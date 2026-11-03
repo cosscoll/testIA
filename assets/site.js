@@ -10,7 +10,7 @@
   function buildCard(product) {
     const link = document.createElement('a');
     link.className = 'product-card';
-    link.href = './produit.html?id=' + encodeURIComponent(product.id);
+    link.href = (window.TESTIA_DEEP && window.TESTIA_DEEP[product.id] && window.TESTIA_DEEP[product.id].page) || ('./produit.html?id=' + encodeURIComponent(product.id));
     link.dataset.type = product.type;
     link.setAttribute('aria-label', 'Découvrir ' + product.title);
 
