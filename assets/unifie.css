@@ -171,3 +171,16 @@ img,svg{max-width:100%}
 .resources-cta-link:hover{background:var(--lav);color:#121018}
 @media(max-width:990px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.resource-grid{grid-template-columns:1fr}.resource-card{min-height:265px}.resources-cta{flex-direction:column;align-items:flex-start}.resources-cta-link{white-space:normal}}
+
+
+/* Contact : aucun message n'est collecte ni traite par ce prototype. */
+.contact-section h2{font-size:clamp(48px,5.8vw,86px);line-height:1;letter-spacing:-.08em;margin:23px 0}
+.contact-section h2 em{font-style:normal;color:var(--lav)}
+.contact-section p{line-height:1.7;color:#bdb4c0;max-width:580px}
+.contact-fields{display:flex;flex-direction:column;gap:13px;margin-top:22px}
+.contact-fields label{font-weight:800;font-size:13px;color:#eae4ed}
+.contact-fields input,.contact-fields textarea{width:100%;padding:15px 17px;color:#f5f1e6;background:#0e0c11;border:1px solid #ffffff54;border-radius:6px;resize:vertical;font:500 15px 'Instrument Sans',Arial,sans-serif}
+.contact-fields input:focus-visible,.contact-fields textarea:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+.contact-fields .contact-notice{color:#d2c6d8;font-size:12px;line-height:1.65;margin:0}
+.contact-fields .contact-button{padding:18px 23px;border:0;border-radius:40px;background:var(--ink);color:#111015;font-weight:900;transition:background .2s,transform .2s;margin-top:5px}
+.contact-fields .contact-button:hover{background:var(--lav);transform:translateY(-3px)}
