@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>STUDIO — Sculpture digitale en 3D</title>
+<meta name="description" content="Une page web qui se déplie en sculpture 3D. Démonstration de création de site WebGL original avec Three.js et GSAP."/>
+<link rel="stylesheet" href="../../toolchain/studio-web-3d/web/src/style.css"/><style id="studio-return">.studio-return{position:fixed;z-index:10000;bottom:12px;left:12px;padding:12px 15px;background:#1c1721ee;color:#f5f0e8!important;border:1px solid #cab7f0;border-radius:40px;font:700 12px Arial,sans-serif;text-decoration:none}</style></head><body><a class="studio-return" href="../../../../ressources.html?type=outils">← Retour aux ressources</a>
+<header class="header"><span>STUDIO / <b>3D</b></span><a href="#experience">Explorer la scène <span aria-hidden="true">↗</span></a></header>
+<main>
+<section class="hero" aria-label="Une page internet transformée en sculpture 3D">
+ <div class="hero-copy"><p class="eyebrow">01 / UNE INTERFACE DEVIENT MATIÈRE</p>
+ <h1>Le web <em>prend</em><br/>forme.</h1>
+ <p class="description">Ce n'est pas une image. C'est une page web transformée en objet physique, dessinée pour réagir à vos mouvements.</p>
+ <a class="cta" href="#experience">Déployer l'expérience <span aria-hidden="true">↘</span></a>
+ </div>
+ <div class="render-area"><canvas id="scene" aria-label="Sculpture tridimensionnelle de page web animée"></canvas>
+ <div id="status" class="status" role="status">Chargement de la scène 3D…</div>
+ <div class="pointer-tag" aria-hidden="true">TOURNER / DÉPLACER</div></div>
+</section>
+<section class="story" id="experience"><p class="eyebrow">02 / EXPÉRIENCE</p><h2>Du trait à<br/><em>l'interaction.</em></h2>
+ <p>Faites défiler la page : le volume suit le mouvement. Survolez la sculpture : elle répond. Cliquez pour changer de matière.</p>
+ <div class="toolbar" role="group" aria-label="Changer la matière de la sculpture">
+ <button data-material="titanium" class="selected" aria-pressed="true">Titane</button>
+ <button data-material="copper" aria-pressed="false">Cuivre</button>
+ <button data-material="ivory" aria-pressed="false">Ivoire</button></div>
+</section>
+<section class="end"><p class="eyebrow">03 / LA MÉTHODE</p><h2>Créer. Animer.<br/>Faire ressentir.</h2>
+ <p>Scène modélisée, matériaux physiques, caméra, scroll et interaction — avec une chaîne de production documentée et des outils gratuits.</p></section>
+</main><footer>STUDIO WEB 3D — prototype original · 0 € de service externe</footer>
+<script type="importmap">{"imports":{
+"three":"https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+"three/addons/":"https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/",
+"gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+"gsap/ScrollTrigger":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js"
+}}</script>
+<script type="module" src="main.js"></script></body></html>
