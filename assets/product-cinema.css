@@ -44,8 +44,8 @@ body.obscure-pop.cinema-page{background:#0c0c0f;color:var(--story-ivory)}
 .cinema-list li::before{content:'↗';position:absolute;left:0;color:var(--story-sage);font-weight:900}
 .cinema-proto-note{margin-top:25px!important;font-size:12px!important;color:#a5a0a9!important}
 .cinema-noise{position:fixed;inset:0;pointer-events:none;opacity:.08;z-index:10;background:repeating-linear-gradient(90deg,#ffffff0a 0 1px,transparent 1px 4px)}
-.cinema-vault{position:relative;min-height:230svh;background:linear-gradient(#111014,#161019 30%,#0b090d)}
-.cinema-vault__sticky{height:100svh;min-height:650px;position:sticky;top:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(110px,11vw,170px) clamp(20px,7vw,115px) 90px;overflow:hidden}
+.cinema-vault{position:relative;min-height:230svh;background:transparent}
+.cinema-vault__sticky{background:linear-gradient(90deg,#100e14f5 0%,#100e14b0 26%,transparent 64%);height:100svh;min-height:650px;position:sticky;top:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(110px,11vw,170px) clamp(20px,7vw,115px) 90px;overflow:hidden}
 .cinema-vault__head{display:flex;justify-content:space-between;align-items:center;color:#c3b7c1;font-weight:800;letter-spacing:.13em;font-size:10px;gap:20px}
 .cinema-vault__copy{max-width:530px;z-index:20;position:relative}
 .cinema-vault__copy h2{font-size:clamp(65px,7vw,116px);line-height:.9;letter-spacing:-.09em;font-weight:800;margin:23px 0}
