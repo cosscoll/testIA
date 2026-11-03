@@ -101,7 +101,12 @@ async function handler(req,res){
     res.setHeader('Access-Control-Allow-Headers','Content-Type');
     return respond(res,204,{},origin);
   }
-  if(req.method==='GET')return respond(res,200,{ready:Boolean(process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN||req.headers?.['x-vercel-oidc-token']),modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
+  if(req.method==='GET'){
+    const credential=Boolean(process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN||req.headers?.['x-vercel-oidc-token']);
+    let free=false;
+    try{free=await freeModelStillFree()}catch{}
+    return respond(res,200,{ready:credential&&free,reason:!free?'free_model_unavailable':!credential?'not_configured':null,modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
+  }
   if(req.method!=='POST')return respond(res,405,{error:'method_not_allowed'});
   if(!corsAllowed(req))return respond(res,403,{error:'origin_denied'});
   if(!rateLimit(req))return respond(res,429,{error:'too_many_requests'},origin);
