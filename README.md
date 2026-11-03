@@ -6,6 +6,8 @@
 
 Ce prototype rassemble les contenus publics de trois projets dans une même plateforme, sans modifier leurs dépôts d’origine.
 
+**État du déploiement au 03/11/2026 :** la dernière version **26 ressources** est enregistrée sur GitHub, mais **pas encore publiée sur Vercel**. Le quota gratuit Vercel de 100 déploiements par jour est atteint (erreur 402 – `api-deployments-free-per-day`). Le site public sert encore un commit antérieur ; aucune option payante n’a été activée. Vérifier le SHA déployé et les interactions avant d'annoncer une mise en ligne complète.
+
 ## Direction graphique actuelle — Obscure Pop restauré
 
 La refonte visuelle `platform-v2` (trois étiquettes plates) a été **abandonnée** à la demande du propriétaire. L'accueil utilise à nouveau les **cinq étiquettes interactives superposées** du design Banque Outils IA validé, avec `assets/kinetic-hero.css`, `assets/kinetic-hero.js`, `assets/obscure-pop.css` et `assets/unifie.css`.

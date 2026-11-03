@@ -82,3 +82,7 @@ La page originale IAgile possède une plateforme Academy de staging protégée :
 - Produits non documentés comme prêts à vendre ou prétendus résultats générés par une IA.
 
 Les contenus détaillés du dépôt d'origine restent leurs références officielles. L'objectif est d'intégrer les **ressources publiques utiles**, non de transformer une archive de développement en catalogue commercial.
+
+## Blocage de déploiement identifié
+
+Au 3 novembre 2026, Vercel refuse la publication du dernier SHA de testIA : statut HTTP `402 payment_required`, quota gratuit `api-deployments-free-per-day` supérieur à 100 déploiements par jour. Le dernier déploiement production vérifié READY correspond au commit `e9031d1aead5503797ff5b2529f6bdd14f9d613d`, antérieur à cet inventaire. Les 26 ressources sont **dans GitHub** mais ne sont pas encore **toutes visibles en production**. Ne pas régler le blocage par une dépense, et ne pas prétendre qu'il est corrigé. Pour éviter une nouvelle saturation, grouper les modifications en commits peu fréquents lors du prochain cycle de publication.
