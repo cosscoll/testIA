@@ -24,17 +24,3 @@ body>.ti-footer small{color:#a69faa!important;font-size:10px!important}
 body>.ti-footer .ti-foot-links{display:flex;gap:23px;flex-wrap:wrap}
 @media(max-width:850px){.ti-links,body>.ti-shell>.ti-cta{display:none!important}.ti-mobile{display:block;margin-left:auto}body>.ti-shell{min-height:66px!important}.ti-brand{font-size:24px!important}}
 @media(max-width:400px){body>.ti-shell{padding:0 16px!important}}
-
-
-/* Navigation de sortie des pages historiques — identite Studio IA v2. */
-body>.ti-shell{min-height:72px!important;background:rgba(16,17,19,.98)!important;border-bottom:1px solid #30312f!important;font-family:Arial,Helvetica,sans-serif!important}
-body>.ti-shell a.ti-brand{font:800 27px/.95 Arial,Helvetica,sans-serif!important;letter-spacing:-.085em!important}
-body>.ti-shell .ti-brand b{color:#e79a72!important}
-body>.ti-shell .ti-links{gap:31px!important}
-body>.ti-shell .ti-links a{color:#ddd9d1!important;font:500 13px Arial,Helvetica,sans-serif!important}
-body>.ti-shell .ti-links a:nth-child(3){display:none!important}
-body>.ti-shell a.ti-cta{border:1px solid #76756f!important;background:transparent!important;color:#f3f0e9!important;border-radius:2px!important;padding:12px 16px!important;font:700 12px Arial,Helvetica,sans-serif!important}
-body>.ti-shell a.ti-cta:hover{background:#f3f0e9!important;color:#101113!important}
-body>.ti-footer{background:#0d0e10!important;border-top:1px solid #30312f!important;color:#aaa9a3!important;font-family:Arial,Helvetica,sans-serif!important}
-body>.ti-footer a{color:#e9e6df!important}
-@media(max-width:850px){body>.ti-shell{min-height:66px!important}body>.ti-shell .ti-mobile>div{background:#17191b!important}body>.ti-shell .ti-mobile>div a:nth-child(3){display:none!important}}

@@ -1,75 +1,35 @@
 <!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101113">
-<meta name="description" content="Choisissez d’abord votre catégorie : packs procédures, banques d’outils IA ou formations. Découvrez ensuite les produits adaptés.">
-<title>Choisir une collection — Studio IA</title>
-<link rel="stylesheet" href="./assets/platform-v2.css">
-<link rel="stylesheet" href="./assets/unified-advisor.css">
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0d"><meta name="description" content="Parcourir les packs procédures, les banques d’outils et les formations IA en un seul endroit.">
+<title>Tous les produits — Studio IA / prototype</title>
+<link rel="stylesheet" href="./assets/kinetic-hero.css">
+<link rel="stylesheet" href="./assets/obscure-pop.css">
+<link rel="stylesheet" href="./assets/unifie.css">
 <script defer src="./assets/data.js"></script>
-<script defer src="./assets/platform-v2.js"></script>
-<script defer src="./assets/unified-advisor.js"></script>
-</head>
-<body class="platform-v2">
-<a class="skip" href="#contenu">Aller au contenu</a>
-<header class="site-header"><div class="header-inner">
- <a class="wordmark" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA</a>
- <nav class="navbar" aria-label="Navigation principale"><a href="./index.html">Accueil</a><a href="./catalogue.html" aria-current="page">Produits</a><a href="./contact.html">Contact</a></nav>
- <button type="button" class="menu-button" data-menu-toggle aria-controls="mobileNav" aria-expanded="false">MENU ☰</button>
-</div><nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" hidden><a href="./index.html">Accueil</a><a href="./catalogue.html" aria-current="page">Produits</a><a href="./contact.html">Contact</a></nav></header>
-<main id="contenu" class="catalogue-main">
-<div class="container" id="choiceView">
- <div class="catalogue-intro">
-  <div class="crumb"><a href="./index.html">ACCUEIL</a><span>/</span><span>PRODUITS</span></div>
-  <span class="eyebrow" style="margin-top:43px">AVANT DE CHOISIR UN PRODUIT</span>
-  <h1>Par quoi voulez-vous<br><em>commencer ?</em></h1>
-  <p class="intro-lead">Choisissez une catégorie. Nous vous présentons uniquement les offres qui correspondent à votre objectif.</p>
- </div>
- <div class="catalogue-doors" aria-label="Choisissez une famille de produits">
-  <a class="door" data-family="procedures" href="./catalogue.html?type=procedures">
-   <span class="door-index">01 / FAIRE</span>
-   <span class="door-head"><strong>Packs procédures</strong><small>J’ai besoin d’une méthode prête à adapter.</small></span>
-   <span class="door-count">1 pack pilote</span><span class="door-arrow" aria-hidden="true">↗</span>
-  </a>
-  <a class="door" data-family="outils" href="./catalogue.html?type=outils">
-   <span class="door-index">02 / EXPLORER</span>
-   <span class="door-head"><strong>Banques d’outils IA</strong><small>Je cherche des outils pour faire avancer un projet.</small></span>
-   <span class="door-count">6 banques</span><span class="door-arrow" aria-hidden="true">↗</span>
-  </a>
-  <a class="door" data-family="formations" href="./catalogue.html?type=formations">
-   <span class="door-index">03 / APPRENDRE</span>
-   <span class="door-head"><strong>Formations IA</strong><small>Je veux apprendre à réaliser moi-même.</small></span>
-   <span class="door-count">4 formations</span><span class="door-arrow" aria-hidden="true">↗</span>
-  </a>
- </div>
-</div>
-<div class="container" id="categoryView" hidden>
- <div class="catalogue-intro">
-  <div class="crumb"><a href="./catalogue.html">LES 3 CATÉGORIES</a><span>/</span><span id="categoryCrumb">COLLECTION</span></div>
-  <span class="eyebrow" id="categoryKicker" style="margin-top:43px">UNE COLLECTION</span>
-  <h1 id="categoryHeading">Découvrez les offres.</h1>
-  <p class="intro-lead" id="categoryLead">Choisissez une offre.</p>
- </div>
- <nav class="category-bar" aria-label="Changer de collection">
-  <a class="category-tab" href="./catalogue.html?type=procedures" data-category-tab="procedures">Procédures</a>
-  <a class="category-tab" href="./catalogue.html?type=outils" data-category-tab="outils">Outils IA</a>
-  <a class="category-tab" href="./catalogue.html?type=formations" data-category-tab="formations">Formations</a>
+<script defer src="./assets/site.js"></script>
+<link rel="stylesheet" href="./assets/unified-advisor.css"></head><body class="obscure-pop"><a class="skip-link" href="#contenu">Aller au contenu</a><header class="global-header" role="banner">
+ <a class="global-logo" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA <small>PROTOTYPE 01</small></a>
+ <nav class="global-nav" aria-label="Navigation principale">
+  <a href="./index.html" >Accueil</a>
+  <a href="./catalogue.html" aria-current="page">Produits</a>
+  <a href="./contact.html">Contact</a>
  </nav>
- <div class="category-subbar">
-  <span class="kicker" id="offersCount" aria-live="polite">0 offre</span>
-  <div id="searchWrap"><label for="categorySearch" class="mini-label" style="display:block;margin-bottom:7px">RECHERCHER DANS CETTE COLLECTION</label><input id="categorySearch" class="search-box" type="search" placeholder="Rechercher une offre…" autocomplete="off"></div>
- </div>
- <div id="offersList" class="offers-list" aria-label="Offres de la collection"></div>
- <div id="offersEmpty" class="offer-empty" hidden>Aucun résultat. Essayez un autre mot.</div>
- <div style="margin-top:33px"><a class="cta-inline" href="./catalogue.html">← Revenir aux trois catégories</a></div>
-</div>
-</main>
-<div class="bottom-note"><div class="container"><span>Les offres présentées ne sont pas encore commercialisées.</span><span class="mono">STUDIO IA · VERSION TEST</span></div></div>
-<footer class="footer"><div class="container footer-inner">
- <a class="wordmark" href="./index.html" aria-label="Studio IA">studio<b>/</b>IA</a>
- <nav class="footer-nav" aria-label="Navigation de bas de page"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav>
- <span class="copyright">© 2026 · SITE TEST</span>
-</div></footer>
-</body></html>
+ <a class="header-action" href="./catalogue.html">Explorer les offres ↗</a>
+ <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">MENU ☰</button>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile" hidden>
+  <a href="./index.html">Accueil</a><a href="./catalogue.html">Tous les produits</a><a href="./contact.html">Contact</a>
+ </nav>
+</header><main id="contenu">
+<section class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a href="./index.html">ACCUEIL</a> / PRODUITS</div><span class="small-eyebrow" style="display:block;margin-top:45px">LA COLLECTION / TROIS FAMILLES</span><h1>Tout est<br><em>au même endroit.</em></h1><p>Un catalogue unique pour trouver votre prochaine méthode, votre prochain outil ou votre prochaine compétence.</p></div></section>
+<section class="catalogue-wrap" aria-labelledby="catalog-heading">
+<h2 id="catalog-heading" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Catalogue des offres</h2>
+<div class="catalog-controls"><div class="filter-list" role="group" aria-label="Filtrer par type de produit">
+<button class="filter-btn" data-filter="all" type="button" aria-pressed="true">Toutes les offres</button>
+<button class="filter-btn" data-filter="procedures" type="button" aria-pressed="false">Packs procédures</button>
+<button class="filter-btn" data-filter="outils" type="button" aria-pressed="false">Banques d’outils</button>
+<button class="filter-btn" data-filter="formations" type="button" aria-pressed="false">Formations IA</button>
+</div><input class="catalog-search" id="catalogSearch" type="search" placeholder="Rechercher une offre..." aria-label="Rechercher une offre"></div>
+<div class="catalog-meta"><span><strong id="catalogCount">11 offres</strong> dans le catalogue</span><span>PROTOTYPE · AUCUNE VENTE ACTIVE</span></div>
+<div class="product-grid" id="catalogueGrid"><p>Chargement des offres…</p></div><p id="emptyState" class="empty-state" hidden>Aucun produit ne correspond à votre recherche. Essayez un autre mot-clé ou une autre catégorie.</p>
+</section><section class="resources-cta"><div><span class="small-eyebrow">ENCORE INDÉCIS ?</span><h2>Vous préférez essayer ?</h2><p>Accédez aux outils, aux exemples de procédures et aux exercices de formation proposés gratuitement.</p></div><a class="resources-cta-link" href="./index.html#ressources">Explorer les ressources gratuites ↗</a></section></main><footer class="site-footer"><a class="global-logo" href="./index.html">studio<b>/</b>IA</a><small>PROTOTYPE DE REGROUPEMENT · 2026 · AUCUNE VENTE ACTIVE</small>
+<nav aria-label="Liens secondaires"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav></footer><script defer src="./assets/unified-advisor.js"></script></body></html>
