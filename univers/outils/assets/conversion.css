@@ -1,0 +1,111 @@
+/* Banque Outils IA — Clarity and conversion improvements, 22 Oct 2026.
+   This layer follows Obscure Pop. Existing layout, 3D cards and hover engine preserved. */
+.value-proof{
+  display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+  margin:21px 0 0;
+  font:600 11px/1.55 'Instrument Sans',sans-serif;
+  color:#C7C0CB;letter-spacing:.005em;
+}
+.value-proof span{color:#BCA7ED}
+.discovery-quick{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  margin:14px 0 25px;
+}
+.discovery-quick>span{
+  font-size:11px;font-weight:700;color:#BFB9C6;
+  margin-right:6px;letter-spacing:.02em;
+}
+.discovery-quick button{
+  background:#25202F;border:1px solid #685678;
+  border-radius:999px;color:#EEE7F6;
+  padding:10px 14px;font:700 11px/1.3 'Instrument Sans',sans-serif;
+  cursor:pointer;transition:background .2s,border-color .2s,transform .2s;
+}
+.discovery-quick button:hover,
+.discovery-quick button[aria-pressed=true]{
+  background:#413052;border-color:#BFADE3;transform:translateY(-2px);
+}
+.discovery-quick button:focus-visible{outline:2px solid #CAB7F0;outline-offset:3px}
+.library-page.obscure-pop .resource-example{
+  display:flex;flex-direction:column;gap:7px;
+  margin:0 0 18px;padding:13px 0 0;
+  border-top:1px solid #ffffff27;
+}
+.library-page.obscure-pop .resource-example strong{
+  color:#C7B3F4;font:800 10px/1.3 'Instrument Sans',sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.library-page.obscure-pop .resource-example span{
+  color:#EAE4ED;font:600 12px/1.5 'Instrument Sans',sans-serif;
+}
+.library-page.obscure-pop .resource a{
+  min-height:36px;
+  color:#F5F1E6!important;
+}
+.library-page.obscure-pop .resource:hover a{
+  color:#CAB7F0!important;
+}
+.library-page.obscure-pop .library-result-line{
+  gap:16px;flex-wrap:wrap;
+}
+.library-page.obscure-pop .library-reset{
+  min-height:40px;
+}
+.library-page.obscure-pop .library-finder:focus-within{
+  border-color:#CAB7F0!important;
+  box-shadow:0 0 0 2px #CAB7F042;
+}
+.method-starter{
+  display:flex;flex-direction:column;gap:8px;
+  background:#292237;border-left:3px solid #CAB7F0;
+  padding:13px 16px;margin:0 0 18px;
+}
+.method-starter b{
+  color:#C9B5EB;font:800 10px 'Instrument Sans',sans-serif;
+  letter-spacing:.09em;
+}
+.method-starter span{
+  color:#F4F0F6;font:500 13px/1.6 'Instrument Sans',sans-serif;
+}
+.library-page.obscure-pop .method-card{
+  min-height:550px;
+}
+.library-page.obscure-pop .method-card>a{
+  min-height:48px;
+}
+body.obscure-pop #result-tools{
+  background:transparent!important;border:1px solid #C4B3E1!important;
+  color:#F5F1E6!important;
+  text-align:center;
+}
+body.obscure-pop #result-tools:hover{
+  background:#342741!important;border-color:#CAB7F0!important;
+}
+@media(max-width:700px){
+  .value-proof{font-size:10px;gap:8px}
+  .discovery-quick{gap:8px}
+  .discovery-quick>span{width:100%;margin:0 0 2px}
+  .discovery-quick button{min-height:42px;padding:10px 13px}
+  .library-page.obscure-pop .method-card{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .discovery-quick button{transition:none}
+}
+
+.conversion-secondary-link{
+  display:flex!important;align-items:center;justify-content:space-between;
+  margin-top:15px;padding-top:11px;
+  max-width:510px;color:#E2D1F5!important;font-size:12px!important;
+}
+.conversion-cta-stack{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.library-page.obscure-pop .conversion-cta-link{
+  color:#221722;display:inline-block;
+  padding:6px 2px;
+  text-decoration:underline;text-underline-offset:5px;
+  font:800 12px/1.5 'Instrument Sans',sans-serif;
+}
+.library-page.obscure-pop .conversion-cta-link:hover{color:#431E62}
+@media(max-width:650px){
+ .conversion-cta-stack{align-items:stretch}
+ .library-page.obscure-pop .conversion-cta-link{padding:7px 0}
+}
