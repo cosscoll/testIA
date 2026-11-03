@@ -23,6 +23,14 @@ L’accueil utilise les étiquettes interactives inspirées du projet Banque Out
 - `univers/procedures/` : pack Conciergerie, exemple P01, atelier et animation clé/coffre 3D.
 - `univers/formations/` : quatre pages de formation, FAQ, comparateur et ressources gratuites.
 
+## Conseiller IA génératif
+
+Le chatbot issu de Banque Outils IA est intégré à l’accueil, au catalogue et aux pages des trois univers (33 pages HTML). Il est désormais informé sur les 11 offres ; il peut expliquer le bon choix et proposer des liens vers les pages détaillées, après consentement à l’envoi des messages.
+
+Fonction serveurless : `api/chat.js` (Vercel). Modèle exclusif `reflection/beam-free`, avec vérification préalable du tarif à zéro avant chaque génération et sans basculement payant. Si le modèle gratuit n’est pas disponible, le service s’arrête plutôt que d’engager des frais.
+
+**Recette :** intégration, validation et simulations vérifiées ; les réponses réelles depuis le site doivent encore être validées manuellement. Lire [la documentation complète du chatbot](docs/CHATBOT_IA_UNIFIE_2026-11-03.md).
+
 ## État commercial
 
 **Ce projet n'est pas une boutique en production.** Aucun paiement, inscription payante, espace client ou livraison automatique de produit n’est actif. Les banques et les formations restent en préparation ; le pack Conciergerie est un pilote. Le contenu privé des cours IAgile n'a pas été publié.
