@@ -28,7 +28,7 @@
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!nav.hidden){setOpen(false);toggle.focus();}});
   document.addEventListener('pointerdown',e=>{if(!nav.hidden&&!nav.contains(e.target)&&!toggle.contains(e.target))setOpen(false);});
-  window.matchMedia('(min-width: 821px)').addEventListener?.('change',e=>{if(e.matches)setOpen(false);});
+  window.matchMedia('(min-width: 981px)').addEventListener?.('change',e=>{if(e.matches)setOpen(false);});
  }
  const clean=s=>String(s||'').toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
  function renderCatalogue(){
