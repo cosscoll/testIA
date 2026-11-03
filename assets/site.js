@@ -150,6 +150,34 @@
     const familyUrl = './catalogue.html?type=' + encodeURIComponent(product.type);
     document.getElementById('detailBack').href = familyUrl;
     document.getElementById('detailCTA').href = familyUrl;
+
+    const complete = (window.TESTIA_DEEP || {})[product.id];
+    if (complete) {
+      const cta = document.getElementById('detailCTA');
+      cta.href = complete.page;
+      cta.textContent = complete.pageLabel + ' ↗';
+      const description = document.querySelector('.detail-main .detail-copy');
+      const explore = document.createElement('a');
+      explore.className = 'detail-open';
+      explore.href = complete.page;
+      explore.textContent = complete.pageLabel + ' ↗';
+      description.after(explore);
+      const links = document.createElement('div');
+      links.className = 'detail-extra-links';
+      if (complete.demo) {
+        const example = document.createElement('a');
+        example.href = complete.demo;
+        example.textContent = complete.demoLabel + ' ↗';
+        links.append(example);
+      }
+      if (complete.secondary) {
+        const secondary = document.createElement('a');
+        secondary.href = complete.secondary;
+        secondary.textContent = complete.secondaryLabel + ' ↗';
+        links.append(secondary);
+      }
+      if (links.childElementCount) cta.after(links);
+    }
     const ul = document.getElementById('detailFeatures');
     product.features.forEach(feature => {
       const li = document.createElement('li');
