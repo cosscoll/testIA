@@ -95,3 +95,20 @@ window.TESTIA_TYPES = {
   outils:{label:'Banques d’outils IA',singular:'Banque d’outils IA',heading:'Les bons outils pour vos idées.',description:'Pour explorer : des outils, des modes d’emploi et des cas d’usage rangés par objectif.'},
   formations:{label:'Formations IA',singular:'Formation IA',heading:'Apprendre à faire soi-même.',description:'Pour monter en compétences : des parcours progressifs orientés pratique.'}
 };
+
+
+/* Liens vers les pages de contenu originales intégrées à la plateforme.
+   Sources publiques uniquement : aucune leçon privée ni offre payante non ouverte. */
+window.TESTIA_DEEP = {
+  conciergerie: {page:'./univers/procedures/pack-conciergerie.html',pageLabel:'Explorer le pack complet',demo:'./univers/procedures/exemple-procedure.html',demoLabel:'Essayer la procédure P01',secondary:'./univers/procedures/atelier-decisions.html',secondaryLabel:'Tester trois décisions métier'},
+  redaction: {page:'./univers/outils/pack-redaction.html',pageLabel:'Explorer la banque Rédaction',demo:'./univers/outils/outils/assistant-messages.html',demoLabel:'Essayer le générateur gratuit'},
+  visuels: {page:'./univers/outils/pack-visuel.html',pageLabel:'Explorer la banque Visuels'},
+  web: {page:'./univers/outils/pack-sites-web.html',pageLabel:'Explorer la banque Sites web'},
+  video: {page:'./univers/outils/pack-video-audio.html',pageLabel:'Explorer la banque Vidéo & audio'},
+  automatisation: {page:'./univers/outils/pack-automatisation.html',pageLabel:'Explorer la banque Automatisation'},
+  analyse: {page:'./univers/outils/pack-recherche-analyse.html',pageLabel:'Explorer la banque Recherche & analyse'},
+  'formation-3d': {page:'./univers/formations/formations/sites-web-3d.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/brief-site-3d.html',demoLabel:'Tester le brief 3D'},
+  'formation-agents': {page:'./univers/formations/formations/agents-personnalises.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/agent-readiness.html',demoLabel:'Tester mon idée d’agent'},
+  'formation-auto': {page:'./univers/formations/formations/automatiser-tache.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/incident-lab.html',demoLabel:'Essayer Incident Lab'},
+  'formation-quotidien': {page:'./univers/formations/formations/ia-au-quotidien.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/diagnostic-10-questions.html',demoLabel:'Faire le diagnostic gratuit'}
+};
