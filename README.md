@@ -6,11 +6,14 @@
 
 Ce prototype rassemble les contenus publics de trois projets dans une même plateforme, sans modifier leurs dépôts d’origine.
 
-## Direction UX actuelle — refonte v2
+## Direction graphique actuelle — Obscure Pop restauré
 
-La navigation publique est désormais organisée par choix progressif : **Accueil → trois catégories → offres de la catégorie → fiche courte**, avec accès aux anciens contenus détaillés uniquement sur demande. Les trois étiquettes interactives et la charte éditoriale sont définies dans `assets/platform-v2.css` et `assets/platform-v2.js`.
+La refonte visuelle `platform-v2` (trois étiquettes plates) a été **abandonnée** à la demande du propriétaire. L'accueil utilise à nouveau les **cinq étiquettes interactives superposées** du design Banque Outils IA validé, avec `assets/kinetic-hero.css`, `assets/kinetic-hero.js`, `assets/obscure-pop.css` et `assets/unifie.css`.
 
-Consulter [le dossier complet de la refonte UX](docs/REFONTE_UX_V2_2026-11-03.md). Les trois dépôts d'origine restent inchangés. Le chatbot est conservé, mais sa correction est différée.
+**Nouveau parcours produit :** Accueil → Catalogue → fiche `produit.html?id=...` avec la vraie clé Three.js de Pack Procédures Pro qui suit le scroll et rejoint la serrure du coffre 3D en fin de page → présentation détaillée originale. Le modèle et la chorégraphie source se trouvent dans `univers/procedures/assets/apartment-scene.js`; la mise en scène spécifique est dans `assets/product-cinema.js` et `assets/product-cinema.css`.
+
+Documentation : [retour Obscure Pop et pages produits 3D](docs/RETOUR_OBSCURE_POP_CINEMA_PRODUITS_2026-11-03.md). Les trois dépôts originaux restent inchangés. Le chatbot a été conservé mais son dysfonctionnement signalé reste à corriger.
+
 
 ## Les 11 offres représentées
 
@@ -20,10 +23,11 @@ Consulter [le dossier complet de la refonte UX](docs/REFONTE_UX_V2_2026-11-03.md
 
 ## Navigation du site
 
-L’accueil utilise trois étiquettes interactives inspirées du projet Banque Outils IA. Le catalogue affiche d’abord les trois familles, puis une seule collection à la fois. Chaque offre possède une fiche courte, avec un lien distinct vers sa page détaillée. Les démonstrations gratuites sont regroupées sur l’accueil dans la section `#ressources`.
+L’accueil utilise cinq étiquettes animées inspirées du site Banque Outils IA validé. Le catalogue présente les onze offres avec des filtres par famille. Chaque carte produit mène à une présentation cinématique avec la clé 3D qui suit le défilement et ouvre le coffre, puis à sa page détaillée. Les démonstrations gratuites sont accessibles depuis l’accueil.
 
 - `index.html` : accueil et guide de choix.
-- `catalogue.html` : toutes les offres.
+- `catalogue.html` : toutes les offres filtrables.
+- `produit.html?id=...` : présentation 3D personnalisée pour chaque offre.
 - `contact.html` : contact provisoire uniquement pour des retours publics non confidentiels via GitHub Issues.
 - `univers/outils/` : banques détaillées, répertoire, fiches et outil gratuit.
 - `univers/procedures/` : pack Conciergerie, exemple P01, atelier et animation clé/coffre 3D.
