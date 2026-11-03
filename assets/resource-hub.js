@@ -34,6 +34,7 @@
    if(a.dataset.resourceType===type)a.setAttribute('aria-current','page');
    else a.removeAttribute('aria-current');
   });
+  $('resourceProducts').href='./catalogue.html?type='+encodeURIComponent(type);
   const search=$('resourceSearch');
   const host=$('resourceGrid');
   const count=$('resourceCount');
