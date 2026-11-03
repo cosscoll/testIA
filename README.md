@@ -6,6 +6,12 @@
 
 Ce prototype rassemble les contenus publics de trois projets dans une même plateforme, sans modifier leurs dépôts d’origine.
 
+## Direction UX actuelle — refonte v2
+
+La navigation publique est désormais organisée par choix progressif : **Accueil → trois catégories → offres de la catégorie → fiche courte**, avec accès aux anciens contenus détaillés uniquement sur demande. Les trois étiquettes interactives et la charte éditoriale sont définies dans `assets/platform-v2.css` et `assets/platform-v2.js`.
+
+Consulter [le dossier complet de la refonte UX](docs/REFONTE_UX_V2_2026-11-03.md). Les trois dépôts d'origine restent inchangés. Le chatbot est conservé, mais sa correction est différée.
+
 ## Les 11 offres représentées
 
 - **Packs Procédures Pro (1)** : pack pilote Conciergeries et locations courte durée.
@@ -14,7 +20,7 @@ Ce prototype rassemble les contenus publics de trois projets dans une même plat
 
 ## Navigation du site
 
-L’accueil utilise les étiquettes interactives inspirées du projet Banque Outils IA. Le catalogue commun permet de filtrer les produits et de consulter leur page détaillée directement. Les démonstrations gratuites sont regroupées sur l’accueil dans la section `#ressources`.
+L’accueil utilise trois étiquettes interactives inspirées du projet Banque Outils IA. Le catalogue affiche d’abord les trois familles, puis une seule collection à la fois. Chaque offre possède une fiche courte, avec un lien distinct vers sa page détaillée. Les démonstrations gratuites sont regroupées sur l’accueil dans la section `#ressources`.
 
 - `index.html` : accueil et guide de choix.
 - `catalogue.html` : toutes les offres.
