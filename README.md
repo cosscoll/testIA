@@ -33,6 +33,19 @@ L’accueil utilise cinq étiquettes animées inspirées du site Banque Outils I
 - `univers/procedures/` : pack Conciergerie, exemple P01, atelier et animation clé/coffre 3D.
 - `univers/formations/` : quatre pages de formation, FAQ, comparateur et ressources gratuites.
 
+## Bibliothèque des ressources publiques
+
+Le regroupement comprend désormais **26 ressources accessibles** dans une bibliothèque progressive, en plus des **11 produits** du catalogue :
+
+- **5 ressources procédures** : exemple P01, atelier de décisions, scène clé/coffre, laboratoire de reproduction et guide technique.
+- **13 ressources d'outils IA** : générateur, fiches, guide de choix, cartographie, démonstrations AETHER/FORME/NOVA/WEB PRESS/STUDIO 3D et guides de prompts.
+- **8 ressources IAgile** : diagnostics, exercices pratiques, comparateur et FAQ.
+
+**Accès :** https://testia-unifie.vercel.app/ressources.html  
+**Inventaire technique :** [26 ressources publiques et provenance](docs/INVENTAIRE_PUBLIC_26_RESSOURCES_2026-11-03.md).
+
+Les fichiers source de grande taille du démonstrateur WEB PRESS restent servis depuis le dépôt Banque Outils IA, à un commit fixe. Les cours privés, les espaces apprenants et les fichiers commerciaux non validés ne sont pas publiés.
+
 ## Conseiller IA génératif
 
 Le chatbot issu de Banque Outils IA est intégré à l’accueil, au catalogue et aux pages des trois univers (33 pages HTML). Il est désormais informé sur les 11 offres ; il peut expliquer le bon choix et proposer des liens vers les pages détaillées, après consentement à l’envoi des messages.
