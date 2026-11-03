@@ -184,3 +184,9 @@ img,svg{max-width:100%}
 .contact-fields .contact-notice{color:#d2c6d8;font-size:12px;line-height:1.65;margin:0}
 .contact-fields .contact-button{padding:18px 23px;border:0;border-radius:40px;background:var(--ink);color:#111015;font-weight:900;transition:background .2s,transform .2s;margin-top:5px}
 .contact-fields .contact-button:hover{background:var(--lav);transform:translateY(-3px)}
+
+
+/* Déclencheur explicite du Conseiller IA (en plus de la bulle fixe). */
+.hero-unified button.kinetic-secondary{background:transparent;border:0;border-bottom:1px solid #f5f1e6;color:inherit;cursor:pointer;text-align:left;font:700 12px 'Instrument Sans',Arial,sans-serif}
+.hero-unified button.kinetic-secondary:hover{color:#cab7f0;border-bottom-color:#cab7f0}
+.hero-unified button.kinetic-secondary:focus-visible{outline:2px solid #cab7f0;outline-offset:4px}
