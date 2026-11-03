@@ -1,0 +1,26 @@
+/* Navigation de plateforme superposee aux vitrines importees, uniquement sur testIA. */
+body>.ti-shell,body>.ti-footer{font-family:'Instrument Sans',Arial,sans-serif!important}
+body>.ti-shell *,body>.ti-footer *{box-sizing:border-box}
+body>.ti-shell{position:sticky!important;top:0!important;left:0!important;right:0!important;z-index:9000!important;min-height:70px!important;padding:0 clamp(18px,4vw,70px)!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;background:rgba(11,11,13,.96)!important;color:#f5f1e6!important;border-bottom:1px solid #ffffff30!important;backdrop-filter:blur(18px)}
+body>.ti-shell a{color:inherit!important;text-decoration:none!important}
+body>.ti-shell a:focus-visible,body>.ti-shell summary:focus-visible,body>.ti-footer a:focus-visible{outline:2px solid #CAB7F0;outline-offset:3px}
+.ti-brand{font:900 27px/.9 'Instrument Sans',Arial,sans-serif!important;letter-spacing:-.08em!important;white-space:nowrap;flex-shrink:0}
+.ti-brand b{color:#ff6a00}
+.ti-links{display:flex;align-items:center;gap:clamp(15px,2vw,36px);margin-left:auto}
+.ti-links a{font-size:12px!important;font-weight:800!important;letter-spacing:0!important}
+.ti-links a:hover,.ti-links a:focus-visible{color:#CAB7F0!important}
+.ti-cta{display:inline-block;border:1px solid #f5f1e6!important;border-radius:30px!important;padding:13px 18px!important;font-size:12px!important;font-weight:900!important;white-space:nowrap;background:#f5f1e6!important;color:#141015!important}
+body>.ti-shell a.ti-cta{color:#141015!important}
+body>.ti-shell a.ti-cta:hover{background:#cab7f0!important;border-color:#cab7f0!important}
+.ti-mobile{display:none;position:relative}
+.ti-mobile summary{cursor:pointer;list-style:none;font-size:12px;font-weight:900;border:1px solid #ffffff66;border-radius:30px;padding:12px 16px;color:#f5f1e6}
+.ti-mobile summary::-webkit-details-marker{display:none}
+.ti-mobile>div{position:absolute;z-index:9500;right:0;top:calc(100% + 15px);width:min(80vw,290px);display:flex;flex-direction:column;padding:9px;background:#19161d;border:1px solid #ffffff42;box-shadow:0 20px 40px #0007}
+.ti-mobile>div a{font:700 13px 'Instrument Sans',Arial,sans-serif!important;padding:13px 10px;border-bottom:1px solid #ffffff26}
+body>footer:not(.ti-footer){display:none!important}
+body>.ti-footer{background:#0b0b0d!important;color:#d5cfd7!important;padding:33px clamp(20px,5vw,75px)!important;border-top:1px solid #ffffff25!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:22px;flex-wrap:wrap;font-size:12px!important}
+body>.ti-footer a{color:#f5f1e6!important;font-weight:800!important;text-decoration:none!important}
+body>.ti-footer small{color:#a69faa!important;font-size:10px!important}
+body>.ti-footer .ti-foot-links{display:flex;gap:23px;flex-wrap:wrap}
+@media(max-width:850px){.ti-links,body>.ti-shell>.ti-cta{display:none!important}.ti-mobile{display:block;margin-left:auto}body>.ti-shell{min-height:66px!important}.ti-brand{font-size:24px!important}}
+@media(max-width:400px){body>.ti-shell{padding:0 16px!important}}
