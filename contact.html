@@ -1,21 +1,46 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0b0d"><meta name="description" content="Échanger à propos de la plateforme Studio IA, des banques d'outils, des packs procédures et des formations. Canal public provisoire.">
-<title>Contact — Studio IA / prototype</title>
-<link rel="stylesheet" href="./assets/kinetic-hero.css"><link rel="stylesheet" href="./assets/obscure-pop.css"><link rel="stylesheet" href="./assets/unifie.css"><script defer src="./assets/site.js"></script>
-<link rel="stylesheet" href="./assets/unified-advisor.css"></head><body class="obscure-pop"><a class="skip-link" href="#contenu">Aller au contenu</a>
-<header class="global-header" role="banner"><a class="global-logo" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA <small>PROTOTYPE 01</small></a>
-<nav class="global-nav" aria-label="Navigation principale"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html" aria-current="page">Contact</a></nav>
-<a class="header-action" href="./catalogue.html">Explorer les offres ↗</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">MENU ☰</button>
-<nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile" hidden><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html" aria-current="page">Contact</a><a href="./index.html#ressources">Ressources gratuites</a></nav></header>
-<main id="contenu"><section class="page-hero"><div class="page-hero-inner"><div class="breadcrumb">ACCUEIL / CONTACT</div><span class="small-eyebrow" style="display:block;margin-top:48px">CONTACT / STUDIO IA</span><h1>Une question ?<br><em>Parlons du projet.</em></h1><p>Une idée d’amélioration pour la plateforme, une formation ou un outil ? Pendant cette phase de test, un canal public permet de transmettre des retours non confidentiels.</p></div></section>
-<section class="section-wrap contact-section"><div class="selector-layout"><div><span class="small-eyebrow">COMMENT ÉCHANGER ?</span><h2>Un retour<br><em>utile.</em></h2><p>Le formulaire ci-contre prépare une demande GitHub. Le message n’est pas envoyé depuis ce site ; vous pourrez le relire avant sa publication sur GitHub. Ce canal nécessite un compte GitHub.</p><p>Ce prototype ne traite ni commande, ni paiement, ni demande personnelle. Une messagerie professionnelle privée reste à configurer avant la commercialisation.</p></div>
-<div class="selector-panel"><span class="small-eyebrow">DEMANDE PUBLIQUE / PRÉ-LANCEMENT</span><form id="contactForm" action="https://github.com/cosscoll/testIA/issues/new" method="get" target="_blank" rel="noopener" class="contact-fields">
-<label for="contactSubject">Sujet de votre demande</label><input id="contactSubject" name="title" required minlength="5" maxlength="100" placeholder="Ex. : Suggestion pour les formations">
-<label for="contactMessage">Votre message</label><textarea id="contactMessage" name="body" rows="7" required minlength="15" maxlength="1500" placeholder="Décrivez votre suggestion, sans données personnelles."></textarea>
-<p class="contact-notice"><strong>Attention :</strong> les Issues GitHub sont publiques. Ne communiquez aucune donnée confidentielle, personnelle ou commerciale sensible.</p>
-<button class="contact-button" type="submit">Préparer le message sur GitHub ↗</button></form></div></div></section>
-<section class="note-strip"><p>La plateforme regroupe des offres en préparation. Aucun achat ni aucune inscription payante ne sont ouverts pendant les tests.</p><a href="./catalogue.html">Parcourir les offres ↗</a></section>
-</main>
-<footer class="site-footer"><a class="global-logo" href="./index.html">studio<b>/</b>IA</a><small>PROTOTYPE DE REGROUPEMENT · 2026 · AUCUNE VENTE ACTIVE</small><nav aria-label="Liens secondaires"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav></footer>
-<script defer src="./assets/data.js"></script><script defer src="./assets/unified-advisor.js"></script></body></html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101113">
+<meta name="description" content="Partager une suggestion sur la plateforme Studio IA pendant la phase de test.">
+<title>Contact — Studio IA</title>
+<link rel="stylesheet" href="./assets/platform-v2.css">
+<link rel="stylesheet" href="./assets/unified-advisor.css">
+<script defer src="./assets/data.js"></script>
+<script defer src="./assets/platform-v2.js"></script>
+<script defer src="./assets/unified-advisor.js"></script>
+</head><body class="platform-v2">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-header"><div class="header-inner">
+<a class="wordmark" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA<small>LAB 02</small></a>
+<nav class="navbar" aria-label="Navigation principale"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html" aria-current="page">Contact</a></nav>
+<button type="button" class="menu-button" data-menu-toggle aria-controls="mobileNav" aria-expanded="false">MENU ☰</button>
+</div><nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" hidden><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html" aria-current="page">Contact</a></nav></header>
+<main id="contenu"><div class="container contact-layout">
+ <div>
+  <span class="eyebrow">NOUS CONTACTER / PHASE TEST</span>
+  <h1>Une idée.<br>Un retour.</h1>
+  <p>Vous avez une suggestion sur les produits ou la navigation ? Vous pouvez nous transmettre un retour public sur le dépôt de test.</p>
+  <p>Le contact privé destiné aux clients et aux commandes n’est pas encore ouvert.</p>
+  <p style="margin-top:35px"><a class="cta-inline" href="./catalogue.html">← Retour aux produits</a></p>
+ </div>
+ <div class="contact-card">
+  <h2>Partager une suggestion</h2>
+  <p>Ce formulaire prépare une demande GitHub. Rien n’est envoyé directement depuis ce site.</p>
+  <form action="https://github.com/cosscoll/testIA/issues/new" method="get" target="_blank">
+   <label for="contactSubject">Sujet</label>
+   <input id="contactSubject" name="title" required minlength="5" maxlength="100" placeholder="Une amélioration à proposer">
+   <label for="contactMessage">Votre suggestion</label>
+   <textarea id="contactMessage" name="body" required minlength="15" maxlength="1500" placeholder="Décrivez votre suggestion."></textarea>
+   <p class="warning">La demande sera publique sur GitHub et nécessite un compte GitHub. N’incluez aucune information personnelle ou confidentielle.</p>
+   <button type="submit">Préparer mon retour ↗</button>
+  </form>
+ </div>
+</div></main>
+<div class="bottom-note"><div class="container"><span>Une plateforme en cours de préparation : pas de prise de commande.</span><span class="mono">STUDIO IA · VERSION TEST</span></div></div>
+<footer class="footer"><div class="container footer-inner">
+<a class="wordmark" href="./index.html" aria-label="Studio IA">studio<b>/</b>IA</a>
+<nav class="footer-nav" aria-label="Navigation de bas de page"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav>
+<span class="copyright">© 2026 · SITE TEST</span>
+</div></footer>
+</body></html>
