@@ -79,7 +79,7 @@
   try{
    const r=await fetch(API,{method:'GET',mode:'cors',cache:'no-store'});
    const data=await r.json();
-   setStatus(r.ok&&data.ready?'IA générative disponible':'IA non configurée actuellement');
+   setStatus(r.ok&&data.ready?'IA générative disponible':data.reason==='free_model_unavailable'?'Modèle gratuit indisponible actuellement':'IA non configurée actuellement');
   }catch{setStatus('Connexion IA momentanément indisponible');}
  };
  const start=()=>{
