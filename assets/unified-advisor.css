@@ -1,0 +1,68 @@
+/* Guide de choix — univers Obscure Pop, utilisable au clavier et mobile. */
+.product-guide{position:fixed;right:clamp(12px,2vw,28px);bottom:clamp(12px,2vw,25px);z-index:900;max-width:calc(100vw - 24px);font-family:'Instrument Sans',Arial,sans-serif;color:#F5F1E6}
+.product-guide button,.product-guide input{font:inherit}
+.product-guide-toggle{cursor:pointer;border:1px solid #D5B3ED;background:#21172B;color:#F5F1E6;display:flex;align-items:center;gap:10px;border-radius:999px;padding:13px 19px;box-shadow:0 12px 36px #0009;min-height:52px;font-weight:800;font-size:13px;transition:transform .2s,border-color .2s,background .2s}
+.product-guide-toggle:hover{background:#342243;border-color:#F5F1E6;transform:translateY(-2px)}
+.product-guide-spark{background:#CDB7E4;color:#251830;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;font-size:17px}
+.product-guide-panel[hidden]{display:none!important}
+.product-guide-panel{display:flex;flex-direction:column;width:min(390px,calc(100vw - 24px));height:min(590px,calc(100dvh - 110px));min-height:320px;position:absolute;bottom:calc(100% + 12px);right:0;background:#151119;color:#F5F1E6;border:1px solid #594963;border-radius:20px;box-shadow:0 28px 65px #000c;overflow:hidden}
+.product-guide-header{flex:none;background:#241B2B;padding:16px 18px;display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff24}
+.product-guide-header strong{display:block;font-size:15px;letter-spacing:-.025em}
+.product-guide-header span{display:block;font-size:11px;color:#C3B5C8;margin-top:4px}
+.product-guide-header-actions{display:flex;gap:5px}
+.product-guide-header-actions button{border:1px solid #ffffff28;border-radius:10px;background:#35273C;color:#fff;cursor:pointer;font-size:23px;line-height:1;min-width:36px;min-height:36px;display:grid;place-items:center}
+.product-guide-messages{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:18px 16px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin}
+.product-guide-bubble{max-width:95%;align-self:flex-start;background:#28202E;color:#EFE9F0;border:1px solid #ffffff1f;border-radius:15px 15px 15px 4px;padding:11px 14px;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.product-guide-bubble.from-user{align-self:flex-end;background:#CDB6E9;color:#201628;border-color:#CDB6E9;border-radius:15px 15px 4px 15px}
+.product-guide-result{border:1px solid #725B82;background:#201B28;padding:15px;border-radius:15px;display:flex;flex-direction:column;gap:9px}
+.product-guide-result strong{color:#E5C8FA;font-size:15px;line-height:1.2}
+.product-guide-result p{font-size:12px;line-height:1.55;color:#E8DEE8;margin:0}
+.product-guide-result .product-guide-outcome{color:#CCC0D0}
+.product-guide-result small{font-size:11px;color:#C7B6CD}
+.product-guide-result a{display:flex;text-align:center;justify-content:center;align-items:center;background:#E9D6FB;color:#24172F;font-size:12px;font-weight:850;min-height:42px;border-radius:30px;text-decoration:none;padding:10px 15px}
+.product-guide-result a:hover{background:#fff}
+.product-guide-choices{flex:none;padding:9px 13px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid #ffffff1b}
+.product-guide-choice{background:#302637;border:1px solid #705B78;color:#F5F1E6;cursor:pointer;border-radius:20px;padding:9px 11px;font-size:12px;line-height:1.2;min-height:35px}
+.product-guide-choice:hover{background:#4C3658}
+.product-guide-form{flex:none;padding:10px 13px 8px;border-top:1px solid #ffffff1a}
+.product-guide-form label{display:block;color:#D4C7D9;font-size:11px;font-weight:700;margin-bottom:7px}
+.product-guide-form>div{display:flex;gap:7px}
+.product-guide-form input{min-width:0;flex:1;border:1px solid #756480;border-radius:11px;background:#211A27;color:#fff;padding:11px;line-height:1.35;font-size:13px}
+.product-guide-form input::placeholder{color:#AAA0B1}
+.product-guide-form button{border:0;background:#CDB6E9;color:#1B1221;padding:10px 13px;font-weight:800;cursor:pointer;border-radius:11px;font-size:12px}
+.product-guide-form button:hover{background:#F0DCFD}
+.product-guide-privacy{font-size:10px;line-height:1.45;color:#B9AEC0;padding:0 14px 12px;margin:0}
+.product-guide :is(button,input,a):focus-visible,[data-open-product-guide]:focus-visible{outline:3px solid #B9CEA2;outline-offset:3px}
+@media(max-width:480px){.product-guide{right:10px;bottom:10px}.product-guide-toggle{font-size:12px;padding:10px 13px;min-height:46px}.product-guide-panel{border-radius:16px;height:min(585px,calc(100dvh - 90px))}.product-guide-messages{padding:12px}.product-guide-result{padding:11px}.product-guide-privacy{font-size:9px}}
+@media(max-height:590px){.product-guide-panel{height:calc(100dvh - 88px);min-height:230px}.product-guide-privacy{display:none}}
+@media(prefers-reduced-motion:reduce){.product-guide-toggle{transition:none}}
+
+/* Lien discret sous l'introduction de la page Produit. */
+.hub-guide-open{margin-top:19px;border:1px solid #BDA5CF;color:#F0E4F5;background:#2D2334;padding:11px 15px;border-radius:28px;font-weight:800;font-size:13px;cursor:pointer;min-height:44px}
+.hub-guide-open span{margin-left:8px}
+.hub-guide-open:hover{background:#4A3555;border-color:#F5F1E6}
+
+/* Dialogue IA génératif, consentement explicite et états réseau. */
+.product-guide-consent{display:flex;gap:9px;align-items:flex-start;padding:7px 13px 0;font-size:10px;line-height:1.45;color:#E5D7E8;cursor:pointer}
+.product-guide-consent input{flex:0 0 auto;width:15px;height:15px;accent-color:#B7D0A7;margin:0}
+.product-guide-thinking{opacity:.75;font-style:italic;animation:guide-wait 1.1s ease-in-out infinite alternate}
+@keyframes guide-wait{from{opacity:.45}to{opacity:1}}
+.product-guide-form button:disabled,.product-guide-choices button:disabled{cursor:wait;opacity:.55}
+.product-guide-result{gap:8px}
+.product-guide-privacy{margin-top:5px;padding-bottom:9px}
+@media(max-width:480px){.product-guide-consent{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.product-guide-thinking{animation:none}}
+
+
+/* Adaptation Studio IA : reste au-dessus des headers originaux importés. */
+.product-guide{z-index:12000!important}
+.product-guide-panel{max-width:calc(100vw - 18px)}
+.product-guide-toggle{background:#201626;border-color:#CAB7F0;color:#F5F1E6}
+.product-guide-result{border-color:#CAB7F077}
+.product-guide-consent{font-size:10px}
+@media(max-width:480px){
+ .product-guide{left:auto;right:10px;bottom:10px!important}
+ .product-guide-panel{height:min(580px,calc(100dvh - 89px));width:min(390px,calc(100vw - 20px))}
+ .product-guide-choices{padding:8px;gap:6px}
+ .product-guide-choice{font-size:11px}
+}
