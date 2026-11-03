@@ -44,7 +44,7 @@
   outils:{label:'BANQUE D’OUTILS IA',action:'Explorer cette banque',intro:'Une collection d’outils adaptés à un objectif précis.'},
   formations:{label:'FORMATION IAGILE',action:'Découvrir le programme',intro:'Un parcours pour apprendre à réaliser vous-même.'}
  };
- const displayTitle=p=>p.type==='formations'?'La compétence.<br><em>À découvrir.</em>':p.type==='outils'?'Les bons outils.<br><em>Au bon moment.</em>':'Des étapes claires.<br><em>À partager.</em>';
+ const displayTitle=p=>p.type==='formations'?['La compétence.','À découvrir.']:p.type==='outils'?['Les bons outils.','Au bon moment.']:['Des étapes claires.','À partager.'];
  function section(index,position,kicker,heading,text,extras){
   const part=node('section','cinema-panel cinema-panel--'+position);
   part.dataset.pose=String(index);
@@ -108,7 +108,7 @@
     (p.features||[]).slice(0,4).forEach(feature=>ul.append(node('li',null,feature)));
     copy.append(ul);
    }),
-   section(4,'left','04 / À QUI S’ADRESSE-T-IL ?',displayTitle(p).replace(/<br>/g,' ').replace(/<[^>]+>/g,'').split(/\s+\./),p.audience,copy=>{
+   section(4,'left','04 / À QUI S’ADRESSE-T-IL ?',displayTitle(p),p.audience,copy=>{
     const label=node('p','cinema-proto-note',p.status+' · Aucun achat ou inscription activé.');
     copy.append(label);
     if(deep.demo)addLink(copy,deep.demo,(deep.demoLabel||'Essayer un exemple')+' ↗','cinema-action cinema-action--ghost');
