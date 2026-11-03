@@ -1,28 +1,99 @@
 <!doctype html>
-<html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101113">
-<meta name="description" content="Découvrez l’essentiel d’un pack procédures, d’une banque d’outils ou d’une formation IA, sans surcharge d’information.">
-<title>Une offre — Studio IA</title>
-<link rel="stylesheet" href="./assets/platform-v2.css">
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="Découvrir une offre Studio IA avec la clé 3D interactive qui accompagne la visite jusqu'à l'ouverture du coffre.">
+<title>Produit — Studio IA</title>
+<link rel="stylesheet" href="./assets/kinetic-hero.css">
+<link rel="stylesheet" href="./assets/obscure-pop.css">
+<link rel="stylesheet" href="./assets/unifie.css">
+<link rel="stylesheet" href="./assets/product-cinema.css">
 <link rel="stylesheet" href="./assets/unified-advisor.css">
 <script defer src="./assets/data.js"></script>
-<script defer src="./assets/platform-v2.js"></script>
+<script defer src="./assets/product-cinema.js"></script>
 <script defer src="./assets/unified-advisor.js"></script>
-</head><body class="platform-v2">
-<a class="skip" href="#contenu">Aller au contenu</a>
-<header class="site-header"><div class="header-inner">
-<a class="wordmark" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA</a>
-<nav class="navbar" aria-label="Navigation principale"><a href="./index.html">Accueil</a><a href="./catalogue.html" aria-current="page">Produits</a><a href="./contact.html">Contact</a></nav>
-<button type="button" class="menu-button" data-menu-toggle aria-controls="mobileNav" aria-expanded="false">MENU ☰</button>
-</div><nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" hidden><a href="./index.html">Accueil</a><a href="./catalogue.html" aria-current="page">Produits</a><a href="./contact.html">Contact</a></nav></header>
-<main class="product-main" id="contenu">
-<div id="productRoot" aria-live="polite"><div class="container" style="padding:95px 0"><p class="eyebrow">CHARGEMENT DE L’OFFRE</p></div></div>
+<script type="module" src="./univers/procedures/assets/apartment-scene.js"></script>
+</head>
+<body class="obscure-pop cinema-page">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="global-header" role="banner">
+ <a class="global-logo" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA <small>COLLECTIONS</small></a>
+ <nav class="global-nav" aria-label="Navigation principale">
+  <a href="./index.html">Accueil</a>
+  <a href="./catalogue.html" aria-current="page">Produits</a>
+  <a href="./contact.html">Contact</a>
+ </nav>
+ <a class="header-action" href="./catalogue.html">Toutes les offres ↗</a>
+ <button type="button" class="mobile-menu-toggle" data-cinema-menu aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">MENU ☰</button>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile" hidden>
+  <a href="./index.html">Accueil</a><a href="./catalogue.html">Tous les produits</a><a href="./contact.html">Contact</a>
+ </nav>
+</header>
+<!-- Original geometry: key with brass blade, leather tag, and articulated vault.
+     Rendered by the original Procédures Pro Three.js scene, already imported in testIA. -->
+<div class="cinema-world" id="world" role="group" aria-label="Mise en scène animée : une clé métallique rejoint un coffre 3D à la fin de la page." data-engine="loading" data-ready="false">
+ <div class="cinema-world__glow" aria-hidden="true"></div>
+</div>
+<div class="cinema-key-layer" id="keyLayer" aria-hidden="true">
+ <div class="cinema-key-fallback" id="sceneFallback" aria-hidden="true">
+  <svg viewBox="0 0 480 720" xmlns="http://www.w3.org/2000/svg" role="presentation">
+   <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8e3ac"/><stop offset=".26" stop-color="#ab8450"/><stop offset=".52" stop-color="#ecd3a1"/><stop offset=".8" stop-color="#78603a"/><stop offset="1" stop-color="#dbc18c"/></linearGradient>
+    <linearGradient id="tag" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#493f31"/><stop offset="1" stop-color="#171f1d"/></linearGradient>
+    <filter id="cast"><feDropShadow dx="26" dy="35" stdDeviation="23" flood-color="#080c0b" flood-opacity=".7"/></filter>
+   </defs>
+   <g transform="translate(230 355) rotate(-24)" filter="url(#cast)">
+    <path d="M70 -150 Q110 -205 148 -188 L228 -143 Q250 -132 245 -110 L179 14 Q172 28 152 20 L72 -20 Q50 -36 54 -58Z" fill="url(#tag)" stroke="#997c58" stroke-width="4"/>
+    <text x="147" y="-89" transform="rotate(27 147 -89)" fill="#c4ab82" font-family="serif" font-size="49">P.</text>
+    <text x="120" y="-42" transform="rotate(27 120 -42)" fill="#c4ab82" font-size="13" letter-spacing="4">001</text>
+    <circle cx="78" cy="-151" r="18" fill="none" stroke="#d9bb83" stroke-width="10"/>
+    <path d="M-51 -123 A72 72 0 1 1 50 -123 L25 -96 A32 32 0 1 0 -26 -96Z" fill="url(#gold)" stroke="#f1d4a2" stroke-width="3"/>
+    <rect x="-21" y="-86" width="42" height="315" rx="6" fill="url(#gold)" stroke="#eccd8d" stroke-width="3"/>
+    <path d="M20 110 H60 V143 H20 V169 H49 V199 H20 V229 H-21 V110Z" fill="url(#gold)" stroke="#eccd8d" stroke-width="3"/>
+    <path d="M-8 -73 V216" stroke="#fff0c2" stroke-opacity=".52" stroke-width="3"/>
+    <ellipse cx="0" cy="-137" rx="15" ry="15" fill="#1c2925"/>
+   </g>
+  </svg>
+ 
+ </div>
+ <canvas id="worldCanvas" aria-hidden="true"></canvas>
+</div>
+<div class="cinema-noise" aria-hidden="true"></div>
+<main class="cinema-main" id="contenu">
+ <div id="cinemaProduct"><section class="cinema-panel cinema-panel--left"><div class="cinema-copy"><p class="cinema-kicker">CHARGEMENT DE LA COLLECTION</p><h1>Ouvrir le bon univers.</h1><p>Votre produit arrive à l'écran.</p></div></section></div>
+ <section class="cinema-vault" id="cinemaVault" aria-label="Finale : la clé ouvre le coffre">
+  <div class="cinema-vault__sticky">
+   <div class="cinema-vault__head"><span>STUDIO IA / LE COFFRE</span><span>05 — LA DÉCOUVERTE</span></div>
+   <div class="cinema-vault__copy">
+     <span class="cinema-kicker">L'OUVERTURE</span>
+     <h2 id="vaultTitle">La clé.<br><em>Le coffre.</em></h2>
+     <p id="vaultDescription">La clé rejoint le coffre et révèle la présentation détaillée de cette offre.</p>
+     <div class="cinema-vault__links">
+      <a class="cinema-action" href="./catalogue.html" id="vaultPrimary">Explorer l'offre <span aria-hidden="true">↗</span></a>
+      <a class="cinema-vault__secondary" href="./catalogue.html" id="vaultSecondary">Retour aux produits ↗</a>
+     </div>
+   </div>
+   <div class="cinema-vault__status" id="vaultState" aria-live="polite">LE COFFRE EST FERMÉ</div>
+   <div class="cinema-vault__fallback" aria-hidden="true">
+   <svg viewBox="0 0 380 280" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="vaultWood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#73563a"/><stop offset=".6" stop-color="#382c21"/><stop offset="1" stop-color="#1c211d"/></linearGradient></defs>
+    <ellipse cx="190" cy="255" rx="146" ry="19" fill="#090d0b" opacity=".4"/>
+    <path d="M62 106L190 74 318 106 308 235 68 235Z" fill="url(#vaultWood)" stroke="#c59c65" stroke-width="5"/>
+    <path d="M62 106L190 74 318 106 308 146 70 146Z" fill="#231d17" stroke="#ccab72" stroke-width="4"/>
+    <path d="M68 146L308 146" stroke="#c59c65" stroke-width="11"/>
+    <path d="M91 150V234M285 150V234" stroke="#9c7d52" stroke-width="12"/>
+    <path d="M162 141H216V188H162Z" fill="#a8814d" stroke="#e6c587" stroke-width="4"/>
+    <path d="M187 154V176" stroke="#191b16" stroke-width="8" stroke-linecap="round"/>
+   </svg>
+  
+   </div>
+  </div>
+ </section>
 </main>
-<div class="bottom-note"><div class="container"><span>Cette présentation est un aperçu : achats et inscriptions non ouverts.</span><span class="mono">STUDIO IA · VERSION TEST</span></div></div>
-<footer class="footer"><div class="container footer-inner">
-<a class="wordmark" href="./index.html" aria-label="Studio IA">studio<b>/</b>IA</a>
-<nav class="footer-nav" aria-label="Navigation de bas de page"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav>
-<span class="copyright">© 2026 · SITE TEST</span>
-</div></footer>
+<footer class="site-footer cinema-story-end">
+ <a class="global-logo" href="./index.html">studio<b>/</b>IA</a><small>PROTOTYPE · PRODUITS NON COMMERCIALISÉS · SCÈNE 3D ORIGINALE PROCÉDURES PRO</small>
+ <nav aria-label="Navigation secondaire"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./contact.html">Contact</a></nav>
+</footer>
+<noscript><style>.cinema-key-fallback,.cinema-vault__fallback{display:block!important;opacity:1!important}</style><p style="padding:24px">Sans JavaScript, consultez directement <a href="./catalogue.html">le catalogue des produits</a>.</p></noscript>
 </body></html>
