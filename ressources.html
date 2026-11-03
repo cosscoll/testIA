@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="Bibliothèque de ressources gratuites : procédures professionnelles, outils IA, expériences web et exercices des formations IAgile.">
+<title>Ressources & démonstrations — Studio IA</title>
+<link rel="stylesheet" href="./assets/kinetic-hero.css">
+<link rel="stylesheet" href="./assets/obscure-pop.css">
+<link rel="stylesheet" href="./assets/unifie.css">
+<link rel="stylesheet" href="./assets/resource-hub.css">
+<link rel="stylesheet" href="./assets/unified-advisor.css">
+<script defer src="./assets/resources-data.js"></script>
+<script defer src="./assets/resource-hub.js"></script>
+<script defer src="./assets/site.js"></script>
+</head><body class="obscure-pop">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="global-header" role="banner">
+ <a class="global-logo" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA <small>RESSOURCES</small></a>
+ <nav class="global-nav" aria-label="Navigation principale">
+  <a href="./index.html">Accueil</a>
+  <a href="./catalogue.html">Produits</a>
+  <a href="./contact.html">Contact</a>
+ </nav>
+ <a class="header-action" href="./catalogue.html">Voir les offres ↗</a>
+ <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">MENU ☰</button>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile" hidden>
+  <a href="./index.html">Accueil</a>
+  <a href="./catalogue.html">Produits</a>
+  <a href="./ressources.html" aria-current="page">Ressources gratuites</a>
+  <a href="./contact.html">Contact</a>
+ </nav>
+</header>
+<main id="contenu">
+ <div id="resourceChoice">
+  <section class="resource-hero"><div class="resource-hero__inner">
+   <div class="resource-breadcrumb"><a href="./index.html">ACCUEIL</a><span>/</span> RESSOURCES</div>
+   <span class="resource-label">01 / EXPLORER AVANT DE CHOISIR</span>
+   <h1>De la pratique.<br><em>Pas du bruit.</em></h1>
+   <p>Une bibliothèque pour essayer les méthodes, les outils et les exercices des trois projets réunis. Choisissez un univers : vous ne verrez que ses ressources.</p>
+  </div></section>
+  <section class="resource-shell" aria-labelledby="categoryTitle">
+   <div class="resource-section-title"><div><span class="small-eyebrow">LES TROIS UNIVERS</span><h2 id="categoryTitle">Par quoi voulez-vous commencer ?</h2></div><p>Trois portes, une bibliothèque. Les produits restent dans le catalogue.</p></div>
+   <div class="resource-doors">
+    <a class="resource-door" data-type="procedures" href="./ressources.html?type=procedures">
+     <span class="resource-door-number">01 / AGIR</span><h3>Packs<br>procédures.</h3>
+     <p>Des exemples métier et la démonstration de la clé 3D.</p>
+     <span class="resource-door-end"><span>4 RESSOURCES PUBLIQUES</span><span>↗</span></span>
+    </a>
+    <a class="resource-door" data-type="outils" href="./ressources.html?type=outils">
+     <span class="resource-door-number">02 / EXPLORER</span><h3>Banques<br>d’outils IA.</h3>
+     <p>Des méthodes concrètes, un outil gratuit et des démonstrations interactives.</p>
+     <span class="resource-door-end"><span>9 RESSOURCES PUBLIQUES</span><span>↗</span></span>
+    </a>
+    <a class="resource-door" data-type="formations" href="./ressources.html?type=formations">
+     <span class="resource-door-number">03 / APPRENDRE</span><h3>Formations<br>IA.</h3>
+     <p>Des exercices et des diagnostics pour tester les compétences enseignées.</p>
+     <span class="resource-door-end"><span>8 RESSOURCES PUBLIQUES</span><span>↗</span></span>
+    </a>
+   </div>
+   <div class="resource-curated">
+    <div class="resource-section-title"><div><span class="small-eyebrow">POUR VOIR CONCRÈTEMENT</span><h2>Trois ressources pour commencer.</h2></div></div>
+    <div class="resource-curated-grid">
+     <a href="./univers/procedures/exemple-procedure.html"><span>PROCÉDURES</span><strong>Essayer la procédure P01</strong><small>Un exemple réel de la structure du pack pilote ↗</small></a>
+     <a href="./univers/outils/outils/assistant-messages.html"><span>OUTILS IA</span><strong>Préparer un message</strong><small>Un générateur gratuit sans IA connectée ↗</small></a>
+     <a href="./univers/formations/ressources/index.html"><span>FORMATIONS</span><strong>Tester une compétence</strong><small>Des exercices publics, sans compte ni inscription ↗</small></a>
+    </div>
+   </div>
+  </section>
+ </div>
+ <div id="resourceCollection" hidden>
+  <section class="resource-hero"><div class="resource-hero__inner">
+   <div class="resource-breadcrumb"><a href="./ressources.html">LES 3 UNIVERS</a><span>/</span><span id="resourceBreadcrumb">COLLECTION</span></div>
+   <span class="resource-label" id="resourceKicker">RESSOURCES</span>
+   <h1 id="resourceTitle">Des ressources.<br><em>À explorer.</em></h1>
+   <p id="resourceDescription">Choisissez un exercice ou une démonstration.</p>
+  </div></section>
+  <section class="resource-shell" aria-label="Ressources de la catégorie choisie">
+   <nav class="resource-category-switch" aria-label="Changer de catégorie">
+    <a href="./ressources.html?type=procedures" data-resource-type="procedures">Procédures</a>
+    <a href="./ressources.html?type=outils" data-resource-type="outils">Outils IA</a>
+    <a href="./ressources.html?type=formations" data-resource-type="formations">Formations</a>
+   </nav>
+   <div class="resource-list-toolbar">
+    <span id="resourceCount" aria-live="polite">Ressources de la collection</span>
+    <div><label for="resourceSearch">RECHERCHE DANS CETTE CATÉGORIE</label><input id="resourceSearch" class="resource-search" type="search" placeholder="Rechercher une ressource…" autocomplete="off"></div>
+   </div>
+   <div class="resource-grid" id="resourceGrid"></div>
+   <p id="resourceEmpty" class="resource-empty" hidden>Aucune ressource pour cette recherche. Essayez un autre mot.</p>
+   <div class="resource-category-foot">
+    <p>Ces contenus sont des exemples, démonstrations ou exercices publics. Ils ne constituent pas les packs payants ni les cours privés complets.</p>
+    <a id="resourceProducts" href="./catalogue.html">Voir les produits associés ↗</a>
+   </div>
+  </section>
+ </div>
+ <div class="resource-legal-note"><p>Les ressources de cette bibliothèque proviennent des trois projets d’origine. Les démonstrations 3D peuvent utiliser WebGL et des bibliothèques externes ; une connexion et un navigateur compatible peuvent être nécessaires. Aucun paiement n’est activé ici.</p></div>
+</main>
+<footer class="site-footer">
+ <a class="global-logo" href="./index.html">studio<b>/</b>IA</a>
+ <small>RESSOURCES PUBLIQUES · VERSION TEST · 2026</small>
+ <nav aria-label="Navigation secondaire"><a href="./index.html">Accueil</a><a href="./catalogue.html">Produits</a><a href="./ressources.html">Ressources</a><a href="./contact.html">Contact</a></nav>
+</footer>
+</body></html>
