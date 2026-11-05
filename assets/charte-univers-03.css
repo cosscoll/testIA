@@ -1,0 +1,175 @@
+/* Studio IA — Application de la charte orange / crème aux pages
+   éditoriales importées (hors démonstrations immersives originales).
+   Aucun changement JS, données, paiement, droits ou modèles 3D. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+:root{
+ --control-orange:#FF6A3D;--control-peach:#FFC7A3;
+ --control-paper:#FFF5EE;--control-white:#FFFCF9;
+ --control-ink:#111827;--control-border:#E5E7EB;
+ --control-shadow:0 9px 24px #6b433016;
+ color-scheme:light;
+}
+html{background:#FFF5EE!important}
+body{
+ background:#FFF5EE!important;color:#111827!important;
+ font-family:Poppins,Arial,sans-serif!important;
+}
+body :is(button,input,textarea,select){font-family:Poppins,Arial,sans-serif}
+body :is(button,a,input,textarea,select):focus-visible{
+ outline:3px solid #FF6A3D!important;outline-offset:3px!important;
+}
+body ::selection{background:#FFC7A3;color:#111827}
+/* Familiar reading and button styles across legacy learning pages. */
+body :is(h1,h2,h3,h4){font-family:Poppins,Arial,sans-serif;letter-spacing:-.055em}
+body :is(.micro,.kicker,.section-label,.overline,.eyebrow,.showroom-overline){color:#cb633d}
+body :is(.button,.primary-cta,.showroom-action.primary,.btn.primary,.msg-button.primary){
+ background:#FF6A3D!important;border-color:#FF6A3D!important;color:#fff!important;
+ border-radius:13px!important;box-shadow:0 7px 17px #ff6a3d29;
+}
+body :is(.button,.primary-cta,.showroom-action.primary,.btn.primary,.msg-button.primary):hover{
+ background:#ea5a31!important;border-color:#ea5a31!important;
+}
+body :is(.text-cta,.quiet-link,.msg-back){color:#bb542f}
+/* Family 01 — conciergerie, procedure P01 and related practical content. */
+body:has(.product-hero){--paper:#FFF5EE;--ivory:#FFFCF9;--ink:#111827;--forest:#fff0e4;--deep:#fff5ee;--bronze:#FF6A3D;--line:#e5ddd9;--muted:#555b67;--sans:Poppins,sans-serif;--serif:Poppins,sans-serif}
+body .product-hero{
+ background:radial-gradient(ellipse at 90% 30%,#ffceacb0,transparent 50%),#FFF5EE!important;
+ color:#111827!important;
+}
+body .product-hero .hero-copy h1,body .product-hero h1{color:#111827!important;font-family:Poppins,sans-serif!important;font-weight:800}
+body .product-hero h1 em{color:#FF6A3D!important}
+body .product-hero .hero-lead{color:#4e5762!important}
+body .product-hero .pilot-note,body .product-hero .hero-format{color:#a05235}
+body .product-hero .button-light{background:#FF6A3D;color:#fff;border-radius:13px}
+body .product-hero .quiet-link{color:#a74a2b}
+body :is(.document-display,.paper-sheet,.inventory-item,.benefit-side){
+ border-radius:14px;border-color:#e6d8d0;
+}
+body .paper-sheet{background:#fffdf9;color:#111827}
+body .section:not(.dark-section),body .composition{background:#FFF5EE;color:#111827}
+body .section :is(h2,h3),body .composition :is(h2,h3){color:#111827}
+body .dark-section{background:#2c343c!important;color:#fff}
+body .dark-section :is(h2,h3,p){color:#fff}
+body .index,body .arrow{color:#d65a34}
+body .inventory-item{background:#fff}
+body .inventory-item:hover{background:#fff8f4;border-color:#FFB38F}
+body .page--sample{
+ --ink:#111827;--paper:#FFF5EE;--light:#fff;--mute:#5a626c;
+ --line:#e9d8ce;--gold:#FF6A3D
+}
+body.page--sample .hero{
+ background:radial-gradient(ellipse at 83% 30%,#FFD2B7,transparent 60%),#FFF5EE!important;
+ color:#111827!important
+}
+body.page--sample :is(h1,h2,h3){font-family:Poppins,sans-serif!important;font-weight:700}
+body.page--sample .hero :is(.lead,.eyebrow){color:#535965}
+body.page--sample h1 em{color:#FF6A3D}
+body.page--sample .label-card{background:#fff;border-color:#f4c8af;border-radius:16px}
+body.page--sample .label-card :is(strong,span,p){color:#26303b}
+body.page--sample .lab{background:#FFF0E6}
+body.page--sample .warning{background:#fff;color:#555c66;border-color:#FF6A3D}
+/* Family 02 — six public storefronts of AI tool collections. */
+body.showroom-page{
+ --tone:#FF6A3D;--surface:#FFE2CE;--paper:#fff9f4;
+ --ink:#111827;--accent2:#FFC7A3;
+ background:#FFF5EE!important;color:#111827!important;font-family:Poppins,Arial,sans-serif!important;
+}
+body.showroom-page[data-pack]{--tone:#FF6A3D;--surface:#FFE2CE;--accent2:#FFC7A3}
+body.showroom-page .showroom-hero{
+ background:radial-gradient(ellipse at 76% 55%,#ffd2b08f,transparent 50%),#FFF5EE!important;
+ color:#111827!important;
+}
+body.showroom-page .showroom-hero h1{color:#111827!important;font:800 clamp(55px,6vw,103px)/1.02 Poppins,sans-serif!important}
+body.showroom-page .showroom-hero h1 em{color:#FF6A3D!important}
+body.showroom-page .showroom-breadcrumb,body.showroom-page .showroom-breadcrumb a{color:#99543c}
+body.showroom-page .showroom-overline,body.showroom-page .showroom-note{color:#b35733}
+body.showroom-page .showroom-intro{color:#515864!important}
+body.showroom-page .showroom-action.secondary{
+ background:#fff;color:#111827;border:1px solid #f3c5a9;border-radius:13px;
+}
+body.showroom-page .showroom-action.primary{border-radius:13px}
+body.showroom-page .showroom-section{background:#FFF5EE!important;color:#111827!important}
+body.showroom-page .showroom-section.alt{background:#FFF0E6!important}
+body.showroom-page .showroom-section :is(h2,h3),body.showroom-page .showroom-section-label{color:#111827}
+body.showroom-page .showroom-section-label{color:#a45739}
+body.showroom-page .showroom-section p.showroom-description{color:#5f636e}
+body.showroom-page :is(.showroom-feature,.showroom-point,.showroom-try-side){
+ background:#fff;border-color:#eadbd1;color:#111827;border-radius:15px;
+ box-shadow:var(--control-shadow);
+}
+body.showroom-page :is(.showroom-feature,.showroom-point,.showroom-try-side) p{color:#545d67}
+body.showroom-page .showroom-buy{
+ background:linear-gradient(115deg,#FFF0E6,#FFF9F4)!important;color:#111827!important;
+}
+body.showroom-page .showroom-buy :is(h2,p,span){color:#111827}
+body.showroom-page .showroom-scene-controls button[aria-pressed="true"]{background:#FF6A3D;color:#fff;border-color:#FF6A3D}
+/* Free AI message composition tool */
+body .msg-main{background:#FFF5EE!important;color:#111827!important}
+body .msg-back,body .msg-kicker,body .msg-title em{color:#d65a33}
+body .msg-title{font-family:Poppins,sans-serif;font-weight:800;color:#111827}
+body .msg-lead,body .msg-note{color:#595e69}
+body .msg-panel{background:#fff;border:1px solid #e6d8d0;color:#111827;box-shadow:var(--control-shadow)}
+body .msg-panel>p{color:#535c65}
+body .msg-field label,body .msg-panel h2{color:#111827}
+body :is(.msg-field input,.msg-field select,.msg-output){
+ background:#FFF9F5;border:1px solid #ebd6c8;color:#111827;border-radius:11px;
+}
+body .msg-button:not(.primary){border:1px solid #ffb998;color:#af5434;background:#fff}
+body .msg-check{background:#FFF0E6;border-color:#edd7c5;color:#111827}
+body .msg-status{color:#358851}
+/* Family 03 — four courses and the public exercises. */
+body.formation{
+ --ivory:#FFF5EE;--paper:#FFFCF9;--ink:#111827;--silver:#c3a99d;
+ --blue:#FF6A3D;--line:#e8dad2;--display:Poppins,sans-serif;
+ --body:Poppins,sans-serif;--mono:Poppins,sans-serif;
+ background:#FFF5EE!important;color:#111827!important;
+}
+body.formation .course-hero{background:radial-gradient(ellipse at 83% 37%,#ffd7bfbb,transparent 48%),#FFF5EE}
+body.formation .hero-copy h1{color:#111827;font-family:Poppins,sans-serif;font-weight:800}
+body.formation .hero-copy h1 em{color:#FF6A3D}
+body.formation .hero-summary,body.formation .hero-punch{color:#525b66}
+body.formation .primary-cta{background:#FF6A3D;color:#fff;border-radius:13px}
+body.formation .text-cta{color:#a95938}
+body.formation .hero-showcase{filter:saturate(.82)}
+body.formation :is(.intro-section,.project-section,.program-section,.tools-section,.related-section){
+ background:#FFF5EE!important;color:#111827!important
+}
+body.formation :is(.intro-copy h2 em,.program-heading h2 em,.tools-heading h2 em){color:#FF6A3D}
+body.formation :is(.v21-benefit-card,.case-teaser-card,.cross-card){background:#fff;border-color:#eddacf;border-radius:16px;box-shadow:var(--control-shadow)}
+body.formation .sitebar{background:#FFF9F5;border-color:#eddacf}
+body.formation .back-top{background:#FF6A3D;color:#fff;border-radius:12px}
+body.formation .read-progress{background:#FF6A3D}
+/* Public tutorials and free learning resources */
+body:has(.ti-shell) .hero:not(.product-hero):not(.showroom-hero):not(.course-hero):not(.hero-chapter){
+ background:#FFF5EE;color:#111827;
+}
+body:has(.ti-shell) :is(.blue,.tag,.micro){color:#c65b35}
+body:has(.ti-shell) :is(.card,.panel,.result){
+ background:#fff;border-color:#eadbd1;color:#111827;border-radius:16px;
+ box-shadow:var(--control-shadow);
+}
+body:has(.ti-shell) :is(.card,.panel,.result) p{color:#58616a}
+body:has(.ti-shell) .button.alt{background:#fff!important;color:#111827!important;border:1px solid #f0c5ab!important}
+body:has(.ti-shell) :is(.field input,.field textarea,select){
+ background:#fff;color:#111827;border:1px solid #e6d7cc;border-radius:11px;
+}
+body:has(.ti-shell) .choice:has(input:checked){background:#fff0e4;border-color:#FF6A3D}
+/* Consistent embedded chatbot on all imported pages. */
+body .product-guide{font-family:Poppins,Arial,sans-serif!important;color:#111827}
+body .product-guide-toggle{background:#FF6A3D!important;color:#fff!important;border-color:#ed865d!important}
+body .product-guide-panel{background:#fff9f4;color:#111827;border-color:#f0cfb9}
+body .product-guide-header{background:#FFF0E6;border-color:#ead9cb}
+body .product-guide-header :is(strong,span){color:#111827}
+body .product-guide-bubble{background:#fff;color:#111827;border-color:#e8ded7}
+body .product-guide-bubble.from-user{background:#FFDFC9;color:#111827}
+body .product-guide-result{background:#fff;border-color:#fac8a7}
+body .product-guide-result :is(strong,p,small){color:#5d5256}
+body .product-guide-result strong{color:#c4542e}
+body .product-guide-result a,body .product-guide-form button{background:#FF6A3D;color:#fff}
+body .product-guide-choices,.product-guide-form{border-color:#ecdacf}
+body .product-guide-choice,body .product-guide-form input{background:#fff;color:#111827;border-color:#eccdb9}
+body .product-guide-form label,body .product-guide-privacy,body .product-guide-consent{color:#626873}
+@media(max-width:640px){
+ body.showroom-page .showroom-hero h1{font-size:clamp(43px,10vw,68px)!important}
+ body.formation .hero-copy h1{font-size:clamp(43px,10vw,73px)}
+}
