@@ -24,3 +24,46 @@ body>.ti-footer small{color:#a69faa!important;font-size:10px!important}
 body>.ti-footer .ti-foot-links{display:flex;gap:23px;flex-wrap:wrap}
 @media(max-width:850px){.ti-links,body>.ti-shell>.ti-cta{display:none!important}.ti-mobile{display:block;margin-left:auto}body>.ti-shell{min-height:66px!important}.ti-brand{font-size:24px!important}}
 @media(max-width:400px){body>.ti-shell{padding:0 16px!important}}
+
+/* 2026-11-05 : identité de plateforme unifiée / charte validée CONTROL 03.
+   Ce bandeau est partagé par les pages publiques importées ; les scènes originales
+   et leurs démonstrations WebGL restent autonomes. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+body>.ti-shell,body>.ti-footer{font-family:Poppins,Arial,sans-serif!important}
+body>.ti-shell{
+ background:rgba(255,249,244,.96)!important;
+ border-bottom:1px solid #E5E7EB!important;
+ color:#111827!important;
+ box-shadow:0 4px 16px #79634a0c!important;
+}
+body>.ti-shell a:focus-visible,body>.ti-shell summary:focus-visible,body>.ti-footer a:focus-visible{
+ outline:3px solid #FF6A3D;outline-offset:3px;
+}
+body>.ti-shell .ti-brand{display:inline-flex;align-items:center;gap:8px;color:#111827!important;font-family:Poppins,Arial,sans-serif!important;font-size:24px!important;font-weight:800!important;letter-spacing:-.055em!important}
+body>.ti-shell .ti-brand::before{
+ content:"S";display:inline-grid;place-items:center;
+ width:34px;height:34px;border-radius:11px;
+ background:linear-gradient(140deg,#FF9A59,#FF6A3D);color:white;
+ font:800 21px Poppins,sans-serif;box-shadow:0 4px 12px #ff6a3d30;
+}
+body>.ti-shell .ti-brand b{color:#FF6A3D!important}
+body>.ti-shell .ti-links a{font-family:Poppins,Arial,sans-serif;color:#343a46!important}
+body>.ti-shell .ti-links a:hover,body>.ti-shell .ti-links a:focus-visible{color:#dc542c!important}
+body>.ti-shell a.ti-cta{
+ background:#FF6A3D!important;color:#fff!important;border:1px solid #FF6A3D!important;
+ border-radius:13px!important;box-shadow:0 5px 12px #ff6a3d26;
+ font-family:Poppins,Arial,sans-serif;font-weight:700!important;
+}
+body>.ti-shell a.ti-cta:hover{background:#ea5d32!important;border-color:#ea5d32!important}
+body>.ti-shell .ti-mobile summary{
+ background:#fff;border:1px solid #e8cfbf;color:#111827;border-radius:12px;
+ font-family:Poppins,Arial,sans-serif;
+}
+body>.ti-shell .ti-mobile>div{
+ background:#fff9f4;border:1px solid #f0dcca;box-shadow:0 20px 40px #62473426;border-radius:13px;
+}
+body>.ti-shell .ti-mobile>div a{color:#111827!important;border-bottom:1px solid #e9d5c7;font-family:Poppins,Arial,sans-serif!important}
+body>.ti-footer{background:#FFF9F5!important;color:#111827!important;border-color:#E5E7EB!important}
+body>.ti-footer a{color:#111827!important}
+body>.ti-footer small{color:#75707b!important}
+@media(max-width:400px){body>.ti-shell .ti-brand{font-size:22px!important}body>.ti-shell .ti-brand::before{width:30px;height:30px;font-size:19px}}
