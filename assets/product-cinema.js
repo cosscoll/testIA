@@ -159,9 +159,13 @@
   $('world').dataset.stage=stage;
   const state=$('vaultState');
   if(state){
-   state.textContent=vaultProgress>.92?'LE COFFRE EST OUVERT':
+   const staticMode=$('world')?.dataset.engine==='fallback'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   const next=staticMode?'COFFRE — APERÇU STATIQUE':
+    vaultProgress>.92?'LE COFFRE EST OUVERT':
     vaultProgress>.72?'LA SERRURE TOURNE':
     vaultProgress>.43?'LA CLÉ ENTRE DANS LA SERRURE':'LE COFFRE EST FERMÉ';
+   // Ne pas réannoncer un statut identique à chaque événement de défilement.
+   if(state.textContent!==next)state.textContent=next;
   }
  }
  function schedule(){if(scrollScheduled)return;scrollScheduled=true;requestAnimationFrame(update);}

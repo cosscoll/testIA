@@ -103,9 +103,12 @@ async function handler(req,res){
   }
   if(req.method==='GET'){
     const credential=Boolean(process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN||req.headers?.['x-vercel-oidc-token']);
+    // Ne jamais contacter l'AI Gateway si l'authentification n'est pas configurée.
+    // La disponibilité reste vérifiée de nouveau côté serveur avant chaque génération POST.
+    if(!credential)return respond(res,200,{ready:false,reason:'not_configured',modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
     let free=false;
     try{free=await freeModelStillFree()}catch{}
-    return respond(res,200,{ready:credential&&free,reason:!free?'free_model_unavailable':!credential?'not_configured':null,modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
+    return respond(res,200,{ready:free,reason:free?null:'free_model_unavailable',modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
   }
   if(req.method!=='POST')return respond(res,405,{error:'method_not_allowed'});
   if(!corsAllowed(req))return respond(res,403,{error:'origin_denied'});

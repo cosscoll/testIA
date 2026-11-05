@@ -26,6 +26,31 @@ for(const page of pages){
  const refs=[...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)].map(m=>m[1]);
  for(const ref of refs){const file=resolve(page,ref);if(file)verify(exists(file)||exists(path.posix.join(file,'index.html')),'Lien local introuvable : '+page+' → '+ref);}
 }
+// Vérification de toutes les pages importées : repérer une référence locale manquante
+// avant qu'elle ne soit poussée sur la version publique.
+const imported=[];
+function collectHtml(dir){
+ for(const entry of fs.readdirSync(path.join(root,dir),{withFileTypes:true})){
+  const filename=path.posix.join(dir,entry.name);
+  if(entry.isDirectory())collectHtml(filename);
+  else if(entry.isFile()&&filename.endsWith('.html'))imported.push(filename);
+ }
+}
+collectHtml('univers');
+verify(imported.length>=38,'La bibliothèque importée semble incomplète');
+for(const page of imported){
+ const html=read(page);
+ const refs=[...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)].map(m=>m[1]);
+ for(const ref of refs){
+  const file=resolve(page,ref);
+  if(file)verify(exists(file)||exists(path.posix.join(file,'index.html')),'Lien local importé introuvable : '+page+' → '+ref);
+ }
+}
+verify(read('contact.html').includes('id="contactCopy"'),'Copie locale de brouillon absente');
+verify(read('contact.html').includes('contact-draft.js'),'Module contact absent');
+verify(read('assets/guide-viewer.js').includes("unsafe protocol"),'Liens dangereux non filtrés du guide');
+verify(read('assets/product-cinema.js').includes('COFFRE — APERÇU STATIQUE'),'Fallback 3D ambigu');
+
 const home=read('index.html');
 verify((home.match(/class="op-card op-card--/g)||[]).length===5,'Les cinq étiquettes doivent rester présentes');
 const cinema=read('assets/product-cinema.js');
@@ -53,7 +78,7 @@ for(const page of ['ressources.html','guide.html']){
 const advisor=read('assets/unified-advisor.js');
 verify(advisor.includes('if(!canSend)'),'Le client doit bloquer les générations non disponibles');
 verify(advisor.includes('Réessayer la vérification'),'Nouvelle vérification manquante');
-for(const script of ['assets/site.js','assets/product-cinema.js','assets/unified-advisor.js','assets/resource-hub.js','api/chat.js']){
+for(const script of ['assets/site.js','assets/product-cinema.js','assets/unified-advisor.js','assets/resource-hub.js','api/chat.js','assets/contact-draft.js','assets/guide-viewer.js']){
  new vm.Script(read(script),{filename:script});
  count++;
 }

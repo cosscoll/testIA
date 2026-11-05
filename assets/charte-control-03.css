@@ -388,3 +388,42 @@ body.obscure-pop .contact-fields .contact-button,
 body.obscure-pop .detail-aside .detail-action,
 body.obscure-pop .detail-open,
 body.obscure-pop .header-action:hover{color:#111827!important}
+
+/* Sprint robustesse mobile : garder texte et CTA visibles sur petits écrans.
+   La scène WebGL et les positions de la clé/coffre ne sont pas modifiées. */
+body.obscure-pop.cinema-page .cinema-copy{pointer-events:auto}
+body.obscure-pop .contact-actions{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;margin-top:6px}
+body.obscure-pop .contact-actions .contact-button{margin:0;min-height:48px;flex:1 1 190px}
+body.obscure-pop .contact-actions .contact-button--github{
+  background:#fff!important;color:#111827!important;border:1px solid #eaa88b!important;
+  box-shadow:0 4px 13px rgba(71,55,40,.045);
+}
+body.obscure-pop .contact-actions .contact-button--github:hover{background:#fff0e6!important;border-color:#ff6a3d!important}
+body.obscure-pop .contact-draft-status{
+  color:#555b67!important;font-size:12px;line-height:1.65;
+  margin:2px 0 0;max-width:100%;
+}
+body.obscure-pop .contact-manual-draft{
+  background:#fff;border:1px solid #e6c5b2;border-radius:12px;color:#111827;
+  font:500 13px/1.65 Poppins,sans-serif;resize:vertical;width:100%;min-height:110px;
+  padding:14px;
+}
+body.obscure-pop .mobile-menu a{min-height:46px;display:flex;align-items:center}
+@media(max-width:740px) and (prefers-reduced-motion:no-preference){
+  body.obscure-pop.cinema-page .cinema-vault__sticky{
+    height:auto;min-height:100svh;overflow:visible;justify-content:flex-end;
+    padding:clamp(240px,39svh,400px) 21px clamp(25px,5svh,50px);
+  }
+  body.obscure-pop.cinema-page .cinema-vault__copy{flex:none;padding-bottom:12px}
+  body.obscure-pop.cinema-page .cinema-vault__status{top:150px}
+}
+@media(max-width:740px) and (prefers-reduced-motion:reduce){
+  body.obscure-pop.cinema-page .cinema-panel{
+    min-height:85svh;padding-top:32svh!important
+  }
+  body.obscure-pop.cinema-page .cinema-vault{min-height:115svh}
+}
+@media(max-width:400px){
+  body.obscure-pop .contact-actions{flex-direction:column}
+  body.obscure-pop .contact-actions .contact-button{flex-basis:auto;width:100%}
+}
