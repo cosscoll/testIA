@@ -382,3 +382,9 @@ body.obscure-pop .cinema-quickfacts{grid-template-columns:1fr}
 body.obscure-pop .cinema-copy .cinema-action{width:100%}
 body.obscure-pop .product-guide-panel{width:calc(100vw - 20px);max-height:calc(100dvh - 80px)}
 }
+
+/* CTA principaux : priorité au contraste WCAG AA, quelle que soit leur profondeur DOM. */
+body.obscure-pop .contact-fields .contact-button,
+body.obscure-pop .detail-aside .detail-action,
+body.obscure-pop .detail-open,
+body.obscure-pop .header-action:hover{color:#111827!important}
