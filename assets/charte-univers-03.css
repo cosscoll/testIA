@@ -173,3 +173,76 @@ body .product-guide-form label,body .product-guide-privacy,body .product-guide-c
  body.showroom-page .showroom-hero h1{font-size:clamp(43px,10vw,68px)!important}
  body.formation .hero-copy h1{font-size:clamp(43px,10vw,73px)}
 }
+
+/* Imported catalogue/method index still contains explicit dark !important rules.
+   Override the exact historical selectors AFTER those rules load. */
+body.library-page.obscure-pop,body.obscure-pop:not(.showroom-page){
+ background:#FFF5EE!important;color:#111827!important;font-family:Poppins,sans-serif!important
+}
+body.library-page.obscure-pop :is(.library-hero,.library-content){
+ background:#FFF5EE!important;color:#111827!important;border-color:#e7d9d0!important
+}
+body.library-page.obscure-pop .library-hero{
+ background:radial-gradient(ellipse at 87% 38%,#ffd5ba99,transparent 49%),#FFF5EE!important
+}
+body.library-page.obscure-pop :is(.library-hero h1,.library-intro h2,.resource h3,.method-card h3,.project-block h2){
+ font-family:Poppins,sans-serif!important;color:#111827!important
+}
+body.library-page.obscure-pop .library-hero h1 em{color:#FF6A3D!important}
+body.library-page.obscure-pop :is(.library-hero-description,.library-hero-meta,.library-intro p,.library-note,.resource p,.method-card p,.project-block p,.project-block li){
+ color:#545c68!important
+}
+body.library-page.obscure-pop :is(.section-overline,.resource-category,.resource-monogram,.method-top,.project-block>span){
+ color:#c35e38!important
+}
+body.library-page.obscure-pop .library-finder{
+ background:#fff!important;border:1px solid #edd7c9!important;color:#111827!important;border-radius:15px!important
+}
+body.library-page.obscure-pop .library-finder input{background:transparent!important;color:#111827!important}
+body.library-page.obscure-pop .library-filters button{
+ background:#fff!important;color:#111827!important;border:1px solid #e8d7cb!important;border-radius:12px!important
+}
+body.library-page.obscure-pop .library-filters button:hover,
+body.library-page.obscure-pop .library-filters button[aria-pressed=true]{
+ background:#FF6A3D!important;color:#fff!important;border-color:#FF6A3D!important
+}
+body.library-page.obscure-pop :is(.library-grid,.method-grid,.project-blocks){border-color:#e1d5ce!important}
+body.library-page.obscure-pop :is(.resource,.method-card,.project-block){
+ background:#fff!important;color:#111827!important;border-bottom:1px solid #e8dace!important;
+ border-radius:13px;box-shadow:0 4px 14px #6847330b
+}
+body.library-page.obscure-pop :is(.resource,.method-card,.project-block):hover{background:#fff4eb!important}
+body.library-page.obscure-pop :is(.resource>a,.method-card>a,.library-note strong){color:#ca5b33!important}
+body.library-page.obscure-pop .library-cta{background:#FFE2CF!important;color:#111827!important}
+body.library-page.obscure-pop .library-cta h2{color:#111827!important;font-family:Poppins,sans-serif!important}
+body.library-page.obscure-pop .library-cta .btn-main{background:#FF6A3D!important;color:#fff!important;border-radius:13px!important}
+body.library-page.obscure-pop .footer{background:#FFF9F4!important;color:#111827!important;border-color:#e9dace!important}
+body.library-page.obscure-pop .footer a{color:#111827!important}
+/* Public onboarding questionnaire */
+body.obscure-pop .journey{
+ background:radial-gradient(ellipse at 85% 28%,#ffd6be88,transparent 50%),#FFF5EE!important;
+ color:#111827!important
+}
+body.obscure-pop .journey h1,body.obscure-pop .outcome h2,body.obscure-pop .next-section h2{
+ font-family:Poppins,sans-serif!important;color:#111827!important
+}
+body.obscure-pop .journey h1 em,body.obscure-pop .journey .eyebrow,body.obscure-pop .step-number{color:#FF6A3D!important}
+body.obscure-pop .journey-lead,body.obscure-pop .chooser-note,body.obscure-pop .outcome p,body.obscure-pop .next-grid p{color:#525966!important}
+body.obscure-pop .chooser,body.obscure-pop .outcome{
+ background:#fff!important;border:1px solid #edddcf!important;color:#111827!important;border-radius:17px!important;
+ box-shadow:0 7px 22px #6c4c3510
+}
+body.obscure-pop .chooser legend{font-family:Poppins,sans-serif!important;color:#111827!important}
+body.obscure-pop .choice span{background:#fff9f4!important;color:#111827!important;border-color:#e8d8ce!important}
+body.obscure-pop .choice:hover span,body.obscure-pop .choice input:checked+span{
+ background:#FFF0E4!important;color:#111827!important;border-color:#FF6A3D!important
+}
+body.obscure-pop .outcome-top{background:#FFF0E6!important;color:#b65935!important;border-color:#edd8cc!important}
+body.obscure-pop .workflow-node{background:#fff8f4!important;border:1px solid #eed8ca!important;color:#111827!important}
+body.obscure-pop .workflow-node strong{color:#111827!important}
+body.obscure-pop .workflow-node small{color:#c6633e!important}
+body.obscure-pop .outcome-actions a{background:#FF6A3D!important;color:#fff!important;border-color:#FF6A3D!important;border-radius:13px!important}
+body.obscure-pop .outcome-actions button{color:#a95738!important}
+body.obscure-pop .next-section{background:#FFF0E6!important;color:#111827!important;border-color:#efd8c8!important}
+body.obscure-pop .next-grid b{color:#111827!important;font-family:Poppins,sans-serif!important}
+body.obscure-pop .footer{background:#FFF9F4!important;color:#111827!important}
