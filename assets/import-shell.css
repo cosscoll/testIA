@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 /* Navigation de plateforme superposee aux vitrines importees, uniquement sur testIA. */
 body>.ti-shell,body>.ti-footer{font-family:'Instrument Sans',Arial,sans-serif!important}
 body>.ti-shell *,body>.ti-footer *{box-sizing:border-box}
@@ -28,7 +29,7 @@ body>.ti-footer .ti-foot-links{display:flex;gap:23px;flex-wrap:wrap}
 /* 2026-11-05 : identité de plateforme unifiée / charte validée CONTROL 03.
    Ce bandeau est partagé par les pages publiques importées ; les scènes originales
    et leurs démonstrations WebGL restent autonomes. */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 body>.ti-shell,body>.ti-footer{font-family:Poppins,Arial,sans-serif!important}
 body>.ti-shell{
  background:rgba(255,249,244,.96)!important;
