@@ -20,6 +20,7 @@
   '<div class="product-guide-header"><div><strong>Conseiller IA</strong><span id="productGuideStatus" role="status">Packs · Banques d’outils · Formations</span></div>',
   '<div class="product-guide-header-actions"><button type="button" id="productGuideReset" aria-label="Recommencer la conversation" title="Recommencer">↺</button>',
   '<button type="button" id="productGuideClose" aria-label="Fermer le guide" title="Fermer">×</button></div></div>',
+  '<div class="product-guide-alternative" id="productGuideAlternative" hidden><p>Le modèle IA gratuit n’est pas disponible pour le moment. Aucune réponse simulée ou payante ne sera utilisée.</p><div><a href="'+new URL('catalogue.html',siteRoot).href+'">Parcourir les 11 offres ↗</a><button type="button" id="productGuideRecheck">Réessayer la vérification</button></div></div>',
   '<div class="product-guide-messages" id="productGuideMessages" role="log" aria-live="polite" aria-relevant="additions"></div>',
   '<div class="product-guide-choices" id="productGuideChoices" role="group" aria-label="Exemples de projets"></div>',
   '<form class="product-guide-form" id="productGuideForm">',
@@ -35,8 +36,9 @@
  const toggle=$('productGuideToggle'),panel=$('productGuidePanel'),close=$('productGuideClose'),
  reset=$('productGuideReset'),messages=$('productGuideMessages'),choices=$('productGuideChoices'),
  form=$('productGuideForm'),input=$('productGuideInput'),consent=$('productGuideConsent'),
- send=$('productGuideSend'),status=$('productGuideStatus');
- let history=[],pending=false,controller=null,healthChecked=false;
+ send=$('productGuideSend'),status=$('productGuideStatus'),
+ alternative=$('productGuideAlternative'),recheck=$('productGuideRecheck');
+ let history=[],pending=false,controller=null,healthChecked=false,checkedAt=0,canSend=false;
  const make=(tag,cls,text)=>{
   const el=document.createElement(tag);
   if(cls)el.className=cls;
@@ -69,29 +71,37 @@
   el.appendChild(make('small',null,p.status||'En préparation'));
   const a=make('a',null,'Voir cette offre →');a.href=p.href;el.appendChild(a);messages.appendChild(el);
  };
- const setBusy=value=>{
-  pending=value;send.disabled=value;input.disabled=value;
-  choices.querySelectorAll('button').forEach(x=>x.disabled=value);
+ const syncControls=()=>{
+  const disabled=pending||!canSend;
+  send.disabled=disabled;input.disabled=disabled;
+  choices.querySelectorAll('button').forEach(x=>x.disabled=disabled);
+  alternative.hidden=canSend||!healthChecked;
  };
- const getAvailable=async()=>{
-  if(healthChecked)return;
-  healthChecked=true;setStatus('Connexion au modèle IA…');
+ const setBusy=value=>{pending=value;syncControls();};
+ const getAvailable=async(force=false)=>{
+  if(pending)return;
+  if(!force&&healthChecked&&Date.now()-checkedAt<120000)return;
+  healthChecked=true;checkedAt=Date.now();canSend=false;
+  setStatus('Vérification du modèle gratuit…');syncControls();
   try{
    const r=await fetch(API,{method:'GET',mode:'cors',cache:'no-store'});
    const data=await r.json();
-   setStatus(r.ok&&data.ready?'IA générative disponible':data.reason==='free_model_unavailable'?'Modèle gratuit indisponible actuellement':'IA non configurée actuellement');
-  }catch{setStatus('Connexion IA momentanément indisponible');}
+   canSend=Boolean(r.ok&&data.ready===true&&data.freeModelOnly===true);
+   setStatus(canSend?'IA générative gratuite disponible':data.reason==='free_model_unavailable'?'Modèle gratuit indisponible actuellement':'Conseiller IA non configuré actuellement');
+  }catch{setStatus('Connexion au conseiller IA indisponible');}
+  syncControls();
  };
  const start=()=>{
   if(controller){controller.abort();controller=null;}
   history=[];messages.replaceChildren();
   setBusy(false);
   bubble('Bonjour ! Je peux vous aider à choisir entre un pack de procédures, une banque d’outils IA ou une formation. Quel est votre objectif ?','bot');
-  showPresets();
+  showPresets();syncControls();
  };
  const sendMessage=async text=>{
   const value=String(text||'').trim().slice(0,400);
   if(!value||pending)return;
+  if(!canSend){setStatus('Modèle gratuit indisponible : utilisez le catalogue ou réessayez.');return;}
   if(!consent.checked){setStatus('Cochez l’accord d’envoi à l’IA pour commencer.');consent.focus();return;}
   bubble(value,'user');input.value='';
   const payload={messages:[...history,{role:'user',content:value}],page:location.pathname};
@@ -133,12 +143,13 @@
  const open=value=>{
   if(!value&&controller){controller.abort();controller=null;}
   panel.hidden=!value;toggle.setAttribute('aria-expanded',String(value));
-  if(value){getAvailable();input.focus();}else toggle.focus();
+  if(value){getAvailable();if(canSend)input.focus();else recheck.focus();}else toggle.focus();
  };
  start();
  toggle.addEventListener('click',()=>open(panel.hidden));
  close.addEventListener('click',()=>open(false));
- reset.addEventListener('click',()=>{start();input.focus();setStatus('Nouvelle conversation');});
+ reset.addEventListener('click',()=>{start();if(canSend)input.focus();setStatus('Nouvelle conversation');});
+ recheck.addEventListener('click',()=>getAvailable(true));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){e.preventDefault();open(false);}});
  document.querySelectorAll('[data-open-product-guide]').forEach(button=>button.addEventListener('click',()=>open(true)));
  form.addEventListener('submit',e=>{e.preventDefault();sendMessage(input.value);});

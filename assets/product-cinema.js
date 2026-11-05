@@ -97,9 +97,14 @@
   root.append(
    section(0,'left',p.number+' / '+details.label,[p.title],p.short,copy=>{
     const actions=node('div','cinema-actions');
-    addLink(actions,'#cinemaScene1','Découvrir l’offre ↓','cinema-action');
-    addLink(actions,collectionUrl,'Revenir aux produits ↗','cinema-action cinema-action--ghost');
-    copy.append(actions,node('div','cinema-scroll-note','SCROLLEZ : LA CLÉ SUIT LE PARCOURS ↓'));
+    addLink(actions,deep.page||collectionUrl,deep.page?(deep.pageLabel||details.action)+' ↗':'Voir la collection ↗','cinema-action');
+    addLink(actions,'#cinemaScene1','Explorer la clé en 3D ↓','cinema-action cinema-action--ghost');
+    const facts=node('dl','cinema-quickfacts');
+    for(const [label,value] of [['Disponibilité',p.status],['Format',p.detail]]){
+      const item=node('div','cinema-quickfact');
+      item.append(node('dt',null,label),node('dd',null,value));facts.append(item);
+    }
+    copy.append(actions,facts,node('div','cinema-scroll-note','LA CLÉ VOUS ACCOMPAGNE JUSQU’AU COFFRE ↓'));
    }),
    section(1,'right','01 / LE BESOIN',['La situation.','La réponse.'],p.summary),
    section(2,'left','02 / LE RÉSULTAT',['Un objectif.','Concret.'],p.result),

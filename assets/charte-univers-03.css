@@ -246,3 +246,7 @@ body.obscure-pop .outcome-actions button{color:#a95738!important}
 body.obscure-pop .next-section{background:#FFF0E6!important;color:#111827!important;border-color:#efd8c8!important}
 body.obscure-pop .next-grid b{color:#111827!important;font-family:Poppins,sans-serif!important}
 body.obscure-pop .footer{background:#FFF9F4!important;color:#111827!important}
+
+/* Contraste des CTA sur l'orange CONTROL : #111827 / #FF6A3D = 6,24:1. */
+body :is(.primary-cta,.button:not(.alt),.showroom-action.primary,.btn.primary,.msg-button.primary,.product-guide-toggle,.product-guide-result a,.product-guide-form button){color:#111827!important}
+body>.ti-shell a.ti-cta{color:#111827!important}
