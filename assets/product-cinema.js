@@ -119,7 +119,7 @@
   if(reduced)reveal=scrollFraction>=.75?1:0;
   const eased=reveal*reveal*(3-2*reveal);
   const mobile=window.innerWidth<=740;
-  const lift=(1-eased)*(mobile?82:158);
+  const lift=(1-eased)*(mobile?10:30);
   const scale=.20+.80*eased;
   card.style.opacity=String(eased);
   card.style.transform=reduced?'none':'translate3d(0,'+lift.toFixed(1)+'px,0) scale('+scale.toFixed(3)+') rotateX('+(-17*(1-eased)).toFixed(1)+'deg)';
