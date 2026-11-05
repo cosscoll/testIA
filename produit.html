@@ -15,6 +15,7 @@
 <script defer src="./assets/unified-advisor.js"></script>
 <script type="module" src="./univers/procedures/assets/apartment-scene.js"></script>
 <link rel="stylesheet" href="./assets/charte-control-03.css">
+<link rel="stylesheet" href="./assets/vault-offer.css">
 </head>
 <body class="obscure-pop cinema-page">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -78,6 +79,27 @@
      </div>
    </div>
    <div class="cinema-vault__status" id="vaultState" aria-live="polite">LE COFFRE EST FERMÉ</div>
+   <!-- La carte commerciale émerge visuellement du coffre lorsque le couvercle est ouvert.
+        Seuls les produits disposant d'un vrai lien de paiement vérifié proposeront un achat. -->
+   <aside id="vaultOffer" class="cinema-offer" data-visible="false" aria-hidden="true" inert aria-label="Découvrez l'offre révélée dans le coffre">
+    <div class="cinema-offer__ribbon"><span>STUDIO IA / LE COFFRE</span><b>VOTRE OFFRE</b></div>
+    <div class="cinema-offer__body">
+     <div class="cinema-offer__eyebrow" id="vaultOfferFamily">OFFRE À DÉCOUVRIR</div>
+     <h3 id="vaultOfferTitle">Votre prochain projet.</h3>
+     <p class="cinema-offer__lead" id="vaultOfferLead">Le contenu de votre offre est révélé à l’ouverture du coffre.</p>
+     <ul class="cinema-offer__features" id="vaultOfferFeatures"></ul>
+     <div class="cinema-offer__meta">
+      <div><span class="cinema-offer__meta-label">CONTENU</span><strong id="vaultOfferFormat">Offre Studio IA</strong></div>
+      <div><span class="cinema-offer__meta-label">DISPONIBILITÉ</span><strong id="vaultOfferStatus">En préparation</strong></div>
+     </div>
+     <div class="cinema-offer__actions">
+      <a class="cinema-offer__primary" id="vaultOfferPrimary" href="./catalogue.html">Découvrir l’offre <span aria-hidden="true">↗</span></a>
+      <a class="cinema-offer__secondary" id="vaultOfferSecondary" href="./contact.html">Préparer une demande <span aria-hidden="true">↗</span></a>
+     </div>
+     <p class="cinema-offer__note" id="vaultOfferNotice">Aucune commande n’est active sur cette version de test.</p>
+    </div>
+    <div class="cinema-offer__corner" aria-hidden="true"></div>
+   </aside>
    <div class="cinema-vault__fallback" aria-hidden="true">
    <svg viewBox="0 0 380 280" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <defs><linearGradient id="vaultWood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#73563a"/><stop offset=".6" stop-color="#382c21"/><stop offset="1" stop-color="#1c211d"/></linearGradient></defs>

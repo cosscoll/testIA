@@ -45,6 +45,94 @@
   formations:{label:'FORMATION IAGILE',action:'Découvrir le programme',intro:'Un parcours pour apprendre à réaliser vous-même.'}
  };
  const displayTitle=p=>p.type==='formations'?['La compétence.','À découvrir.']:p.type==='outils'?['Les bons outils.','Au bon moment.']:['Des étapes claires.','À partager.'];
+
+ const offerFamilies={
+  procedures:{label:'PACK PROCÉDURES',promise:'Une méthode structurée à adapter à votre métier.',purchase:'Acheter le pack'},
+  outils:{label:'BANQUE D’OUTILS IA',promise:'Des outils et des méthodes pour passer à l’action.',purchase:'Acheter la banque'},
+  formations:{label:'FORMATION IAGILE',promise:'Une compétence concrète à apprendre et à pratiquer.',purchase:'M’inscrire à la formation'}
+ };
+ // La vente est volontairement désactivée tant qu'un produit n'est pas
+ // explicitement marqué commercialisable AVEC un vrai prix et lien Stripe.
+ function verifiedCheckout(p){
+  if(p.sellable!==true||typeof p.price!=='string'||!p.price.trim()||typeof p.checkoutUrl!=='string')return null;
+  try{
+   const url=new URL(p.checkoutUrl);
+   if(url.protocol!=='https:'||!['buy.stripe.com','checkout.stripe.com'].includes(url.hostname))return null;
+   return url.href;
+  }catch{return null;}
+ }
+ function prepareOffer(p,deep,collectionUrl){
+  const card=$('vaultOffer');
+  if(!card)return;
+  const kind=offerFamilies[p.type]||offerFamilies.outils;
+  $('vaultOfferFamily').textContent=kind.label;
+  $('vaultOfferTitle').textContent=p.title;
+  $('vaultOfferLead').textContent=p.result||kind.promise;
+  $('vaultOfferFormat').textContent=p.detail;
+  $('vaultOfferStatus').textContent=p.status;
+  const items=$('vaultOfferFeatures');
+  items.replaceChildren();
+  (p.features||[]).slice(0,3).forEach(text=>items.append(node('li',null,text)));
+  const primary=$('vaultOfferPrimary');
+  const secondary=$('vaultOfferSecondary');
+  const notice=$('vaultOfferNotice');
+  const checkout=verifiedCheckout(p);
+  if(checkout){
+   primary.href=checkout;
+   primary.target='_blank';
+   primary.rel='noopener noreferrer';
+   primary.replaceChildren(node('span',null,kind.purchase+' — '+p.price),node('span',null,'↗'));
+   secondary.href=deep.page||collectionUrl;
+   secondary.replaceChildren(node('span',null,'Consulter le contenu complet'),node('span',null,'↗'));
+   notice.textContent='Paiement sécurisé sur Stripe. Vérifiez les conditions et le tarif avant de confirmer.';
+   card.dataset.checkout='ready';
+  }else{
+   primary.href=deep.page||collectionUrl;
+   primary.removeAttribute('target');
+   primary.removeAttribute('rel');
+   primary.replaceChildren(node('span',null,deep.page?'Découvrir l’offre complète':'Explorer la collection'),node('span',null,'↗'));
+   secondary.href='./contact.html?produit='+encodeURIComponent(p.id);
+   secondary.replaceChildren(node('span',null,'Préparer une demande de disponibilité'),node('span',null,'↗'));
+   notice.textContent='Achat et inscription non ouverts : aucun montant n’est prélevé. La demande est un brouillon à copier, non un envoi automatique.';
+   card.dataset.checkout='unavailable';
+  }
+ }
+ let offerSyncFrames=0;
+ function updateOffer(scrollFraction,scrollVault){
+  const card=$('vaultOffer'),vault=$('cinemaVault');
+  if(!card||!vault||vault.hidden)return;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const world=$('world');
+  const fallback=world?.dataset.engine==='fallback'||document.body.classList.contains('vault-fallback-mode');
+  let reveal=Math.max(0,Math.min(1,(scrollFraction-.76)/.17));
+  const sceneState=window.rotationScene?.getVaultState?.();
+  // Révélation seulement lorsque le vrai couvercle a suffisamment tourné.
+  if(!fallback&&!reduced&&sceneState){
+   const actualOpen=Math.max(0,Math.min(1,(sceneState.open-.83)/.14));
+   reveal=Math.min(reveal,actualOpen);
+   // Limite de synchronisation pour éviter une boucle permanente si WebGL s'arrête.
+   if(scrollFraction>.76&&sceneState.open<.975&&offerSyncFrames<100){
+    offerSyncFrames++;
+    requestAnimationFrame(schedule);
+   }else if(scrollFraction<=.76||sceneState.open>=.975)offerSyncFrames=0;
+  }
+  if(reduced)reveal=scrollFraction>=.75?1:0;
+  const eased=reveal*reveal*(3-2*reveal);
+  const mobile=window.innerWidth<=740;
+  const lift=(1-eased)*(mobile?82:158);
+  const scale=.20+.80*eased;
+  card.style.opacity=String(eased);
+  card.style.transform=reduced?'none':'translate3d(0,'+lift.toFixed(1)+'px,0) scale('+scale.toFixed(3)+') rotateX('+(-17*(1-eased)).toFixed(1)+'deg)';
+  card.dataset.visible=String(reveal>.02);
+  const accessible=reveal>.96;
+  card.inert=!accessible;
+  card.setAttribute('aria-hidden',String(!accessible));
+  card.style.pointerEvents=accessible?'auto':'none';
+  vault.dataset.offerRevealed=String(reveal>.58);
+  // Continuer à annoncer le coffre tant que la carte n'est pas révélée.
+  return accessible;
+ }
+
  function section(index,position,kicker,heading,text,extras){
   const part=node('section','cinema-panel cinema-panel--'+position);
   part.dataset.pose=String(index);
@@ -129,6 +217,7 @@
   const secondary=$('vaultSecondary');
   secondary.href=deep.demo||collectionUrl;
   secondary.textContent=deep.demo?(deep.demoLabel||'Essayer gratuitement')+' ↗':'Revenir à la collection ↗';
+  prepareOffer(p,deep,collectionUrl);
  }
  let scrollScheduled=false;
  const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
@@ -151,7 +240,10 @@
   }
   if(current>=anchors[anchors.length-1])progress=6;
   const end=Math.max(1,vault.offsetHeight-window.innerHeight);
-  const vaultProgress=clamp((current-anchors[anchors.length-1])/end,0,1);
+  const fraction=clamp((current-anchors[anchors.length-1])/end,0,1);
+  // Le coffre finit de s'ouvrir avant le dernier quart de la séquence sticky ;
+  // ce temps supplémentaire permet au module d'émerger puis d'être lu.
+  const vaultProgress=clamp(fraction/.72,0,1);
   window.rotationScene?.setProgress(progress);
   window.rotationScene?.setVaultProgress?.(vaultProgress);
   window.rotationScene?.setChapter?.(Math.min(3,Math.floor(progress*.55)));
@@ -160,7 +252,9 @@
   const state=$('vaultState');
   if(state){
    const staticMode=$('world')?.dataset.engine==='fallback'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   const offerRevealed=updateOffer(fraction,vaultProgress);
    const next=staticMode?'COFFRE — APERÇU STATIQUE':
+    offerRevealed?'VOTRE OFFRE EST DÉVOILÉE':
     vaultProgress>.92?'LE COFFRE EST OUVERT':
     vaultProgress>.72?'LA SERRURE TOURNE':
     vaultProgress>.43?'LA CLÉ ENTRE DANS LA SERRURE':'LE COFFRE EST FERMÉ';

@@ -7,6 +7,19 @@
     const copy=document.getElementById('contactCopy');
     const feedback=document.getElementById('contactCopyStatus');
     if(!form||!copy||!feedback)return;
+    // Les demandes issues du coffre sont préremplies uniquement pour des IDs
+    // présents dans le catalogue. Aucune information personnelle n'est stockée.
+    const productId=new URLSearchParams(location.search).get('produit');
+    const product=(window.TESTIA_PRODUCTS||[]).find(item=>item.id===productId);
+    if(product){
+      const subject=document.getElementById('contactSubject');
+      const message=document.getElementById('contactMessage');
+      if(subject&&message){
+        subject.value=('Disponibilité de l’offre : '+product.title).slice(0,100);
+        message.value='Bonjour, je souhaite connaître la disponibilité et les modalités d’achat de l’offre « '+product.title+' ». Merci de préciser à quel moment elle sera commercialisée.';
+        feedback.textContent='Demande préremplie pour '+product.title+'. Vous pouvez copier ce brouillon ; il n’est pas envoyé automatiquement.';
+      }
+    }
     let manual=null;
     copy.addEventListener('click',async()=>{
       if(!form.reportValidity()){
