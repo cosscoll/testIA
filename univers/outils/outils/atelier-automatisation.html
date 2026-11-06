@@ -1,0 +1,91 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><meta name="theme-color" content="#FFF5EE">
+<meta name="description" content="Atelier gratuit pour concevoir et simuler un workflow : doublons, données manquantes, autorisations, validation humaine et export JSON ou texte. Aucune automatisation exécutée.">
+<title>Atelier Workflow — Studio IA · Banque Automatisation</title>
+<link rel="stylesheet" href="../../../assets/import-shell.css">
+<link rel="stylesheet" href="../assets/obscure-pop.css">
+<link rel="stylesheet" href="../assets/journey-nav.css">
+<link rel="stylesheet" href="../../../assets/unified-advisor.css">
+<link rel="stylesheet" href="../../../assets/charte-univers-03.css">
+<link rel="stylesheet" href="../assets/workflow-studio.css">
+<script defer src="../../../assets/data.js"></script>
+<script defer src="../assets/workflow-studio.js"></script>
+<script defer src="../../../assets/unified-advisor.js"></script>
+</head><body class="obscure-pop workflow-page">
+<div class="ti-shell" role="navigation" aria-label="Navigation de la plateforme">
+<a class="ti-brand" href="../../../index.html">studio<b>/</b>IA</a>
+<nav class="ti-links" aria-label="Navigation générale"><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a></nav>
+<a class="ti-cta" href="../pack-automatisation.html">VOIR LA BANQUE ↗</a>
+<details class="ti-mobile"><summary>MENU ☰</summary><div><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a><a href="../pack-automatisation.html">Banque Automatisation</a></div></details></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<main id="contenu" class="wf-main">
+<div class="wf-shell" id="workflowStudio">
+<a href="../pack-automatisation.html" class="wf-back">← Revenir à la banque Automatisation</a>
+<p class="wf-kicker">Atelier gratuit / LIV-03 — Premiers workflows</p>
+<h1>Organisez le travail.<br><em>Gardez le contrôle.</em></h1>
+<p class="wf-lead">Transformez une tâche répétitive en un processus clair. Construisez les étapes, testez les risques et exportez un plan que vous pourrez utiliser pour préparer votre propre automatisation.</p>
+<p class="wf-warning"><strong>Simulation locale uniquement.</strong> L’atelier ne connecte aucun compte, ne programme aucune tâche, n’utilise aucune API et n’envoie aucun message. Les demandes et résultats sont fictifs.</p>
+<div class="wf-preset-row" role="group" aria-label="Exemples de workflows">
+<strong>Partir d'un cas :</strong>
+<button type="button" class="wf-preset" data-wf-preset="devis" aria-pressed="true">Demande de devis</button>
+<button type="button" class="wf-preset" data-wf-preset="stock" aria-pressed="false">Stock faible</button>
+<button type="button" class="wf-preset" data-wf-preset="document" aria-pressed="false">Document reçu</button>
+</div>
+<div class="wf-layout">
+<section class="wf-panel" aria-labelledby="wf-config-title">
+<h2 id="wf-config-title">01 / Construire le processus</h2>
+<p>Remplacez les exemples par vos propres consignes. Aucun champ ne quitte le navigateur.</p>
+<div class="wf-fields">
+<div class="wf-field wf-field--wide"><label for="wf-title">Nom du processus</label><input id="wf-title" maxlength="100" value="Trier une demande de devis"></div>
+<div class="wf-field"><label for="wf-owner">Responsable de la validation</label><input id="wf-owner" maxlength="100" value="Responsable commercial"></div>
+<div class="wf-field"><label for="wf-trigger">Déclencheur</label><input id="wf-trigger" maxlength="150" value="Nouvelle demande reçue"></div>
+<div class="wf-field wf-field--wide"><label for="wf-required">Informations indispensables avant de continuer</label><input id="wf-required" maxlength="160" value="Contact et nature du projet"><small>Si elles manquent dans le cas simulé, le processus s’arrête.</small></div>
+<div class="wf-field wf-field--wide"><label for="wf-action">Résultat à préparer (sans l’envoyer)</label><input id="wf-action" maxlength="180" value="Préparer un brouillon de réponse"></div>
+</div>
+<div class="wf-section-line"></div>
+<h3 class="wf-subtitle">Étapes de travail personnalisables</h3>
+<p class="wf-warning">Ajoutez jusqu’à cinq étapes. L’atelier ajoute systématiquement les contrôles de doublons, de complétude et de consentement, puis la validation humaine.</p>
+<div class="wf-step-add">
+<input id="wf-new-step" maxlength="120" aria-label="Nouvelle étape" placeholder="Ex. : vérifier les pièces jointes">
+<button class="wf-btn" id="wf-add-step" type="button">Ajouter l’étape</button>
+</div>
+<ol class="wf-steps" id="wf-steps" aria-label="Étapes personnalisées"></ol>
+<p class="wf-guard" id="wf-health" role="status"></p>
+</section>
+<section class="wf-panel" aria-labelledby="wf-plan-title">
+<h2 id="wf-plan-title">02 / Le workflow obtenu</h2>
+<p>Chaque étape est visible avant de simuler un dossier. Les contrôles bloquants sont systématiques.</p>
+<ol class="wf-plan" id="wf-plan" aria-label="Séquence proposée"></ol>
+<div class="wf-simulation" aria-labelledby="wf-sim-title">
+<h3 id="wf-sim-title">03 / Tester sans conséquence</h3>
+<label class="wf-case" for="wf-case">Choisir une situation fictive
+<select id="wf-case">
+<option value="complet">Dossier complet</option>
+<option value="incomplet">Information manquante</option>
+<option value="doublon">Doublon détecté</option>
+<option value="autorisation">Autorisation absente</option>
+</select></label>
+<div class="wf-actions">
+<button id="wf-run" class="wf-btn wf-btn--primary" type="button">Tester ce cas ↗</button>
+<button id="wf-approve" class="wf-btn" type="button" disabled>Valider dans la simulation</button>
+</div>
+<p class="wf-result" id="wf-result" role="status" aria-live="polite" data-result="idle">Choisissez un cas fictif puis lancez la simulation.</p>
+<ol class="wf-log" id="wf-log" aria-label="Journal du scénario simulé"></ol>
+</div>
+</section>
+</div>
+<section class="wf-bottom" aria-labelledby="wf-export-title">
+<h2 id="wf-export-title">04 / Récupérer votre plan</h2>
+<p>Deux documents locaux : un JSON descriptif <strong>désactivé par défaut</strong>, et un guide texte à partager avec la personne qui vérifiera le processus. Le JSON n’est pas un programme exécutable ni un scénario importable garanti dans un service tiers.</p>
+<div class="wf-actions">
+<button class="wf-btn wf-btn--primary" id="wf-export-json" type="button">Exporter le plan JSON</button>
+<button class="wf-btn" id="wf-export-txt" type="button">Exporter le mode d’emploi .txt</button>
+</div>
+<p class="wf-status" id="wf-status" role="status" aria-live="polite"></p>
+<small>Avant toute automatisation réelle : préciser les droits d’accès, les données personnelles, les coûts, les erreurs possibles, la conservation des traces et les conditions de retour arrière. Ne connectez aucun système de production sans revue et autorisation adaptées.</small>
+</section>
+<p class="wf-footer">Studio IA · Banque Automatisation en préparation · <a href="../pack-automatisation.html">Présentation de la banque</a> · <a href="../../../catalogue.html?type=outils">Toutes les banques</a></p>
+</div></main>
+<footer class="ti-footer"><a href="../../../index.html">studio/IA</a><small>OUTIL PÉDAGOGIQUE · AUCUNE AUTOMATISATION RÉELLE</small><div class="ti-foot-links"><a href="../../../catalogue.html?type=outils">Les banques</a><a href="../../../contact.html">Contact</a></div></footer>
+</body></html>
