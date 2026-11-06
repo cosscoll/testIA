@@ -7,6 +7,11 @@ const html=read('beta.html'),css=read('assets/beta-test.css'),script=read('asset
 let checks=0,requests=0,copies=[],downloads=[],created=0,revoked=0;
 const check=(ok,label)=>{assert.ok(ok,label);checks++};
 check(html.includes('noindex,nofollow'),'La page beta doit être non indexable');
+check(html.includes('http-equiv="Content-Security-Policy"'),'CSP du questionnaire beta absente');
+check(html.includes('connect-src &#39;none&#39;'),'Le questionnaire ne doit autoriser aucun appel réseau');
+check(html.includes('form-action &#39;none&#39;'),'La soumission de formulaire doit être bloquée par la CSP');
+check(html.includes('script-src &#39;self&#39;'),'Les scripts beta doivent provenir du domaine courant');
+check(!read('contact.html').includes('Canal public provisoire.'),'Le descriptif de Contact est obsolète');
 check((html.match(/data-beta-task=/g)||[]).length===5,'Cinq missions attendues');
 check((html.match(/data-beta-result/g)||[]).length===5,'Chaque mission doit être notée');
 check(html.includes('href="./produit.html?id=redaction"'),'Test du coffre 3D manquant');
