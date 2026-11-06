@@ -1,0 +1,16 @@
+# Fichiers de travail sans utilité côté navigateur.
+# Le site public reste statique et les guides Markdown des /univers restent servis.
+README.md
+docs/
+tests/
+scripts/
+*.zip
+*.env
+*.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*service-account*.json
+studio_ia_produits_prives_*

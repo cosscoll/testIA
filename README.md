@@ -72,3 +72,11 @@ Fonction serveurless : `api/chat.js` (Vercel). Modèle exclusif `reflection/beam
 Site statique, sans étape de build, déployé via la connexion GitHub → Vercel. Aucune automatisation récurrente n’a été créée. Vérifications locales sans dépendances : `node tests/smoke-static.cjs`, `node tests/offer-finder.cjs`, `node tests/vault-offer.cjs` et `node tests/chat-contract.cjs`.
 
 Consulter le [rapport d’intégration](docs/INTEGRATION_3_PROJETS_2026-11-03.md) pour le périmètre exact, les vérifications et les étapes restantes.
+
+
+## Sécurité et contrôle de la publication (session 01, 06/11/2026)
+
+- En-têtes de sécurité versionnés dans `vercel.json` ; exclusion des fichiers de travail non destinés au site via `.vercelignore`.
+- Vérification manuelle sans API : `node scripts/verify-release.cjs` (six scripts, dont `tests/security-static.cjs`).
+- Voir `docs/SESSION_01_SECURITE_2026-11-06.md` pour la recette, les limites et les réglages GitHub à effectuer par le propriétaire.
+- Le dépôt reste public et la protection de `main` nécessite une configuration dans GitHub. Aucun workflow récurrent, aucune CI payante, aucun accès aux produits premium n'a été activé.
