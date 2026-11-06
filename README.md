@@ -80,3 +80,11 @@ Consulter le [rapport d’intégration](docs/INTEGRATION_3_PROJETS_2026-11-03.md
 - Vérification manuelle sans API : `node scripts/verify-release.cjs` (six scripts, dont `tests/security-static.cjs`).
 - Voir `docs/SESSION_01_SECURITE_2026-11-06.md` pour la recette, les limites et les réglages GitHub à effectuer par le propriétaire.
 - Le dépôt reste public et la protection de `main` nécessite une configuration dans GitHub. Aucun workflow récurrent, aucune CI payante, aucun accès aux produits premium n'a été activé.
+
+## Session 02 — Pack Conciergerie, édition pilote v0.2 (06/11/2026)
+
+Un dossier de travail privé a été préparé hors dépôt : quinze procédures approfondies en Markdown, manuel DOCX éditable et PDF de 18 pages, sept CSV vierges et sept CSV fictifs, dictionnaire de données, exemple transversal et validateur Python local. Dix cas invalides ont été détectés lors de la recette ; la validation professionnelle métier et juridique reste à réaliser. **Aucune vente active.**
+
+La page publique du pack ne présente que le statut de ce travail et un lien vers un atelier gratuit. Les fichiers commerciaux DOCX/PDF/CSV ne sont ni committés dans GitHub ni publiés sur Vercel.
+
+Suivi : https://github.com/cosscoll/testIA/issues/2
