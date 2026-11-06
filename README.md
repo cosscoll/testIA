@@ -6,11 +6,11 @@
 
 Ce prototype rassemble les contenus publics de trois projets dans une même plateforme, sans modifier leurs dépôts d’origine.
 
-**État du déploiement au 03/11/2026 :** la dernière version **26 ressources** est enregistrée sur GitHub, mais **pas encore publiée sur Vercel**. Le quota gratuit Vercel de 100 déploiements par jour est atteint (erreur 402 – `api-deployments-free-per-day`). Le site public sert encore un commit antérieur ; aucune option payante n’a été activée. Vérifier le SHA déployé et les interactions avant d'annoncer une mise en ligne complète.
+**État au 06/11/2026 :** la plateforme est à nouveau déployée sur Vercel depuis la branche `main`. Un déploiement de production correspondant au commit `174b151` a été vérifié comme **READY** le 6 novembre. Les commits ultérieurs doivent toujours être revérifiés sur Vercel avant d’être annoncés comme visibles. L’ouverture réelle du coffre, les performances et le responsive demandent une recette dans un navigateur.
 
-## Direction graphique actuelle — Obscure Pop restauré
+## Direction graphique actuelle — palette orange/crème validée
 
-La refonte visuelle `platform-v2` (trois étiquettes plates) a été **abandonnée** à la demande du propriétaire. L'accueil utilise à nouveau les **cinq étiquettes interactives superposées** du design Banque Outils IA validé, avec `assets/kinetic-hero.css`, `assets/kinetic-hero.js`, `assets/obscure-pop.css` et `assets/unifie.css`.
+La structure validée reprend les **cinq étiquettes interactives superposées** et les animations de l’accueil antérieur. La palette orange/crème, la typographie Poppins et les composants récents proviennent de `assets/charte-control-03.css` (chargé après les styles historiques). Aucune substitution des étiquettes par des cartes plates.
 
 **Nouveau parcours produit :** Accueil → Catalogue → fiche `produit.html?id=...` avec la vraie clé Three.js de Pack Procédures Pro qui suit le scroll et rejoint la serrure du coffre 3D en fin de page → présentation détaillée originale. Le modèle et la chorégraphie source se trouvent dans `univers/procedures/assets/apartment-scene.js`; la mise en scène spécifique est dans `assets/product-cinema.js` et `assets/product-cinema.css`.
 
@@ -25,9 +25,10 @@ Documentation : [retour Obscure Pop et pages produits 3D](docs/RETOUR_OBSCURE_PO
 
 ## Navigation du site
 
-L’accueil utilise cinq étiquettes animées inspirées du site Banque Outils IA validé. Le catalogue présente les onze offres avec des filtres par famille. Chaque carte produit mène à une présentation cinématique avec la clé 3D qui suit le défilement et ouvre le coffre, puis à sa page détaillée. Les démonstrations gratuites sont accessibles depuis l’accueil.
+L’accueil utilise les cinq étiquettes animées validées. Le catalogue présente les onze offres avec filtres et recherche. Un **guide de choix local en deux étapes** permet de choisir une famille, puis l’un des douze sujets proposés : chaque résultat mène à la fiche produit 3D, et à un exemple gratuit quand il existe. Pour un métier non couvert, il ne recommande aucun faux pack. Ce guide est disponible même lorsque le conseiller IA externe est indisponible ; il n’appelle aucune API et ne collecte aucune donnée. Chaque fiche suit le parcours original de la clé jusqu’au coffre et propose un module commercial sans fausse vente.
 
-- `index.html` : accueil et guide de choix.
+- `index.html` : accueil, cinq étiquettes et conseiller IA.
+- `assets/offer-finder.js` et `assets/offer-finder.css` : guide de choix instantané du catalogue, sans IA ni coût, douze cas dont un métier non couvert.
 - `catalogue.html` : toutes les offres filtrables.
 - `produit.html?id=...` : présentation 3D personnalisée pour chaque offre.
 - `contact.html` : contact provisoire uniquement pour des retours publics non confidentiels via GitHub Issues.
@@ -60,6 +61,6 @@ Fonction serveurless : `api/chat.js` (Vercel). Modèle exclusif `reflection/beam
 
 **Ce projet n'est pas une boutique en production.** Aucun paiement, inscription payante, espace client ou livraison automatique de produit n’est actif. Les banques et les formations restent en préparation ; le pack Conciergerie est un pilote. Le contenu privé des cours IAgile n'a pas été publié.
 
-Site statique, sans étape de build, déployé via la connexion GitHub → Vercel. Aucune automatisation récurrente n’a été créée.
+Site statique, sans étape de build, déployé via la connexion GitHub → Vercel. Aucune automatisation récurrente n’a été créée. Vérifications locales sans dépendances : `node tests/smoke-static.cjs`, `node tests/offer-finder.cjs`, `node tests/vault-offer.cjs` et `node tests/chat-contract.cjs`.
 
 Consulter le [rapport d’intégration](docs/INTEGRATION_3_PROJETS_2026-11-03.md) pour le périmètre exact, les vérifications et les étapes restantes.
