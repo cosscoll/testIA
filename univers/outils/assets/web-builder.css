@@ -1,0 +1,68 @@
+/* LIV-04B — UI du constructeur web. Conserve la charte principale CONTROL. */
+body.web-builder-page{background:#fff5ee!important;color:#111827!important;font-family:Poppins,Arial,sans-serif}
+.web-builder-page .wb-main{background:radial-gradient(ellipse at 87% 7%,#ffd4b989,transparent 42%),#fff5ee!important;color:#111827;padding:clamp(31px,5vw,75px) 17px 95px}
+.web-builder-page .wb-shell{max-width:1380px;margin:auto}
+.web-builder-page .wb-back{display:inline-flex;color:#9b4932!important;font:600 12px Poppins,Arial,sans-serif;text-underline-offset:4px;margin-bottom:26px}
+.web-builder-page .wb-kicker{font:700 11px/1.5 Poppins,Arial,sans-serif;letter-spacing:.12em;color:#a45337;text-transform:uppercase}
+.web-builder-page .wb-hero h1{font:800 clamp(42px,6vw,88px)/1.04 Poppins,Arial,sans-serif;letter-spacing:-.073em;color:#111827;margin:12px 0 20px}
+.web-builder-page .wb-hero h1 em{font-style:normal;color:#c45d3c}
+.web-builder-page .wb-lead{font:400 clamp(15px,1.7vw,19px)/1.75 Poppins,Arial,sans-serif;color:#505b67;max-width:850px}
+.web-builder-page .wb-note{font:400 12px/1.75 Poppins,Arial,sans-serif;color:#5b616a;margin:17px 0 28px;max-width:1000px}
+.web-builder-page .wb-note strong{color:#8b432e}
+.web-builder-page .wb-presets{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:25px 0 29px}
+.web-builder-page .wb-presets strong{font-size:12px;margin-right:6px;color:#394655}
+.web-builder-page .wb-preset,.web-builder-page .wb-device-btn{border-radius:999px;background:#fff;border:1px solid #e2cbbd;color:#8d452d;min-height:44px;padding:11px 16px;cursor:pointer;font:650 12px Poppins,Arial,sans-serif}
+.web-builder-page .wb-preset[aria-pressed=true],.web-builder-page .wb-preset:hover,.web-builder-page .wb-device-btn[aria-pressed=true],.web-builder-page .wb-device-btn:hover{background:#ffeadc;border-color:#d9825a;color:#753b28}
+.web-builder-page .wb-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:19px;align-items:start}
+.web-builder-page .wb-panel,.web-builder-page .wb-bottom{min-width:0;background:#fffcf9;border:1px solid #e7dad1;border-radius:19px;padding:clamp(19px,2.4vw,31px);box-shadow:0 10px 30px #64503b0c}
+.web-builder-page .wb-section-heading{display:flex;align-items:start;gap:14px;margin-bottom:20px}
+.web-builder-page .wb-section-heading>span{flex:0 0 35px;height:35px;display:grid;place-items:center;background:#ffebdd;border:1px solid #ecbda6;border-radius:10px;font:750 12px Poppins,Arial,sans-serif;color:#a05334}
+.web-builder-page .wb-section-heading h2{font:750 clamp(20px,2.5vw,29px)/1.24 Poppins,Arial,sans-serif;letter-spacing:-.042em;color:#111827;margin:0 0 6px}
+.web-builder-page .wb-section-heading p{font:400 12px/1.6 Poppins,Arial,sans-serif;color:#636d75;margin:0}
+.web-builder-page .wb-fields,.web-builder-page .wb-selects{display:grid;gap:15px}
+.web-builder-page .wb-field{display:grid;gap:7px;min-width:0}
+.web-builder-page .wb-field label,.web-builder-page .wb-fieldset legend{font:650 12px/1.5 Poppins,Arial,sans-serif;color:#273748}
+.web-builder-page .wb-field input,.web-builder-page .wb-field textarea,.web-builder-page .wb-field select,.web-builder-page .wb-fieldset input,.web-builder-page #wb-brief,.web-builder-page #wb-code-fallback{
+ box-sizing:border-box;width:100%;background:#fff!important;color:#111827!important;border:1px solid #d9ccc3;border-radius:10px;padding:12px 13px;font:450 13px/1.6 Poppins,Arial,sans-serif;min-width:0}
+.web-builder-page .wb-field textarea{resize:vertical;min-height:68px}
+.web-builder-page .wb-field small{font:400 11px/1.65 Poppins,Arial,sans-serif;color:#676d76}
+.web-builder-page .wb-fieldset{margin:0;padding:15px;border:1px solid #e6dace;border-radius:12px;display:grid;gap:9px;background:#fff8f2}
+.web-builder-page .wb-fieldset legend{padding:0 7px}
+.web-builder-page .wb-fieldset label{font:600 11px/1.3 Poppins,Arial,sans-serif;color:#5f5960}
+.web-builder-page .wb-divider{border-top:1px solid #e8d9d0;margin:27px 0}
+.web-builder-page .wb-recette{margin-top:23px;padding:16px 17px;border-radius:12px;border:1px solid #e8d8ca;background:#fff6ee}
+.web-builder-page .wb-recette h3{font:750 14px Poppins,Arial,sans-serif;color:#26364c;margin:0 0 5px}
+.web-builder-page .wb-recette p{font:400 12px/1.65 Poppins,Arial,sans-serif;color:#5d666e;margin:0}
+.web-builder-page .wb-preview-panel{position:sticky;top:100px}
+.web-builder-page .wb-devices{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}
+.web-builder-page .wb-device-btn{border-radius:9px}
+.web-builder-page .wb-device{position:relative;overflow:hidden;border:1px solid #ded2ca;border-radius:13px;background:#f0e7df;min-height:330px;box-shadow:0 10px 24px #47392b16}
+.web-builder-page .wb-device iframe{position:absolute;display:block;top:0;left:0;width:1100px;height:840px;border:0;transform-origin:top left;transform:scale(.5);background:white}
+.web-builder-page .wb-preview-caption{font:400 11px/1.6 Poppins,Arial,sans-serif;color:#6b7077;margin:12px 0 19px}
+.web-builder-page .wb-actions{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.web-builder-page .wb-button{border:1px solid #e3b7a0;border-radius:10px;background:#fff3eb;color:#7c3f2c;min-height:44px;padding:11px 15px;cursor:pointer;font:700 12px/1.4 Poppins,Arial,sans-serif}
+.web-builder-page .wb-button--primary{background:#ff6a3d!important;border-color:#ff6a3d!important;color:#111827!important}
+.web-builder-page .wb-button:hover:not(:disabled){background:#ffe1ce}
+.web-builder-page .wb-button--primary:hover:not(:disabled){background:#f58058!important}
+.web-builder-page .wb-button:disabled{opacity:.46;cursor:not-allowed}
+.web-builder-page .wb-status{min-height:18px;font:500 12px/1.6 Poppins,Arial,sans-serif;color:#8d4c31}
+.web-builder-page .wb-checks{border:1px solid #eadccf;background:#fff8f1;border-radius:12px;padding:17px;margin-top:18px}
+.web-builder-page .wb-checks-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.web-builder-page .wb-checks-header h3{font:750 15px Poppins,Arial,sans-serif;color:#263344;margin:0}
+.web-builder-page .wb-checks-header span{font:700 12px Poppins,Arial,sans-serif;color:#a05735}
+.web-builder-page .wb-checks ul{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+.web-builder-page .wb-checks li{background:#fff;border:1px solid #eee0d5;border-radius:8px;padding:8px 10px;font:550 11px/1.55 Poppins,Arial,sans-serif}
+.web-builder-page .wb-checks li.wb-pass{color:#25623a}
+.web-builder-page .wb-checks li.wb-warning{color:#a0422c}
+.web-builder-page .wb-checks p,.web-builder-page .wb-bottom>p{font:400 11px/1.7 Poppins,Arial,sans-serif;color:#676b72}
+.web-builder-page .wb-bottom{margin-top:19px}
+.web-builder-page #wb-brief{min-height:215px;resize:vertical;background:#fffaf6!important}
+.web-builder-page #wb-code-fallback{margin-top:12px}
+.web-builder-page .wb-code-details{margin-top:16px}
+.web-builder-page .wb-code-details summary{font:600 12px/1.4 Poppins,Arial,sans-serif;color:#914c31;cursor:pointer}
+.web-builder-page .wb-footer{font-size:12px;color:#717075;padding-top:28px}
+.web-builder-page .wb-footer a{color:#9f4d31}
+.web-builder-page :is(input,textarea,select,button,a,summary):focus-visible{outline:3px solid #ad4a2c!important;outline-offset:3px!important}
+@media(max-width:1010px){.web-builder-page .wb-layout{grid-template-columns:1fr}.web-builder-page .wb-preview-panel{position:relative;top:auto}}
+@media(max-width:590px){.web-builder-page .wb-main{padding:28px 12px 60px}.web-builder-page .wb-panel,.web-builder-page .wb-bottom{padding:18px}.web-builder-page .wb-presets{align-items:stretch}.web-builder-page .wb-presets strong{flex-basis:100%}.web-builder-page .wb-actions .wb-button{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.web-builder-page .wb-device iframe{scroll-behavior:auto}}
