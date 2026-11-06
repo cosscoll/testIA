@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="./assets/unifie.css">
 <script defer src="./assets/data.js"></script>
 <script defer src="./assets/site.js"></script>
+<script defer src="./assets/offer-finder.js"></script>
 <link rel="stylesheet" href="./assets/unified-advisor.css"><link rel="stylesheet" href="./assets/charte-control-03.css">
+<link rel="stylesheet" href="./assets/offer-finder.css">
 </head><body class="obscure-pop"><a class="skip-link" href="#contenu">Aller au contenu</a><header class="global-header" role="banner">
  <a class="global-logo" href="./index.html" aria-label="Studio IA, accueil">studio<b>/</b>IA <small>PROTOTYPE 01</small></a>
  <nav class="global-nav" aria-label="Navigation principale">
@@ -24,6 +26,23 @@
  </nav>
 </header><main id="contenu">
 <section class="page-hero"><div class="page-hero-inner"><div class="breadcrumb"><a href="./index.html">ACCUEIL</a> / PRODUITS</div><span class="small-eyebrow" style="display:block;margin-top:45px">LA COLLECTION / TROIS FAMILLES</span><h1>Tout est<br><em>au même endroit.</em></h1><p>Un catalogue unique pour trouver votre prochaine méthode, votre prochain outil ou votre prochaine compétence.</p></div></section>
+<section class="offer-finder" id="offerFinder" aria-labelledby="offerFinderTitle">
+ <div class="offer-finder__heading">
+  <div><span class="offer-finder__eyebrow">UN CONSEIL IMMÉDIAT / SANS COMPTE</span>
+   <h2 id="offerFinderTitle">Quel produit vous correspond ?</h2></div>
+  <p>Deux choix suffisent pour trouver une première piste dans nos onze offres. Aucun message à envoyer et aucune IA nécessaire.</p>
+ </div>
+ <p class="offer-finder__prompt" id="offerFinderPrompt">Étape 1 / Quel type d'aide recherchez-vous ?</p>
+ <div class="offer-finder__modes" role="group" aria-label="Type de solution recherché">
+  <button class="offer-finder__mode" data-finder-mode="procedures" type="button" aria-pressed="false">Une méthode prête à adapter</button>
+  <button class="offer-finder__mode" data-finder-mode="outils" type="button" aria-pressed="false">Des outils pour créer</button>
+  <button class="offer-finder__mode" data-finder-mode="formations" type="button" aria-pressed="false">Une compétence à apprendre</button>
+ </div>
+ <div class="offer-finder__topics" id="offerFinderTopics" hidden></div>
+ <div class="offer-finder__result" id="offerFinderResult" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+ <p class="offer-finder__privacy">Guide indicatif fondé sur le catalogue actuel. Le choix reste sur votre appareil ; aucun renseignement personnel n'est demandé.</p>
+ <noscript><p>Guide interactif indisponible sans JavaScript. <a href="./ressources.html">Voir les ressources gratuites</a> ou parcourir les offres ci-dessous.</p></noscript>
+</section>
 <section class="catalogue-wrap" aria-labelledby="catalog-heading">
 <h2 id="catalog-heading" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Catalogue des offres</h2>
 <div class="catalog-controls"><div class="filter-list" role="group" aria-label="Filtrer par type de produit">
