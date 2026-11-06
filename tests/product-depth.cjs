@@ -42,9 +42,16 @@ function simulate(product){
  const elements=Object.fromEntries(ids.map(id=>[id,new Element()]));
  const created=[];
  const body=new Element('body');let lastDownload=null;
+ elements.depthInventory.hidden=true;
+ elements.depthCopy.disabled=true;
+ elements.depthDownload.disabled=true;
  const document={
   title:'',body,
-  createElement(tag){const el=new Element(tag);created.push(el);return el},
+  createElement(tag){
+   const el=new Element(tag);created.push(el);
+   if(tag==='a')el.click=function(){lastDownload={filename:this.download,href:this.href}};
+   return el;
+  },
   getElementById(id){return elements[id]||created.find(el=>el.id===id)||null}
  };
  const context={
@@ -56,13 +63,7 @@ function simulate(product){
   navigator:{clipboard:{async writeText(text){callbacks.copied=text}}},
   setTimeout(callback){callback()},
  };
- const originalClick=Element.prototype.click;
- Element.prototype.click=function(){
-  if(this.tagName==='a')lastDownload={filename:this.download,href:this.href};
-  else this.listeners.click?.({preventDefault(){}});
- };
- try{vm.runInNewContext(read('assets/product-depth.js'),context,{timeout:2000})}
- finally{Element.prototype.click=originalClick}
+ vm.runInNewContext(read('assets/product-depth.js'),context,{timeout:2000});
  return{elements,created,document,download:()=>lastDownload};
 }
 async function main(){
@@ -76,7 +77,7 @@ async function main(){
   verify(!idsSeen.has(product.id),'Identifiant produit dupliqué : '+product.id);
   idsSeen.add(product.id);
   totals.phases+=info.phases.length;totals.fields+=info.sample.fields.length;totals.criteria+=info.criteria.length;
-  const {elements,created}=simulate(product);
+  const {elements,created,download}=simulate(product);
   const find=id=>elements[id],fields=created.filter(el=>/^depthField\d+$/.test(el.id)),checks=find('depthChecks').querySelectorAll('input[type="checkbox"]');
   verify(find('depthTitle').textContent===product.title,'Titre incorrect : '+product.id);
   verify(find('depthSteps').children.length===info.phases.length,'Étapes incorrectes : '+product.id);
@@ -94,6 +95,8 @@ async function main(){
   verify(draft.includes('Essai sans données personnelles'),'Champ non repris dans le document : '+product.id);
   verify(draft.includes('[x] '+info.criteria[0]),'Critère validé absent : '+product.id);
   verify(!find('depthDownload').disabled,'Export inaccessible : '+product.id);
+  find('depthDownload').listeners.click();
+  verify(download()?.filename==='atelier-studio-ia-'+product.id+'.txt','Export .txt invalide : '+product.id);
   // Un changement après génération invalide l'ancienne fiche au lieu de fournir un fichier périmé.
   fields[0].value='Deuxième formulation';
   find('depthFields').listeners.input();
