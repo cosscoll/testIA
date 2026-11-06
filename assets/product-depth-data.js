@@ -57,7 +57,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. linge à remplacer, contrôle des consommables"
         }
       ],
-      "end": "Ne marquez jamais une intervention comme « confirmée » avant l’accord de l’intervenant. Le contrôle final est une étape distincte."
+      "end": "Ne marquez jamais une intervention comme « confirmée » avant l’accord de l’intervenant. Le contrôle final est une étape distincte.",
+      "exampleAnswers": [
+        "LOGT-A, appartement fictif sans adresse ni code réel",
+        "Départ à 11 h, prochaine arrivée à 16 h ; planning à confirmer",
+        "Ménage proposé à l'intervenant A ; attendre son acceptation explicite",
+        "Coordinateur B chargé du contrôle du linge et de la propreté",
+        "Vérifier le stock de savon et un jeu de linge ; déclarer tout manque"
+      ]
     },
     "criteria": [
       "La mission a un responsable et une confirmation datée.",
@@ -146,7 +153,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. proposer un créneau d’échange"
         }
       ],
-      "end": "Vérifier les faits et demander une validation humaine avant la diffusion. Ne jamais insérer de données client sensibles dans un outil tiers."
+      "end": "Vérifier les faits et demander une validation humaine avant la diffusion. Ne jamais insérer de données client sensibles dans un outil tiers.",
+      "exampleAnswers": [
+        "Commerçants indépendants préparant leur première vitrine en ligne",
+        "Obtenir un échange de découverte, sans résultat chiffré promis",
+        "Le service comprend une analyse de page et une liste écrite des améliorations",
+        "Email professionnel, ton direct, clair et non technique",
+        "Proposer une réponse à ce message pour fixer un rendez-vous"
+      ]
     },
     "criteria": [
       "Le message parle à un public identifié.",
@@ -207,7 +221,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. utiliser une photo créée en interne ou correctement licenciée"
         }
       ],
-      "end": "Un rendu séduisant ne suffit pas : relisez toutes les informations et assurez-vous que les visuels sont utilisables légalement."
+      "end": "Un rendu séduisant ne suffit pas : relisez toutes les informations et assurez-vous que les visuels sont utilisables légalement.",
+      "exampleAnswers": [
+        "Publication verticale à lire sur téléphone",
+        "Débutants intéressés par un atelier de création numérique",
+        "ATELIER DÉCOUVERTE : démonstration pratique et accessible",
+        "Date et lieu fictifs, informations à confirmer avant diffusion",
+        "Photo interne autorisée ; fond crème, texte foncé et accent orange"
+      ]
     },
     "criteria": [
       "Le titre reste lisible sur un téléphone.",
@@ -268,7 +289,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. un utilisateur comprend l’offre et trouve le contact sans aide"
         }
       ],
-      "end": "Testez la clarté sur un téléphone avant d’ajouter des animations. Les visiteurs doivent pouvoir agir même si WebGL ne fonctionne pas."
+      "end": "Testez la clarté sur un téléphone avant d’ajouter des animations. Les visiteurs doivent pouvoir agir même si WebGL ne fonctionne pas.",
+      "exampleAnswers": [
+        "Particuliers qui cherchent une entreprise de rénovation locale",
+        "Obtenir une demande de rappel après lecture de l'offre",
+        "Services, zone couverte, preuves de réalisations, FAQ et contact",
+        "Bouton de rappel visible sur mobile et navigation clavier prévue",
+        "Un testeur trouve la zone desservie et le contact sans assistance"
+      ]
     },
     "criteria": [
       "Le visiteur comprend à qui s’adresse la page.",
@@ -329,7 +357,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. invitation à contacter, musiques libres d’usage documentées"
         }
       ],
-      "end": "Préparez les sous-titres et vérifiez les autorisations des personnes, voix, musiques et images avant diffusion."
+      "end": "Préparez les sous-titres et vérifiez les autorisations des personnes, voix, musiques et images avant diffusion.",
+      "exampleAnswers": [
+        "Prospects locaux, vidéo verticale pour un réseau social",
+        "Montrer les étapes de préparation d'un service sans exagération",
+        "0–5 s : matériel préparé et problème concret, sous-titre lisible",
+        "5–20 s : préparation, contrôle qualité, résultat observable",
+        "Conclusion : contact ; musique, images et voix avec autorisations vérifiées"
+      ]
     },
     "criteria": [
       "La vidéo peut être comprise sans audio.",
@@ -390,7 +425,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. ID unique de demande ; ne pas recréer après un délai API"
         }
       ],
-      "end": "Aucune connexion ni action externe n’est effectuée par cet atelier. N’utilisez pas de véritables clés API ou données personnelles."
+      "end": "Aucune connexion ni action externe n’est effectuée par cet atelier. N’utilisez pas de véritables clés API ou données personnelles.",
+      "exampleAnswers": [
+        "Nouvelle demande fictive reçue dans un formulaire de test",
+        "Objet de la demande et service sollicité, sans données confidentielles",
+        "Créer un brouillon de réponse sans l'envoyer",
+        "Responsable qui vérifie et valide le texte avant tout envoi",
+        "ID unique ; après une erreur réseau, rechercher le brouillon avant de réessayer"
+      ]
     },
     "criteria": [
       "La source et la destination sont identifiées.",
@@ -451,7 +493,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. essai gratuit incomplet, déploiement non testé"
         }
       ],
-      "end": "Une synthèse sans sources vérifiables ne doit pas être utilisée comme preuve. Les prix et fonctionnalités doivent être recontrôlés."
+      "end": "Une synthèse sans sources vérifiables ne doit pas être utilisée comme preuve. Les prix et fonctionnalités doivent être recontrôlés.",
+      "exampleAnswers": [
+        "Choisir une organisation documentaire pour une équipe fictive",
+        "A : conserver les dossiers actuels ; B : tester un outil partagé",
+        "Coût total, export, confidentialité, accès, temps d'apprentissage",
+        "Documentation officielle datée et essai de l'outil sur jeu fictif",
+        "Les limites du plan d'essai et les tarifs complets restent à vérifier"
+      ]
     },
     "criteria": [
       "Chaque donnée importante possède une source datée.",
@@ -517,7 +566,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. trois liens fonctionnent clavier/touch, scène stable au redimensionnement"
         }
       ],
-      "end": "Une belle scène ne suffit pas : la page doit rester compréhensible quand JavaScript, WebGL ou les animations sont indisponibles."
+      "end": "Une belle scène ne suffit pas : la page doit rester compréhensible quand JavaScript, WebGL ou les animations sont indisponibles.",
+      "exampleAnswers": [
+        "Présenter trois projets d'une agence fictive sur ordinateur et mobile",
+        "Prisme 3D à rotation horizontale contrôlé à la souris ou au toucher",
+        "Liste HTML des trois projets lorsque WebGL est indisponible",
+        "Textures légères, caméra stable, réduction des animations respectée",
+        "Tester les trois liens au clavier, à 390 px et sans WebGL"
+      ]
     },
     "criteria": [
       "Le parcours est utilisable sans WebGL.",
@@ -583,7 +639,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. demander une information absente de la FAQ : ne pas inventer"
         }
       ],
-      "end": "Ne connectez jamais un compte ou une base avec des droits d’écriture sans contrôle humain et évaluation des risques."
+      "end": "Ne connectez jamais un compte ou une base avec des droits d’écriture sans contrôle humain et évaluation des risques.",
+      "exampleAnswers": [
+        "Expliquer une offre de formation à partir de sa FAQ validée",
+        "FAQ publique datée et page de présentation officielles",
+        "Interdit : inventer le tarif, confirmer une place, envoyer des emails",
+        "Faire relire toute demande contractuelle à un conseiller humain",
+        "Demander le tarif non publié : l'agent doit dire qu'il ne le connaît pas"
+      ]
     },
     "criteria": [
       "L’agent sait reconnaître une information absente.",
@@ -649,7 +712,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. alerte, vérification de l’état, relance manuelle seulement si nécessaire"
         }
       ],
-      "end": "Tester avec des données fictives. Les clés de déduplication doivent être conçues avant d’activer des écritures réelles."
+      "end": "Tester avec des données fictives. Les clés de déduplication doivent être conçues avant d’activer des écritures réelles.",
+      "exampleAnswers": [
+        "Préparer un brouillon de synthèse après une demande fictive",
+        "Identifiant unique DEMANDE-001 provenant du formulaire de test",
+        "Vérifier les champs obligatoires puis créer un brouillon sans envoi",
+        "Si DEMANDE-001 existe déjà, ne pas créer de second brouillon",
+        "Après une erreur 504, contrôler l'état avant de relancer manuellement"
+      ]
     },
     "criteria": [
       "Un double déclenchement ne répète pas l’action.",
@@ -715,7 +785,14 @@ window.STUDIO_PRODUCT_DEPTH = {
           "hint": "Ex. noter préparation + génération + corrections, puis comparer au manuel"
         }
       ],
-      "end": "Mesurez le temps réellement gagné en incluant toutes les corrections. L’IA ne décide pas à votre place."
+      "end": "Mesurez le temps réellement gagné en incluant toutes les corrections. L’IA ne décide pas à votre place.",
+      "exampleAnswers": [
+        "Transformer des notes fictives de réunion en tâches à vérifier",
+        "Notes anonymisées, sans client ni donnée confidentielle",
+        "Séparer décisions confirmées, suggestions et questions ouvertes",
+        "Relire dates et responsables avant d'envoyer le compte rendu",
+        "Chronométrer préparation, génération et corrections, puis comparer au manuel"
+      ]
     },
     "criteria": [
       "Les faits confirmés sont distincts des suggestions.",

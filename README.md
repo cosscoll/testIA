@@ -19,7 +19,7 @@ Documentation : [retour Obscure Pop et pages produits 3D](docs/RETOUR_OBSCURE_PO
 
 ## Ateliers d'essai gratuits — 6 novembre 2026
 
-Les onze offres disposent chacune d'un **atelier public praticable**, non d'un simple texte de présentation : 49 étapes de travail au total, 55 champs de brief, des critères de contrôle qualité et une génération locale d'un canevas texte réutilisable. La fonction d'export `.txt` ne contacte aucun serveur et n'envoie aucune donnée métier à une IA. Le pack Conciergerie présente les intitulés publics de ses 15 procédures et 7 registres pilotes, sans diffuser les documents commerciaux.
+Les onze offres disposent chacune d'un **atelier public praticable**, non d'un simple texte de présentation : 49 étapes de travail au total, 55 champs de brief, des critères de contrôle qualité, des exemples fictifs préremplis et une génération locale d'un canevas texte réutilisable. La fonction d'export `.txt` ne contacte aucun serveur et n'envoie aucune donnée métier à une IA. Le pack Conciergerie présente les intitulés publics de ses 15 procédures et 7 registres pilotes, sans diffuser les documents commerciaux.
 
 Le parcours est **Catalogue → fiche produit cinématique → atelier associé**, avec accès direct depuis le guide de choix et le module sortant du coffre. La bibliothèque compte 37 ressources publiques : 26 sources importées et 11 ateliers originaux créés pour la plateforme. Les supports commerciaux complets, tarifs, inscriptions et livraisons restent à finaliser.
 

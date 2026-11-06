@@ -75,6 +75,7 @@ for(const product of browser.TESTIA_PRODUCTS){
  verify(Boolean(atelier),'Atelier absent : '+product.id);
  verify(Array.isArray(atelier.phases)&&atelier.phases.length>=4,'Progression trop courte : '+product.id);
  verify(atelier.sample.fields.length>=4,'Brief incomplet : '+product.id);
+ verify(atelier.sample.exampleAnswers.length===atelier.sample.fields.length,'Exemple fictif incomplet : '+product.id);
  verify(atelier.criteria.length>=4,'Critères de qualité manquants : '+product.id);
  verify(browser.STUDIO_RESOURCES.some(r=>r.id==='atelier-'+product.id),'Atelier non listé : '+product.id);
 }

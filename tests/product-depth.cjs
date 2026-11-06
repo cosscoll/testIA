@@ -34,7 +34,7 @@ class Element {
  focus(){}
  select(){}
 }
-const ids='depthTitle depthFocus depthPageLink depthSourceLink depthInventory depthForm depthCopy depthDownload depthDemo depthFamily depthStatus depthBefore depthAfter depthExerciseTitle depthExerciseContext depthClosing depthBack depthSteps depthProcedures depthRegisters depthFields depthChecks depthCheckCount depthOutput depthMessage'.split(' ');
+const ids='depthExample depthTitle depthFocus depthPageLink depthSourceLink depthInventory depthForm depthCopy depthDownload depthDemo depthFamily depthStatus depthBefore depthAfter depthExerciseTitle depthExerciseContext depthClosing depthBack depthSteps depthProcedures depthRegisters depthFields depthChecks depthCheckCount depthOutput depthMessage'.split(' ');
 const callbacks={};
 let assertions=0;
 function verify(condition,label){assert.ok(condition,label);assertions++}
@@ -87,7 +87,13 @@ async function main(){
   verify(find('depthDemo').href.startsWith('./'),'Lien externe inattendu : '+product.id);
   verify(find('depthCopy').disabled,'Copie active avant génération : '+product.id);
   verify(find('depthDownload').disabled,'Export actif avant génération : '+product.id);
+  find('depthExample').listeners.click();
+  verify(fields[0].value===info.sample.exampleAnswers[0],'Exemple fictif non chargé : '+product.id);
+  verify(checks.every(box=>!box.checked),'Exemple charge avec des validations acquises : '+product.id);
+  find('depthForm').listeners.submit({preventDefault(){}});
+  verify(find('depthOutput').value.includes(info.sample.exampleAnswers[0]),'Exemple fictif absent du résultat : '+product.id);
   fields[0].value='Essai sans données personnelles';
+  find('depthFields').listeners.input();
   checks[0].checked=true;
   checks[0].listeners.change?.();
   find('depthForm').listeners.submit({preventDefault(){}});

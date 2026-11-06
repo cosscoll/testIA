@@ -25,7 +25,7 @@
   assign('depthFocus','Choisissez un produit du catalogue pour découvrir son atelier.');
   $('depthPageLink').href='./catalogue.html';
   $('depthSourceLink').hidden=true;
-  for(const section of ['depthInventory','depthForm','depthCopy','depthDownload','depthDemo'])$(section).hidden=true;
+  for(const section of ['depthInventory','depthForm','depthExample','depthCopy','depthDownload','depthDemo'])$(section).hidden=true;
   return;
  }
  document.title='Atelier '+product.title+' — Studio IA';
@@ -140,6 +140,16 @@
  };
  fields.addEventListener('input',invalidate);
  checked.addEventListener('change',invalidate);
+ const example=$('depthExample');
+ if(example){
+  example.addEventListener('click',()=>{
+   info.sample.exampleAnswers.forEach((answer,index)=>{$('depthField'+index).value=answer;});
+   boxes.forEach(box=>{box.checked=false;});
+   count();invalidate();
+   status.textContent='Exemple fictif chargé. Adaptez les champs puis construisez votre fiche.';
+   $('depthField0')?.focus();
+  });
+ }
  copy.addEventListener('click',async()=>{
   if(!output.value)return;
   try{
