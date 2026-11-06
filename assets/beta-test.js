@@ -28,6 +28,7 @@ function update(){
  $('beta-copy').disabled=n===0;$('beta-export').disabled=n===0;
  output.value=result();
 }
+form.addEventListener('submit',event=>event.preventDefault());
 form.addEventListener('input',update);
 form.addEventListener('change',update);
 $('beta-copy').addEventListener('click',async()=>{
