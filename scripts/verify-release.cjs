@@ -13,6 +13,7 @@ const tests=[
  'tests/workflow-studio.cjs',
  'tests/visual-studio.cjs',
  'tests/web-builder.cjs',
+ 'tests/storyboard-studio.cjs',
  'tests/product-depth.cjs',
  'tests/vault-offer.cjs',
  'tests/chat-contract.cjs'
