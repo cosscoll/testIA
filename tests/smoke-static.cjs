@@ -62,6 +62,16 @@ verify(exists('univers/outils/assets/workflow-studio.css'),'Styles workflow abse
 const workflowPage=read('univers/outils/outils/atelier-automatisation.html');
 verify(workflowPage.includes('workflow-studio.js'),'Le nouveau moteur n’est pas chargé');
 verify(workflowPage.includes('id="wf-approve"'),'Validation fictive absente de la page');
+verify(exists('univers/outils/outils/atelier-visuels.html'),'Atelier visuel absent');
+verify(exists('univers/outils/assets/visual-studio.js'),'Moteur graphique absent');
+verify(exists('univers/outils/assets/visual-studio.css'),'Styles atelier visuel absents');
+const visuelPage=read('univers/outils/outils/atelier-visuels.html');
+verify(visuelPage.includes('visual-studio.js'),'Moteur visuel non chargé');
+verify(visuelPage.includes('id="vs-preview"'),'Aperçu graphique absent');
+verify(visuelPage.includes('id="vs-export-svg"'),'Export SVG absent');
+verify(visuelPage.includes('id="vs-export-png"'),'Export PNG absent');
+verify(visuelPage.includes('unified-advisor.js'),'Conseiller commun disparu de la nouvelle page');
+verify(read('univers/outils/pack-visuel.html').includes('./outils/atelier-visuels.html'),'Lien atelier absent de la page Banque Visuels');
 verify(read('univers/outils/pack-automatisation.html').includes('./outils/atelier-automatisation.html'),'La page produit ne relie pas l’atelier workflow');
 
 
@@ -85,7 +95,7 @@ for(const product of browser.TESTIA_PRODUCTS){
  verify(exists(resolve('index.html',detail.page)),'Page originale absente : '+product.id);
 }
 vm.runInNewContext(read('assets/resources-data.js'),{window:browser},{timeout:1000});
-verify(browser.STUDIO_RESOURCES.length===38,'La bibliothèque doit présenter 26 ressources importées + 11 ateliers de fiches + 1 atelier workflow');
+verify(browser.STUDIO_RESOURCES.length===39,'La bibliothèque doit présenter 26 ressources importées + 11 ateliers de fiches + 2 ateliers pratiques supplémentaires');
 vm.runInNewContext(read('assets/product-depth-data.js'),{window:browser},{timeout:1000});
 verify(Object.keys(browser.STUDIO_PRODUCT_DEPTH).length===11,'Chaque offre doit avoir un atelier');
 for(const product of browser.TESTIA_PRODUCTS){

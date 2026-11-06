@@ -102,7 +102,7 @@ window.TESTIA_TYPES = {
 window.TESTIA_DEEP = {
   conciergerie: {page:'./univers/procedures/pack-conciergerie.html',pageLabel:'Explorer le pack complet',demo:'./univers/procedures/exemple-procedure.html',demoLabel:'Essayer la procédure P01',secondary:'./univers/procedures/atelier-decisions.html',secondaryLabel:'Tester trois décisions métier'},
   redaction: {page:'./univers/outils/pack-redaction.html',pageLabel:'Explorer la banque Rédaction',demo:'./univers/outils/outils/assistant-messages.html',demoLabel:'Essayer le générateur gratuit'},
-  visuels: {page:'./univers/outils/pack-visuel.html',pageLabel:'Explorer la banque Visuels'},
+  visuels: {page:'./univers/outils/pack-visuel.html',pageLabel:'Explorer la banque Visuels',demo:'./univers/outils/outils/atelier-visuels.html',demoLabel:'Composer une affiche et l’exporter'},
   web: {page:'./univers/outils/pack-sites-web.html',pageLabel:'Explorer la banque Sites web'},
   video: {page:'./univers/outils/pack-video-audio.html',pageLabel:'Explorer la banque Vidéo & audio'},
   automatisation: {page:'./univers/outils/pack-automatisation.html',pageLabel:'Explorer la banque Automatisation',demo:'./univers/outils/outils/atelier-automatisation.html',demoLabel:'Construire et tester un workflow'},

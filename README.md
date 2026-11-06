@@ -106,3 +106,7 @@ Suivi LIV-02 : une amélioration visible est à la fois intégrée à la page pr
 ## LIV-03 — Construire et tester un workflow (06/11/2026)
 
 La [démonstration interactive d’automatisation](univers/outils/outils/atelier-automatisation.html) permet de concevoir des étapes de travail, de tester des cas d'erreur, de simuler une approbation humaine et d'exporter des plans JSON/TXT **sans installer ni activer aucune automatisation**. Le JSON est intentionnellement marqué `enabled:false` et `mode:simulation-only`. La vitrine du produit et le catalogue de ressources pointent désormais vers cette démonstration. Test manuel : `node tests/workflow-studio.cjs`.
+
+## LIV-04A — Banque Création visuelle (06/11/2026)
+
+La [démonstration graphique publique](univers/outils/outils/atelier-visuels.html) crée directement des affiches carrées ou portrait depuis un brief. Trois exemples, trois palettes et trois compositions ; prévisualisation SVG, contrôles de contraste, export SVG, PNG et texte. Aucune API, aucune image externe ni paiement. Le produit complet reste en préparation ; poursuivre ensuite LIV-04B/C/D sur les autres banques. Test manuel : `node tests/visual-studio.cjs`.
