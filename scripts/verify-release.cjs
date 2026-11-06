@@ -8,6 +8,7 @@ const tests=[
  'tests/security-static.cjs',
  'tests/smoke-static.cjs',
  'tests/offer-finder.cjs',
+ 'tests/catalogue-actions.cjs',
  'tests/product-depth.cjs',
  'tests/vault-offer.cjs',
  'tests/chat-contract.cjs'

@@ -18,6 +18,7 @@ const modes=['all','procedures','outils','formations'].map(type=>{const b=new El
 const events={};const document={
  createElement:tag=>new Elem(tag),getElementById:id=>ids[id]||null,
  querySelectorAll:selector=>selector==='[data-filter]'?modes:[],
+ querySelector:()=>null,
  addEventListener:(name,callback)=>events[name]=callback
 };
 const context={window:{...browser,addEventListener(){}},document,location:{search:'',href:'https://example.test/catalogue.html'},history:{replaceState(){}},URL,URLSearchParams,console};

@@ -88,3 +88,9 @@ Un dossier de travail privé a été préparé hors dépôt : quinze procédures
 La page publique du pack ne présente que le statut de ce travail et un lien vers un atelier gratuit. Les fichiers commerciaux DOCX/PDF/CSV ne sont ni committés dans GitHub ni publiés sur Vercel.
 
 Suivi : https://github.com/cosscoll/testIA/issues/2
+
+## Sessions de travail : chaque lot doit être visible en production
+
+Le travail est désormais découpé en lots fonctionnels publiés sur la version test. Une session ne peut être annoncée terminée sans **changement vérifiable sur le site**, commit GitHub identifiable et Vercel synchronisé en état READY. Voir [les lots LIV-01 à LIV-11](docs/SESSIONS_LIVRAISONS_VISIBLES_2026-11-06.md) et [la feuille de route GitHub](https://github.com/cosscoll/testIA/issues/9).
+
+**LIV-01** : les onze cartes du catalogue proposent maintenant un bouton d'accès direct à l'atelier gratuit du produit, distinct de la fiche cinéma clé/coffre ; conservation des filtres et de la recherche. Test manuel dédié : `node tests/catalogue-actions.cjs`. Les ateliers restent des exemples publics et aucun achat n'est ouvert.
