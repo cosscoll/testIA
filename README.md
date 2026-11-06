@@ -119,8 +119,17 @@ Le [nouvel atelier Sites web & prototypes](univers/outils/outils/atelier-sites-w
 
 La [démo Vidéo & audio](univers/outils/outils/atelier-video.html) permet de préparer les scènes d’un court récit, calculer les timecodes, préparer voix off et indications sonores, parcourir les scènes, exporter plan CSV, sous-titres SRT, script TXT et projet JSON réimportable. **Aucun fichier vidéo/audio ou musique n’est produit**, aucune API externe ni dépense. Tests locaux : `node tests/storyboard-studio.cjs`.
 
-**Statut de publication LIV-04C (06/11/2026) :** le code et la recette sont prêts, mais Vercel retourne `402 / api-deployments-free-per-day` (100 déploiements API quotidiens). La page storyboard **n'est pas confirmée en production**. Le site public sert encore un ancien commit. Aucun achat ni réactivation d’automatisation. Les futures sessions devront privilégier un **seul commit GitHub final après recette**, puis contrôle SHA Vercel READY.
+**Historique de publication LIV-04C :** un quota Vercel a temporairement bloqué le déploiement le 06/11. Un déploiement manuel ultérieur a synchronisé les ateliers Vidéo et Recherche sur le commit `d5359a9`. Toute mise à jour suivante reste soumise à une vérification du SHA GitHub/production READY ; ne jamais supposer qu'un push est publié.
 
 ## LIV-04D — Matrice manuelle de sources (06/11/2026)
 
-Le nouvel [atelier Recherche & analyse](univers/outils/outils/atelier-recherche.html) permet de comparer 2–4 options, saisir jusqu'à 12 sources, visualiser les contradictions et exporter un document Markdown, des données CSV et un projet JSON réimportable. Il ne consulte aucune source et ne prétend jamais vérifier les faits automatiquement. Liens intégrés au catalogue, aux pages de la banque et aux ressources. **Déploiement Vercel à confirmer**, quota journalier atteint lors de LIV-04C. Recette manuelle : `node tests/research-studio.cjs`.
+Le nouvel [atelier Recherche & analyse](univers/outils/outils/atelier-recherche.html) permet de comparer 2–4 options, saisir jusqu'à 12 sources, visualiser les contradictions et exporter un document Markdown, des données CSV et un projet JSON réimportable. Il ne consulte aucune source et ne prétend jamais vérifier les faits automatiquement. Liens intégrés au catalogue, aux pages de la banque et aux ressources. **Code intégré à la version de production vérifiée au SHA `d5359a9`** ; les tests navigateur réels restent nécessaires. Recette manuelle : `node tests/research-studio.cjs`.
+
+## Pré-bêta fermée — questionnaire intégré (06/11/2026)
+
+[Participer au test utilisateur](beta.html) : cinq missions depuis l'accueil jusqu'à la clé/coffre et au guide ; retour qualitatif, indicateurs de blocage, copie et export local TXT. La page n'envoie aucune réponse à un serveur. Les participants remettent volontairement leurs comptes rendus à l'organisateur par un canal privé convenu.
+La page [Contact](contact.html) ne soumet plus les messages à une Issue GitHub publique : elle prépare uniquement un brouillon local.
+
+**Recette ciblée :** `node tests/beta-readiness.cjs` (ajouté à `node scripts/verify-release.cjs`).
+**Recette pré-bêta :** [checklist détaillée](docs/RECETTE_PRE_BETA_2026-11-06.md).
+Audit statique du 06/11 : 51 pages HTML et 1 220 références internes sans lien manquant, 50 scripts classiques syntaxiquement valides, 41 fichiers clés inspectés contre des signatures connues de secrets. Ces contrôles **ne remplacent pas** un essai en vrai navigateur, la recette globale Node, le contrôle HTTP des exclusions de publication ni l'audit de l'historique Git.
