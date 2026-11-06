@@ -47,6 +47,38 @@
     if (!element) return;
     element.replaceChildren(...list.map(buildCard));
   }
+  // Deux liens distincts au catalogue : un véritable aperçu d'offre et un atelier public.
+  // Jamais d'ancre imbriquée : clavier et lecteur d'écran peuvent choisir chaque action.
+  function buildCatalogueCard(product) {
+    const item = document.createElement('article');
+    item.className = 'catalogue-product';
+    item.dataset.type = product.type;
+    item.dataset.productId = product.id;
+
+    const presentation = buildCard(product);
+    presentation.classList.add('catalogue-product__presentation');
+    presentation.setAttribute('aria-label', 'Découvrir ' + product.title + ' : présentation et parcours clé/coffre en 3D');
+
+    const actions = document.createElement('div');
+    actions.className = 'catalogue-product__actions';
+    const workshop = document.createElement('a');
+    workshop.className = 'catalogue-product__workshop';
+    workshop.href = './atelier-produit.html?id=' + encodeURIComponent(product.id);
+    workshop.textContent = 'Essayer l’atelier gratuit';
+    workshop.setAttribute('aria-label', 'Essayer gratuitement l’atelier : ' + product.title);
+
+    const arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '↗';
+    workshop.appendChild(arrow);
+    actions.appendChild(workshop);
+    item.append(presentation,actions);
+    return item;
+  }
+  function fillCatalogueCards(element,list) {
+    if (!element) return;
+    element.replaceChildren(...list.map(buildCatalogueCard));
+  }
   function initMobileNav() {
     // L'accueil réutilise le contrôleur de Banque Outils IA (kinetic-hero.js).
     if (document.getElementById('kineticStage')) return;
@@ -100,7 +132,7 @@
         const text = [p.title,p.short,p.summary,p.audience,p.detail,(families[p.type] || {}).label].join(' ').toLocaleLowerCase('fr');
         return matchType && text.includes(query);
       });
-      fillCards(grid,filtered);
+      fillCatalogueCards(grid,filtered);
       empty.hidden = filtered.length !== 0;
       count.textContent = filtered.length + (filtered.length > 1 ? ' offres' : ' offre');
       buttons.forEach(b => b.setAttribute('aria-pressed',String(b.dataset.filter === filter)));

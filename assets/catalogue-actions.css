@@ -1,0 +1,48 @@
+/* Studio IA — action d'essai directe sur les offres. Charte CONTROL orange/crème. */
+/* Le lien principal reste une véritable fiche cliquable ; le lien d'atelier est indépendant. */
+body.obscure-pop .catalogue-product{
+  min-width:0;display:flex;flex-direction:column;background:#fff;
+  border-radius:18px;overflow:hidden;border:1px solid #e8dfd9;
+  box-shadow:0 9px 28px #a3614314;
+  transition:box-shadow .22s ease,transform .22s ease,border-color .22s ease;
+}
+body.obscure-pop .catalogue-product:hover,
+body.obscure-pop .catalogue-product:focus-within{
+  border-color:#e8b39b;box-shadow:0 14px 32px #a3614324;transform:translateY(-3px);
+}
+body.obscure-pop .catalogue-product .product-card{
+  flex:1 1 auto;min-height:295px;display:flex;flex-direction:column;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  transform:none!important;padding-bottom:20px;
+}
+body.obscure-pop .catalogue-product .product-card:hover,
+body.obscure-pop .catalogue-product .product-card:focus-visible{
+  transform:none!important;
+}
+body.obscure-pop .catalogue-product__actions{
+  background:#fffaf6;border-top:1px solid #ecded5;padding:12px 18px;
+}
+body.obscure-pop .catalogue-product__workshop{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:48px;border:1px solid #edc0a9;border-radius:12px;
+  background:#fff0e5;color:#813d29;font:700 12px/1.45 Poppins,system-ui,sans-serif;
+  text-decoration:none;padding:12px 14px;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+body.obscure-pop .catalogue-product__workshop:hover{
+  color:#5c291b;background:#ffe2cf;border-color:#eb9974;
+}
+body.obscure-pop .catalogue-product__workshop:focus-visible{
+  outline:3px solid #b35132;outline-offset:3px;
+}
+body.obscure-pop .catalogue-product__workshop span{
+  font-size:19px;line-height:1;font-weight:500;
+}
+@media(max-width:740px){
+  body.obscure-pop .catalogue-product .product-card{min-height:260px;padding:21px}
+  body.obscure-pop .catalogue-product__actions{padding:10px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.obscure-pop .catalogue-product,
+  body.obscure-pop .catalogue-product__workshop{transition:none;transform:none!important}
+}

@@ -82,6 +82,8 @@ for(const product of browser.TESTIA_PRODUCTS){
 verify(read('produit.html').includes('id="vaultOfferWorkshop"'),'Lien atelier coffre absent');
 verify(read('assets/product-cinema.js').includes('atelier-produit.html?id='),'Accès atelier depuis les scènes absent');
 verify(read('assets/offer-finder.js').includes('atelier-produit.html?id='),'Accès atelier depuis le guide de choix absent');
+verify(read('catalogue.html').includes('assets/catalogue-actions.css'),'Style du double accès catalogue absent');
+verify(read('assets/site.js').includes('fillCatalogueCards(grid,filtered)'),'L’accès direct aux ateliers manque dans les cartes catalogue');
 for(const resource of browser.STUDIO_RESOURCES){
  verify(exists(resolve('index.html',resource.url)),'Ressource introuvable : '+resource.id);
 }
