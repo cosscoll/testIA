@@ -1,0 +1,91 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><meta name="theme-color" content="#FFF5EE">
+<meta name="description" content="Atelier storyboard gratuit : scènes, durées, voix off, sous-titres SRT, plan de tournage CSV, script TXT et projet JSON réimportable. Sans génération vidéo ni API.">
+<title>Atelier Storyboard vidéo &amp; audio — Studio IA</title>
+<link rel="stylesheet" href="../../../assets/import-shell.css">
+<link rel="stylesheet" href="../assets/obscure-pop.css">
+<link rel="stylesheet" href="../assets/journey-nav.css">
+<link rel="stylesheet" href="../../../assets/unified-advisor.css">
+<link rel="stylesheet" href="../../../assets/charte-univers-03.css">
+<link rel="stylesheet" href="../assets/storyboard-studio.css">
+<script defer src="../../../assets/data.js"></script>
+<script defer src="../assets/storyboard-studio.js"></script>
+<script defer src="../../../assets/unified-advisor.js"></script>
+</head><body class="obscure-pop storyboard-page">
+<div class="ti-shell" role="navigation" aria-label="Navigation Studio IA">
+<a class="ti-brand" href="../../../index.html">studio<b>/</b>IA</a>
+<nav class="ti-links" aria-label="Navigation générale"><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a></nav>
+<a class="ti-cta" href="../pack-video-audio.html">VOIR LA BANQUE ↗</a>
+<details class="ti-mobile"><summary>MENU ☰</summary><div><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a><a href="../pack-video-audio.html">Vidéo &amp; audio</a></div></details>
+</div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<main id="contenu" class="sb-main"><div class="sb-shell" id="storyboardStudio">
+<a class="sb-back" href="../pack-video-audio.html">← Revenir à la banque Vidéo &amp; audio</a>
+<header class="sb-hero"><p class="sb-kicker">Studio IA / Atelier gratuit / LIV-04C</p>
+<h1>De l’idée au plan.<br><em>Scène après scène.</em></h1>
+<p class="sb-lead">Écrivez votre storyboard, choisissez la durée de chaque scène et préparez la voix off. Parcourez ensuite les plans et récupérez les documents pour le tournage et le montage.</p>
+<p class="sb-disclaimer"><strong>Un outil de préparation, pas de génération vidéo.</strong> Aucun MP4, piste audio ou musique n’est produit. L’aperçu représente des cartons de storyboard, sans images externes. Aucun contenu n’est transmis à un serveur.</p>
+</header>
+<div class="sb-examples" role="group" aria-label="Exemples de storyboards">
+<strong>Point de départ :</strong>
+<button type="button" class="sb-example" data-sb-preset="activite" aria-pressed="true">Présenter une activité</button>
+<button type="button" class="sb-example" data-sb-preset="evenement" aria-pressed="false">Annoncer un atelier</button>
+<button type="button" class="sb-example" data-sb-preset="service" aria-pressed="false">Expliquer un service</button>
+</div>
+<div class="sb-grid">
+<section class="sb-panel" aria-labelledby="sb-editor-title">
+<div class="sb-section-head"><span>01</span><div><h2 id="sb-editor-title">Composer votre récit</h2><p>Modifiez, ajoutez, retirez ou réorganisez les scènes. Maximum 8 scènes et 90 secondes.</p></div></div>
+<div class="sb-base-fields">
+<label class="sb-field"><span>Nom du projet</span><input id="sb-title" value="Présenter une activité" maxlength="90"></label>
+<label class="sb-field"><span>Public visé</span><input id="sb-audience" value="Personnes qui découvrent un artisan local" maxlength="150"></label>
+<label class="sb-field"><span>Format final envisagé</span><select id="sb-format">
+<option value="vertical">Vertical 9:16 · Réseaux sociaux</option>
+<option value="horizontal">Horizontal 16:9 · Site ou présentation</option>
+<option value="square">Carré 1:1 · Publication</option>
+</select></label>
+</div>
+<div class="sb-divider"></div>
+<div class="sb-progress"><div><h3>Liste de plans</h3><p id="sb-count">4 scènes</p></div><strong id="sb-duration">30 s / 90 s maximum</strong></div>
+<div id="sb-editor-scenes" class="sb-editor-scenes" aria-label="Scènes modifiables"></div>
+<button id="sb-add-scene" class="sb-button sb-button--add" type="button">+ Ajouter une scène</button>
+<ul class="sb-errors" id="sb-errors" aria-label="Données à corriger" role="status" hidden></ul>
+</section>
+<aside class="sb-panel sb-preview-panel" aria-labelledby="sb-preview-title">
+<div class="sb-section-head"><span>02</span><div><h2 id="sb-preview-title">Feuilleter le storyboard</h2><p>Prévisualisez les textes, descriptions de plans et indications de voix. Aucun média n’est joué.</p></div></div>
+<div class="sb-stage-frame" id="sb-stage-frame" data-format="vertical">
+<div class="sb-stage" id="sb-stage" aria-label="Carton du storyboard"></div>
+</div>
+<div class="sb-scene-meta"><strong id="sb-scene-time">0–5 s</strong><span>Carton de prévisualisation, sans vidéo</span></div>
+<div class="sb-stage-audio">
+<div><span>Voix off prévue</span><p id="sb-scene-voice">—</p></div>
+<div><span>Indications audio</span><p id="sb-scene-audio">—</p></div>
+</div>
+<div class="sb-stage-controls"><button id="sb-prev" type="button" class="sb-button">← Scène précédente</button><button id="sb-next" type="button" class="sb-button">Scène suivante →</button></div>
+<h3 class="sb-timeline-title">Séquence des plans</h3>
+<div id="sb-scenes-nav" class="sb-timeline" role="group" aria-label="Choisir un plan à visualiser"></div>
+<div class="sb-checkpanel"><div class="sb-checkhead"><h3>Points de vérification</h3><span id="sb-quality">—</span></div>
+<ul id="sb-checks" aria-label="Contrôles de qualité du storyboard"></ul>
+<p>Le débit de voix et la longueur du texte sont estimés. Vérifiez aussi le cadrage, le son, la lisibilité sur téléphone et les droits à l’image et à la voix avant toute diffusion.</p></div>
+</aside>
+</div>
+<section class="sb-export sb-panel" aria-labelledby="sb-export-title">
+<div class="sb-section-head"><span>03</span><div><h2 id="sb-export-title">Passer du storyboard au tournage</h2><p>Exportez les documents de préparation. Le fichier JSON permet de reprendre votre projet dans cet atelier.</p></div></div>
+<div class="sb-export-grid">
+<div><h3>Découpage &amp; montage</h3>
+<p><strong>CSV :</strong> liste des plans, timecodes, voix off et consignes audio. <strong>SRT :</strong> sous-titres chronométrés d’après le texte de voix off.</p>
+<div class="sb-actions"><button id="sb-export-csv" class="sb-button sb-button--primary" type="button">Exporter les plans CSV</button><button id="sb-export-srt" class="sb-button" type="button">Exporter les sous-titres SRT</button></div>
+</div>
+<div><h3>Script &amp; reprise de travail</h3>
+<p><strong>TXT :</strong> script avec plans et vérifications. <strong>JSON :</strong> version structurée que vous pourrez recharger ici sans créer de compte.</p>
+<div class="sb-actions"><button id="sb-export-txt" class="sb-button" type="button">Télécharger le script TXT</button><button id="sb-export-json" class="sb-button" type="button">Enregistrer le storyboard JSON</button></div>
+<label class="sb-import"><span>Réimporter un storyboard JSON créé ici</span><input id="sb-import" type="file" accept=".json,application/json"></label>
+</div></div>
+<p id="sb-status" class="sb-status" role="status" aria-live="polite"></p>
+<p class="sb-footnote">Les fichiers ne constituent pas un montage terminé. Le SRT est une base à recaler sur la voix enregistrée. Aucun média ni droit musical n’est inclus. Les exports ne sont pas publiés et ne déclenchent aucune automatisation.</p>
+</section>
+<p class="sb-footer"><a href="../pack-video-audio.html">Découvrir la banque Vidéo &amp; audio</a> · <a href="../../../catalogue.html?type=outils">Comparer les six banques</a></p>
+<noscript><p>Activez JavaScript pour utiliser l’atelier. <a href="../pack-video-audio.html">Retour à la collection</a>.</p></noscript>
+</div></main>
+<footer class="ti-footer"><a href="../../../index.html">studio/IA</a><small>STORYBOARD LOCAL · AUCUNE VIDÉO NI MUSIQUE GÉNÉRÉE</small><div class="ti-foot-links"><a href="../../../catalogue.html?type=outils">Les banques</a><a href="../../../contact.html">Contact</a></div></footer>
+</body></html>
