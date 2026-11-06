@@ -23,7 +23,7 @@ const normalize=raw=>{
  return out;
 };
 const escapeHtml=x=>String(x??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-const emailValid=x=>/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(trim(x))&&trim(x).length<=160&&!trim(x).includes('..');
+const emailValid=x=>/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(trim(x))&&trim(x).length<=160&&!trim(x).includes('..')&&!/@(?:example\.(?:com|org|net)|[^@]+\.(?:test|invalid))$/i.test(trim(x));
 const lin=x=>{const r=x/255;return r<=.04045?r/12.92:Math.pow((r+.055)/1.055,2.4)};
 const luminance=x=>{const c=[1,3,5].map(i=>lin(parseInt(x.slice(i,i+2),16)));return c[0]*.2126+c[1]*.7152+c[2]*.0722};
 const contrast=(x,y)=>{const a=luminance(x),b=luminance(y);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
@@ -162,9 +162,21 @@ function preset(id){
  document.querySelectorAll('[data-web-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.webPreset===id)));
  render();$('wb-status').textContent='Exemple chargé. Modifiez les textes et comparez les versions.';
 }
+function resizePreview(){
+ const holder=$('wb-device');
+ const width=mode==='mobile'?390:1100;
+ const height=mode==='mobile'?810:840;
+ const available=holder.clientWidth||560;
+ const scale=Math.min(1,Math.max(.2,available/width));
+ iframe.style.width=width+'px';
+ iframe.style.height=height+'px';
+ iframe.style.transform='scale('+scale+')';
+ holder.style.height=Math.ceil(height*scale)+'px';
+}
 function view(value){
  mode=value==='mobile'?'mobile':'desktop';
  $('wb-device').dataset.device=mode;
+ resizePreview();
  document.querySelectorAll('[data-web-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.webDevice===mode)));
  $('wb-status').textContent=mode==='mobile'?'Aperçu mobile à largeur réduite.':'Aperçu ordinateur.';
 }
@@ -180,6 +192,7 @@ controls.forEach(field=>['input','change'].forEach(event=>$('wb-'+field).addEven
 })));
 document.querySelectorAll('[data-web-preset]').forEach(b=>b.addEventListener('click',()=>preset(b.dataset.webPreset)));
 document.querySelectorAll('[data-web-device]').forEach(b=>b.addEventListener('click',()=>view(b.dataset.webDevice)));
+ if(typeof window!=='undefined'&&typeof window.addEventListener==='function')window.addEventListener('resize',resizePreview);
 $('wb-download-html').addEventListener('click',()=>{
  const v=render();if(!v.headline.trim())return;
  download('studio-ia-site-demo.html',build(v),'text/html');
