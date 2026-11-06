@@ -118,3 +118,5 @@ Le [nouvel atelier Sites web & prototypes](univers/outils/outils/atelier-sites-w
 ## LIV-04C — Atelier storyboard (06/11/2026)
 
 La [démo Vidéo & audio](univers/outils/outils/atelier-video.html) permet de préparer les scènes d’un court récit, calculer les timecodes, préparer voix off et indications sonores, parcourir les scènes, exporter plan CSV, sous-titres SRT, script TXT et projet JSON réimportable. **Aucun fichier vidéo/audio ou musique n’est produit**, aucune API externe ni dépense. Tests locaux : `node tests/storyboard-studio.cjs`.
+
+**Statut de publication LIV-04C (06/11/2026) :** le code et la recette sont prêts, mais Vercel retourne `402 / api-deployments-free-per-day` (100 déploiements API quotidiens). La page storyboard **n'est pas confirmée en production**. Le site public sert encore un ancien commit. Aucun achat ni réactivation d’automatisation. Les futures sessions devront privilégier un **seul commit GitHub final après recette**, puis contrôle SHA Vercel READY.

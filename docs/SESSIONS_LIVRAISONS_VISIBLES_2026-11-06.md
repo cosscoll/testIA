@@ -24,7 +24,7 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 | LIV-01 | #3 | Accès simple et direct à l'essai des 11 offres | Catalogue : bouton **Essayer l'atelier gratuit** indépendant sur chaque offre, utilisable après filtres et recherche. Publié en premier. |
 | LIV-02 | #3 | Banque Rédaction pratique | **LIVRÉ :** 4 formats (e-mail, relance, publication et texte web), 3 exemples, 3 tons, 5 repères de relecture, édition, copie, export .txt et prompt IA facultatif. [Ouvrir l’atelier](../univers/outils/outils/assistant-messages.html). |
 | LIV-03 | #3 | Banque Automatisation pratique | **LIVRÉ :** 3 scénarios métiers, étapes personnalisables, quatre simulations (complet, incomplet, doublon, autorisation), validation humaine fictive et exports JSON désactivé + TXT. [Ouvrir l’atelier](../univers/outils/outils/atelier-automatisation.html). Aucune automatisation réelle. |
-| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **A livré :** [Atelier Visuels](../univers/outils/outils/atelier-visuels.html) ; **B livré :** [constructeur web](../univers/outils/outils/atelier-sites-web.html) ; **C livré :** [storyboard Vidéo & audio](../univers/outils/outils/atelier-video.html) avec scènes éditables et exports CSV/SRT/TXT/JSON. **D restant :** Recherche & analyse. |
+| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **A livré :** [Atelier Visuels](../univers/outils/outils/atelier-visuels.html) ; **B livré :** [constructeur web](../univers/outils/outils/atelier-sites-web.html) ; **C développé et testé sur GitHub, publication bloquée :** [storyboard Vidéo & audio](../univers/outils/outils/atelier-video.html) avec scènes éditables et exports CSV/SRT/TXT/JSON. Vercel : limite gratuite 100 déploiements API/jour (HTTP 402), SHA production non synchronisé. **D restant :** Recherche & analyse. |
 | LIV-05 | #4 | Formation Sites 3D + Agents IA | Une vraie leçon publique par formation, avec exercice, corrigé/critères et fichiers non commerciaux. |
 | LIV-06 | #4 | Formation Automatiser + IA au quotidien | Deux nouvelles leçons interactives complètes, évaluation simple et liens depuis les pages formation. |
 | LIV-07 | #2 | Démontrer le pack Conciergerie v0.2 sans dévoiler le pack privé | Démonstration réelle d'un registre fictif de rotation, contrôles, export CSV d'essai, lien depuis la page Conciergerie. |
@@ -94,3 +94,13 @@ Contrôles : `node tests/catalogue-actions.cjs` puis `node scripts/verify-releas
 - Aucun fichier vidéo ou audio généré, aucune musique, aucun média tiers, aucune tâche périodique ou API utilisée. Contenu payant complet toujours privé et en préparation.
 - Test manuel : `node tests/storyboard-studio.cjs` ; intégré à `scripts/verify-release.cjs`. Vérifier le commit GitHub = Vercel production READY avant déclaration de publication.
 - LIV-04D reste à créer : banque Recherche & analyse.
+
+## Incident de publication — LIV-04C (6 novembre 2026)
+
+- Code et tests présents sur `cosscoll/testIA`, branche `main`. **85 vérifications de scénario réussies** en JavaScript/DOM simulé.
+- **Non livré sur le domaine Vercel** à ce stade : production au SHA `ef59a1895851cd21bc3cce44997d9e3f9ecf686e`, branche GitHub au SHA `8d9f0d77be9760c817b46206cf853ed32926e526` lors du contrôle.
+- Tentative de publication explicite via Vercel : erreur `402 payment_required`, code `api-deployments-free-per-day`, limite des 100 déploiements/jour atteinte. Aucun paiement, aucun changement d'offre.
+- L'environnement local n'a pas de CLI Vercel et ne peut pas joindre GitHub par réseau pour réaliser une solution de contournement autorisée.
+- **Aucune session ne doit être déclarée publiée tant que le SHA de production n'est pas le dernier SHA GitHub en état READY.**
+- À la prochaine publication autorisée, déployer une seule version consolidée et vérifier le lien direct ; conserver le site existant et les trois dépôts d'origine inchangés.
+- Pour limiter l'épuisement du quota : **préparer, tester et rassembler les fichiers avant de pousser ; un commit atomique par session en priorité**, au lieu de pousser chaque composant au fur et à mesure. Pas de tâches automatiques ou périodiques.
