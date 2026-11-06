@@ -106,7 +106,7 @@ window.TESTIA_DEEP = {
   web: {page:'./univers/outils/pack-sites-web.html',pageLabel:'Explorer la banque Sites web',demo:'./univers/outils/outils/atelier-sites-web.html',demoLabel:'Construire une page web en direct'},
   video: {page:'./univers/outils/pack-video-audio.html',pageLabel:'Explorer la banque Vidéo & audio',demo:'./univers/outils/outils/atelier-video.html',demoLabel:'Créer un storyboard exportable'},
   automatisation: {page:'./univers/outils/pack-automatisation.html',pageLabel:'Explorer la banque Automatisation',demo:'./univers/outils/outils/atelier-automatisation.html',demoLabel:'Construire et tester un workflow'},
-  analyse: {page:'./univers/outils/pack-recherche-analyse.html',pageLabel:'Explorer la banque Recherche & analyse'},
+  analyse: {page:'./univers/outils/pack-recherche-analyse.html',pageLabel:'Explorer la banque Recherche & analyse',demo:'./univers/outils/outils/atelier-recherche.html',demoLabel:'Comparer et documenter mes sources'},
   'formation-3d': {page:'./univers/formations/formations/sites-web-3d.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/brief-site-3d.html',demoLabel:'Tester le brief 3D'},
   'formation-agents': {page:'./univers/formations/formations/agents-personnalises.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/agent-readiness.html',demoLabel:'Tester mon idée d’agent'},
   'formation-auto': {page:'./univers/formations/formations/automatiser-tache.html',pageLabel:'Voir le programme de formation',demo:'./univers/formations/ressources/incident-lab.html',demoLabel:'Essayer Incident Lab'},

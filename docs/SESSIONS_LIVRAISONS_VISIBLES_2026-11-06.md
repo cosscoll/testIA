@@ -24,7 +24,7 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 | LIV-01 | #3 | Accès simple et direct à l'essai des 11 offres | Catalogue : bouton **Essayer l'atelier gratuit** indépendant sur chaque offre, utilisable après filtres et recherche. Publié en premier. |
 | LIV-02 | #3 | Banque Rédaction pratique | **LIVRÉ :** 4 formats (e-mail, relance, publication et texte web), 3 exemples, 3 tons, 5 repères de relecture, édition, copie, export .txt et prompt IA facultatif. [Ouvrir l’atelier](../univers/outils/outils/assistant-messages.html). |
 | LIV-03 | #3 | Banque Automatisation pratique | **LIVRÉ :** 3 scénarios métiers, étapes personnalisables, quatre simulations (complet, incomplet, doublon, autorisation), validation humaine fictive et exports JSON désactivé + TXT. [Ouvrir l’atelier](../univers/outils/outils/atelier-automatisation.html). Aucune automatisation réelle. |
-| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **A livré :** [Atelier Visuels](../univers/outils/outils/atelier-visuels.html) ; **B livré :** [constructeur web](../univers/outils/outils/atelier-sites-web.html) ; **C développé et testé sur GitHub, publication bloquée :** [storyboard Vidéo & audio](../univers/outils/outils/atelier-video.html) avec scènes éditables et exports CSV/SRT/TXT/JSON. Vercel : limite gratuite 100 déploiements API/jour (HTTP 402), SHA production non synchronisé. **D restant :** Recherche & analyse. |
+| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **A livré :** [Atelier Visuels](../univers/outils/outils/atelier-visuels.html) ; **B livré :** [constructeur web](../univers/outils/outils/atelier-sites-web.html) ; **C développé et testé sur GitHub, publication bloquée :** [storyboard Vidéo & audio](../univers/outils/outils/atelier-video.html) avec scènes éditables et exports CSV/SRT/TXT/JSON. Vercel : limite gratuite 100 déploiements API/jour (HTTP 402), SHA production non synchronisé. **D développé et testé dans GitHub, publication Vercel à confirmer :** [matrice Recherche & analyse](../univers/outils/outils/atelier-recherche.html), sources contradictoires et synthèses MD/CSV/JSON. |
 | LIV-05 | #4 | Formation Sites 3D + Agents IA | Une vraie leçon publique par formation, avec exercice, corrigé/critères et fichiers non commerciaux. |
 | LIV-06 | #4 | Formation Automatiser + IA au quotidien | Deux nouvelles leçons interactives complètes, évaluation simple et liens depuis les pages formation. |
 | LIV-07 | #2 | Démontrer le pack Conciergerie v0.2 sans dévoiler le pack privé | Démonstration réelle d'un registre fictif de rotation, contrôles, export CSV d'essai, lien depuis la page Conciergerie. |
@@ -104,3 +104,13 @@ Contrôles : `node tests/catalogue-actions.cjs` puis `node scripts/verify-releas
 - **Aucune session ne doit être déclarée publiée tant que le SHA de production n'est pas le dernier SHA GitHub en état READY.**
 - À la prochaine publication autorisée, déployer une seule version consolidée et vérifier le lien direct ; conserver le site existant et les trois dépôts d'origine inchangés.
 - Pour limiter l'épuisement du quota : **préparer, tester et rassembler les fichiers avant de pousser ; un commit atomique par session en priorité**, au lieu de pousser chaque composant au fur et à mesure. Pas de tâches automatiques ou périodiques.
+
+## Bilan LIV-04D — Matrice Recherche & analyse (06/11/2026)
+
+- **Page cible (après déploiement) :** https://testia-unifie.vercel.app/univers/outils/outils/atelier-recherche.html
+- Deux à quatre options, jusqu’à douze observations modifiables ; trois jeux d’exemples explicitement fictifs ; arguments favorables/contraires/contexte, dates et URL facultatives, déclaration de consultation.
+- Synthèse Markdown, CSV neutralisant les formules, JSON exportable et réimportable. Six contrôles de présence, aucun gagnant calculé.
+- Aucune source consultée ni vérifiée automatiquement, aucun compte externe ou API connecté. Ce prototype ne doit pas être décrit comme moteur de recherche ou comparateur de vérité.
+- Les liens vers l’atelier sont préparés sur les pages produit 3D, la vitrine Recherche & analyse et la bibliothèque (42 ressources).
+- Recette ciblée : `tests/research-studio.cjs` ; inclus dans le lanceur manuel `scripts/verify-release.cjs`.
+- **Publication Vercel non confirmée tant que `main` n’est pas le SHA Vercel production READY.** Le quota gratuit a bloqué LIV-04C ; aucune facturation ne doit être lancée pour forcer un déploiement.

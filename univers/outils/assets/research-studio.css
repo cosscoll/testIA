@@ -1,0 +1,78 @@
+/* LIV-04D : atelier Recherche & analyse — charte orange et crème inchangée. */
+body.research-page{background:#fff5ee!important;color:#111827!important;font-family:Poppins,Arial,sans-serif}
+.research-page .ra-main{background:radial-gradient(ellipse at 88% 3%,#ffdcc188,transparent 42%),#fff5ee!important;color:#111827;padding:clamp(30px,5vw,70px) 16px 90px}
+.research-page .ra-shell{max-width:1360px;margin:0 auto}
+.research-page .ra-back{display:inline-flex;margin:0 0 28px;color:#93472f!important;font:650 12px Poppins,Arial,sans-serif;text-underline-offset:4px}
+.research-page .ra-kicker{font:700 11px Poppins,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9a5135}
+.research-page h1{font:800 clamp(41px,6vw,87px)/1.04 Poppins,Arial,sans-serif;letter-spacing:-.068em;color:#111827;margin:12px 0 21px}
+.research-page h1 em{font-style:normal;color:#c25a38}
+.research-page .ra-lead{max-width:900px;font:450 clamp(15px,1.65vw,19px)/1.7 Poppins,Arial,sans-serif;color:#4f5a66}
+.research-page .ra-note{max-width:1050px;font:400 12px/1.7 Poppins,Arial,sans-serif;color:#676268;margin:18px 0 28px}
+.research-page .ra-note strong{color:#8b432c}
+.research-page .ra-examples{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:25px 0 28px}
+.research-page .ra-examples strong{font-size:12px;color:#344153;margin-right:7px}
+.research-page .ra-example{border-radius:999px;border:1px solid #e4c8b7;background:#fff;color:#854128;min-height:43px;padding:11px 15px;font:650 12px Poppins,Arial,sans-serif;cursor:pointer}
+.research-page .ra-example[aria-pressed=true],.research-page .ra-example:hover{background:#ffe6d6;border-color:#df8d62}
+.research-page .ra-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:20px;align-items:start}
+.research-page .ra-panel{background:#fffcf9;border:1px solid #e7d9ce;border-radius:19px;padding:clamp(19px,2.6vw,31px);box-shadow:0 12px 30px #72544011;min-width:0}
+.research-page .ra-results-panel{position:sticky;top:96px}
+.research-page .ra-panel-heading{display:flex;align-items:flex-start;gap:14px;margin:0 0 20px}
+.research-page .ra-panel-heading>span{flex:0 0 35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#ffeadc;border:1px solid #e9bda4;color:#9d4d2c;font:750 12px Poppins,Arial,sans-serif}
+.research-page .ra-panel-heading h2{font:750 clamp(22px,2.35vw,30px)/1.2 Poppins,Arial,sans-serif;letter-spacing:-.046em;color:#111827;margin:0 0 8px}
+.research-page .ra-panel-heading p{font:450 12px/1.65 Poppins,Arial,sans-serif;color:#66707b;margin:0}
+.research-page .ra-field{display:grid;gap:7px;min-width:0}
+.research-page .ra-field span{font:650 12px Poppins,Arial,sans-serif;color:#293746}
+.research-page .ra-field :is(input,select,textarea){box-sizing:border-box;width:100%;min-width:0;max-width:100%;background:#fff!important;color:#111827!important;border:1px solid #d7cbc4;border-radius:11px;padding:12px 13px;font:450 13px/1.65 Poppins,Arial,sans-serif}
+.research-page .ra-field textarea{resize:vertical;min-height:76px}
+.research-page :is(input,select,textarea,button,a):focus-visible{outline:3px solid #b4512f!important;outline-offset:3px!important}
+.research-page .ra-inline-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 13px}
+.research-page .ra-inline-heading h3{font:750 16px Poppins,Arial,sans-serif;color:#203041;margin:0}
+.research-page .ra-inline-heading span{font:650 12px Poppins,Arial,sans-serif;color:#956044}
+.research-page .ra-button,.research-page .ra-remove{min-height:44px;border:1px solid #e3b79e;border-radius:11px;background:#fff3eb;color:#7b402d;padding:11px 15px;font:700 12px Poppins,Arial,sans-serif;cursor:pointer}
+.research-page .ra-button--primary{background:#ff6a3d!important;color:#111827!important;border-color:#ff6a3d!important}
+.research-page .ra-button:hover:not(:disabled),.research-page .ra-remove:hover:not(:disabled){background:#ffe1cf}
+.research-page .ra-button:disabled,.research-page .ra-remove:disabled{opacity:.43;cursor:not-allowed}
+.research-page .ra-options,.research-page .ra-sources,.research-page .ra-results{display:grid;gap:12px}
+.research-page .ra-option{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:12px;padding:12px;background:#fff9f5;border:1px solid #ebdcd1;border-radius:12px}
+.research-page .ra-option>b{color:#9c5132;font:750 12px Poppins,Arial,sans-serif;text-align:center}
+.research-page .ra-remove{font-size:11px;padding:10px 12px;min-height:38px}
+.research-page .ra-divider{border-top:1px solid #eadbd0;margin:27px 0}
+.research-page .ra-new-source{display:grid;gap:14px;background:#fff7f0;padding:19px;border:1px solid #ead9c9;border-radius:13px}
+.research-page .ra-dual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.research-page .ra-hint{margin:0;font:450 11px/1.7 Poppins,Arial,sans-serif;color:#746b68}
+.research-page .ra-source{background:#fff;border:1px solid #e6d9cf;border-radius:12px;padding:16px}
+.research-page .ra-source-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.research-page .ra-source-head>b{color:#a45a3a;font:750 11px Poppins,Arial,sans-serif;letter-spacing:.1em}
+.research-page .ra-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.research-page .ra-fields>.ra-field:nth-child(2){grid-column:1/-1}
+.research-page .ra-checkline{display:flex;align-items:flex-start;gap:9px;grid-column:1/-1;font:500 11px/1.7 Poppins,Arial,sans-serif;color:#475569}
+.research-page .ra-checkline input{width:17px;height:17px;accent-color:#a95530}
+.research-page .ra-link{display:inline-block;margin-top:12px;color:#9e4e30;font:650 11px Poppins,Arial,sans-serif;overflow-wrap:anywhere}
+.research-page .ra-result{border:1px solid #ebd8c9;background:#fff7f1;border-radius:13px;padding:18px}
+.research-page .ra-result h3{font:750 18px/1.4 Poppins,Arial,sans-serif;color:#1b2b3c;margin:0 0 7px}
+.research-page .ra-result-state{display:inline-block;padding:5px 9px;background:#fff0e2;border:1px solid #e6c6ae;border-radius:99px;color:#8e4d34;font:650 11px Poppins,Arial,sans-serif;margin:0}
+.research-page .ra-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:16px 0 14px}
+.research-page .ra-stat{padding:10px 3px;background:#fff;border:1px solid #ecded2;border-radius:10px;text-align:center;min-width:0}
+.research-page .ra-stat strong{display:block;font:800 23px Poppins,Arial,sans-serif;color:#22364c}
+.research-page .ra-stat span{font:550 10px/1.45 Poppins,Arial,sans-serif;color:#626873;overflow-wrap:anywhere}
+.research-page .ra-claims{margin:0;padding-left:20px;font:450 11px/1.7 Poppins,Arial,sans-serif;color:#5e6370}
+.research-page .ra-qa{border:1px solid #e7d8cb;background:#fff6ee;border-radius:13px;margin-top:23px;padding:17px}
+.research-page .ra-qa-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.research-page .ra-qa-heading h3{font:750 16px Poppins,Arial,sans-serif;color:#1f2e3e;margin:0}
+.research-page .ra-qa-heading span{font:750 12px Poppins,Arial,sans-serif;color:#934d32}
+.research-page .ra-qa ul{list-style:none;margin:13px 0;padding:0;display:grid;gap:7px}
+.research-page .ra-qa li{background:#fff;border:1px solid #eddfd5;border-radius:8px;padding:8px 10px;font:600 11px/1.65 Poppins,Arial,sans-serif}
+.research-page .ra-qa li.ra-good{color:#256442}.research-page .ra-qa li.ra-warning{color:#a4492f}
+.research-page .ra-qa p,.research-page .ra-fineprint{font:450 11px/1.75 Poppins,Arial,sans-serif;color:#70696c}
+.research-page .ra-errors{margin-top:18px;border:1px solid #e9b4a8;border-radius:10px;background:#fff0ea;padding:12px 12px 12px 30px;color:#933a2e;font:500 12px/1.7 Poppins,Arial,sans-serif}
+.research-page .ra-errors[hidden]{display:none}
+.research-page .ra-export{margin-top:20px}
+.research-page #ra-summary{min-height:250px;background:#fffaf5!important}
+.research-page .ra-actions{display:flex;gap:9px;flex-wrap:wrap;margin:19px 0}
+.research-page .ra-import{display:grid;gap:10px;max-width:580px;color:#2b3b4e;font:650 12px Poppins,Arial,sans-serif}
+.research-page .ra-import input{font:450 12px Poppins,Arial,sans-serif}
+.research-page .ra-status{min-height:18px;color:#984a32;font:550 12px Poppins,Arial,sans-serif}
+.research-page .ra-bottom{color:#727079;font-size:12px;margin-top:29px}.research-page .ra-bottom a{color:#984b32}
+@media(max-width:1050px){.research-page .ra-grid{grid-template-columns:1fr}.research-page .ra-results-panel{position:relative;top:auto}}
+@media(max-width:620px){.research-page .ra-main{padding:27px 12px 59px}.research-page .ra-panel{padding:18px}.research-page .ra-examples strong{flex-basis:100%}.research-page .ra-dual,.research-page .ra-fields{grid-template-columns:1fr}.research-page .ra-fields>.ra-field:nth-child(2){grid-column:auto}.research-page .ra-option{grid-template-columns:24px 1fr}.research-page .ra-option .ra-remove{grid-column:2;justify-self:start}.research-page .ra-stats{grid-template-columns:1fr 1fr}.research-page .ra-actions .ra-button{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.research-page .ra-button,.research-page .ra-example{transition:none!important}}

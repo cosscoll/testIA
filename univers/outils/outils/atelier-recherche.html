@@ -1,0 +1,86 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><meta name="theme-color" content="#FFF5EE">
+<meta name="description" content="Comparer des options, organiser des sources contradictoires et exporter une synthèse Markdown, CSV ou JSON. Atelier local, sans recherche automatique.">
+<title>Atelier Recherche & analyse — Studio IA</title>
+<link rel="stylesheet" href="../../../assets/import-shell.css">
+<link rel="stylesheet" href="../assets/obscure-pop.css">
+<link rel="stylesheet" href="../assets/journey-nav.css">
+<link rel="stylesheet" href="../../../assets/unified-advisor.css">
+<link rel="stylesheet" href="../../../assets/charte-univers-03.css">
+<link rel="stylesheet" href="../assets/research-studio.css">
+<script defer src="../../../assets/data.js"></script>
+<script defer src="../assets/research-studio.js"></script>
+<script defer src="../../../assets/unified-advisor.js"></script>
+</head><body class="obscure-pop research-page">
+<div class="ti-shell" role="navigation" aria-label="Navigation Studio IA">
+<a class="ti-brand" href="../../../index.html">studio<b>/</b>IA</a>
+<nav class="ti-links" aria-label="Navigation générale"><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a></nav>
+<a class="ti-cta" href="../pack-recherche-analyse.html">VOIR LA BANQUE ↗</a>
+<details class="ti-mobile"><summary>MENU ☰</summary><div><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a><a href="../pack-recherche-analyse.html">Recherche &amp; analyse</a></div></details>
+</div><a class="skip-link" href="#contenu">Aller au contenu</a>
+<main class="ra-main" id="contenu"><div class="ra-shell" id="researchStudio">
+<a class="ra-back" href="../pack-recherche-analyse.html">← Revenir à la banque Recherche &amp; analyse</a>
+<header class="ra-hero">
+<p class="ra-kicker">Atelier gratuit / LIV-04D — Recherche &amp; analyse</p>
+<h1>Des sources.<br><em>Une décision éclairée.</em></h1>
+<p class="ra-lead">Comparez plusieurs options à partir de vos propres observations. Séparez les arguments favorables des limites, identifiez les informations manquantes et exportez une note de décision.</p>
+<p class="ra-note"><strong>Aucune recherche automatique :</strong> cet atelier ne consulte pas les URL et ne vérifie pas les informations à votre place. Les exemples sont fictifs ; les compteurs ne mesurent pas l’efficacité réelle des options et ne choisissent pas un gagnant.</p>
+</header>
+<div class="ra-examples" role="group" aria-label="Exemples fictifs">
+<strong>Partir d’un cas fictif :</strong>
+<button class="ra-example" type="button" data-ra-example="contact" aria-pressed="true">Prospection &amp; contact</button>
+<button class="ra-example" type="button" data-ra-example="projet" aria-pressed="false">Gestion de projet</button>
+<button class="ra-example" type="button" data-ra-example="vitrine" aria-pressed="false">Présence en ligne</button>
+</div>
+<div class="ra-grid">
+<section class="ra-panel" aria-labelledby="ra-editor-title">
+<div class="ra-panel-heading"><span>01</span><div><h2 id="ra-editor-title">Définir la comparaison</h2><p>Deux à quatre options. Une question précise, sans conclusion préétablie.</p></div></div>
+<label class="ra-field"><span>Question à examiner</span><textarea id="ra-question" maxlength="220" rows="2"></textarea></label>
+<div class="ra-inline-heading"><h3>Les options</h3><button id="ra-add-option" class="ra-button" type="button">+ Ajouter une option</button></div>
+<div id="ra-options" class="ra-options" aria-label="Options personnalisables"></div>
+<div class="ra-divider"></div>
+<div class="ra-panel-heading"><span>02</span><div><h2>Consigner les sources</h2><p>Chaque observation doit être rattachée à une option. Maximum 12 observations.</p></div></div>
+<div class="ra-new-source">
+<label class="ra-field"><span>Titre ou référence</span><input id="ra-new-title" maxlength="110" placeholder="Ex. : documentation du service"></label>
+<label class="ra-field"><span>Observation précise</span><textarea id="ra-new-note" maxlength="450" rows="3" placeholder="Décrire uniquement ce que la source indique"></textarea></label>
+<div class="ra-dual">
+<label class="ra-field"><span>Option concernée</span><select id="ra-new-option"></select></label>
+<label class="ra-field"><span>Position</span><select id="ra-new-stance"><option value="for">Favorable</option><option value="against">Contraire</option><option value="neutral">Contexte</option></select></label>
+<label class="ra-field"><span>Origine de la source</span><select id="ra-new-kind"><option value="unknown">Origine non précisée</option><option value="primary">Document original</option><option value="independent">Analyse indépendante</option><option value="internal">Observation personnelle</option></select></label>
+<label class="ra-field"><span>Date (facultatif)</span><input id="ra-new-date" type="date"></label>
+</div>
+<label class="ra-field"><span>Lien vers la source (facultatif)</span><input id="ra-new-url" type="url" maxlength="400" placeholder="https://exemple.fr/documentation"></label>
+<button id="ra-add-source" class="ra-button ra-button--primary" type="button">Ajouter l’observation ↗</button>
+<p class="ra-hint">Les URL sont des références saisies par vous. Elles ne sont ni ouvertes ni évaluées automatiquement.</p>
+</div>
+<div class="ra-inline-heading"><h3>Observations à relire</h3><span id="ra-source-count">0 / 12 observations</span></div>
+<div id="ra-sources" class="ra-sources" aria-label="Observations éditables"></div>
+</section>
+<aside class="ra-panel ra-results-panel" aria-labelledby="ra-results-title">
+<div class="ra-panel-heading"><span>03</span><div><h2 id="ra-results-title">Voir les contradictions</h2><p>Les nombres décrivent les observations saisies, et non des preuves indépendantes.</p></div></div>
+<div id="ra-results" class="ra-results" aria-label="Comparaison des options"></div>
+<div class="ra-qa"><div class="ra-qa-heading"><h3>Traçabilité</h3><span id="ra-score">—</span></div>
+<ul id="ra-quality" aria-label="Contrôles de présence"></ul>
+<p>La case « consultée » est une déclaration de l’utilisateur ; elle ne prouve pas qu’une affirmation est vraie. Les contradictions demandent un examen humain.</p></div>
+<ul id="ra-errors" class="ra-errors" aria-label="Champs à corriger" role="status" hidden></ul>
+</aside>
+</div>
+<section class="ra-panel ra-export" aria-labelledby="ra-export-title">
+<div class="ra-panel-heading"><span>04</span><div><h2 id="ra-export-title">Récupérer une note transparente</h2><p>La synthèse est structurée automatiquement à partir de vos saisies. Elle ne vérifie aucun fait.</p></div></div>
+<label class="ra-field"><span>Note de comparaison générée localement</span><textarea id="ra-summary" rows="12" readonly></textarea></label>
+<div class="ra-actions">
+<button id="ra-copy" class="ra-button ra-button--primary" type="button">Copier la note</button>
+<button id="ra-export-md" class="ra-button" type="button">Télécharger Markdown</button>
+<button id="ra-export-csv" class="ra-button" type="button">Télécharger CSV</button>
+<button id="ra-export-json" class="ra-button" type="button">Enregistrer le projet JSON</button>
+</div>
+<label class="ra-import"><span>Reprendre votre projet (JSON exporté depuis cet atelier, 64 Ko maximum)</span><input id="ra-import" type="file" accept=".json,application/json"></label>
+<p id="ra-status" class="ra-status" role="status" aria-live="polite"></p>
+<p class="ra-fineprint">Aucune donnée n’est enregistrée sur un serveur par cet atelier. Pour une décision financière, réglementaire ou stratégique, vérifiez les documents originaux, dates et chiffres, puis sollicitez un professionnel compétent si nécessaire.</p>
+</section>
+<p class="ra-bottom"><a href="../pack-recherche-analyse.html">Découvrir la banque Recherche &amp; analyse</a> · <a href="../../../catalogue.html?type=outils">Comparer les six banques</a></p>
+<noscript>Activez JavaScript pour utiliser cet atelier. <a href="../pack-recherche-analyse.html">Retour à la collection</a>.</noscript>
+</div></main>
+<footer class="ti-footer"><a href="../../../index.html">studio/IA</a><small>DONNÉES SAISIES MANUELLEMENT · AUCUNE IA DE RECHERCHE CONNECTÉE</small><div class="ti-foot-links"><a href="../../../catalogue.html?type=outils">Les banques</a><a href="../../../contact.html">Contact</a></div></footer>
+</body></html>
