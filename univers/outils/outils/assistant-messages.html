@@ -1,46 +1,92 @@
 <!doctype html>
-<html lang="fr">
-<head><meta name="robots" content="noindex,follow"><link rel="stylesheet" href="../../../assets/import-shell.css">
+<html lang="fr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0B0B0D"><meta name="robots" content="noindex,follow">
-<meta name="description" content="Outil de rédaction gratuit pour composer localement un message de présentation, un e-mail ou une publication. Sans IA connectée et sans collecte de données.">
-<title>Assistant Messages — outil gratuit | Banque Outils IA</title>
-<link rel="stylesheet" href="../assets/obscure-pop.css?v=20261022-softpop">
-<link rel="stylesheet" href="../assets/journey-nav.css?v=20261022-main3">
-
-<script defer src="../assets/message-generator.js?v=20261102-v2"></script>
-<style>
-body{margin:0}.msg-main{min-height:80vh;padding:clamp(32px,5vw,75px) 18px 90px;background:#0b0b0d;color:#f5f1e6}.msg-shell{max-width:1200px;margin:auto}.msg-back{display:inline-block;margin-bottom:24px;color:#d6caec;text-underline-offset:4px}.msg-kicker{font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:#cab7f0;font-weight:700}.msg-title{font-size:clamp(44px,7vw,94px);letter-spacing:-.065em;line-height:.98;margin:15px 0 20px}.msg-title em{font-style:normal;color:#cab7f0}.msg-lead{font-size:clamp(16px,1.8vw,20px);line-height:1.65;color:#d1cbd5;max-width:690px}.msg-note{font-size:13px;line-height:1.6;color:#c6c0ca;margin:18px 0 30px}.msg-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.msg-panel{background:#17131b;border:1px solid #ffffff30;border-radius:18px;padding:clamp(20px,2.8vw,34px);min-width:0}.msg-panel h2{font-size:clamp(24px,2.6vw,35px);letter-spacing:-.045em;margin:0 0 12px}.msg-panel>p{line-height:1.6;color:#d0c8d2}.msg-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.msg-field{display:flex;flex-direction:column;gap:7px;min-width:0}.msg-field.wide{grid-column:1/-1}.msg-field label{font-size:13px;font-weight:700}.msg-field input,.msg-field select,.msg-output{width:100%;min-width:0;box-sizing:border-box;background:#0b0b0d;border:1px solid #ffffff50;color:#f5f1e6;border-radius:10px;font:inherit;padding:13px}.msg-field input:focus-visible,.msg-field select:focus-visible,.msg-output:focus-visible,.msg-button:focus-visible{outline:2px solid #b9cea2;outline-offset:3px}.msg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.msg-button{border:1px solid #ffffff5a;border-radius:40px;background:transparent;color:#f5f1e6;padding:13px 18px;font:700 14px 'Instrument Sans',Arial,sans-serif;cursor:pointer;min-height:46px;transition:transform .2s ease}.msg-button.primary{background:#b9cea2;border-color:#b9cea2;color:#0b0b0d}.msg-button:hover:not(:disabled){transform:translateY(-3px)}.msg-button:disabled{opacity:.45;cursor:not-allowed}.msg-output{min-height:325px;resize:vertical;line-height:1.7;margin-top:8px}.msg-status{min-height:22px;color:#b9cea2;font-size:13px}.msg-check{margin-top:22px;background:#241f29;border:1px solid #ffffff23;padding:18px 20px;border-radius:12px}.msg-check h3{font-size:16px;margin:0 0 8px}.msg-check ul{margin:0;padding-left:19px;line-height:1.65;color:#ded4df;font-size:14px}.msg-footer{margin-top:40px;border-top:1px solid #ffffff25;padding-top:20px;color:#c3bfca;font-size:13px}.msg-footer a{color:#dcc8fb}@media(max-width:800px){.msg-grid,.msg-fields{grid-template-columns:1fr}.msg-title{font-size:clamp(43px,10vw,76px)}.msg-panel{padding:20px}}@media(prefers-reduced-motion:reduce){.msg-button{transition:none}.msg-button:hover:not(:disabled){transform:none}}
-</style>
-<link rel="stylesheet" href="../../../assets/unified-advisor.css"><link rel="stylesheet" href="../../../assets/charte-univers-03.css"></head>
-<body class="obscure-pop"><div class="ti-shell" role="navigation" aria-label="Navigation de la plateforme"><a class="ti-brand" href="../../../index.html">studio<b>/</b>IA</a><nav class="ti-links"><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../index.html#ressources">Exemples gratuits</a></nav><a class="ti-cta" href="../../../catalogue.html">LES COLLECTIONS ↗</a><details class="ti-mobile"><summary>MENU ☰</summary><div><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../index.html#ressources">Exemples gratuits</a></div></details></div>
-<a class="skip-link" href="#contenu">Aller au contenu</a>
-
-<main class="msg-main" id="contenu"><div class="msg-shell">
-<a class="msg-back" href="../pack-redaction.html">← Revenir à la collection Rédaction</a>
-<p class="msg-kicker">Outil gratuit · Rédaction &amp; communication</p>
-<h1 class="msg-title">Des mots plus clairs.<br><em>En quelques étapes.</em></h1>
-<p class="msg-lead">Préparez une première version de message pour votre entreprise. Précisez votre offre, choisissez un format, puis personnalisez le brouillon proposé.</p>
-<p class="msg-note">Données d'exemple fictives, librement modifiables. Générateur de modèles : aucune IA connectée, aucune donnée envoyée à un serveur et aucun compte nécessaire.</p>
-<div class="msg-grid">
-<section class="msg-panel" aria-labelledby="formTitle"><h2 id="formTitle">01 / Votre contexte</h2><p>Complétez les informations utiles. Les exemples servent seulement à tester le fonctionnement.</p>
-<form id="messageForm"><div class="msg-fields">
-<div class="msg-field"><label for="business">Votre activité</label><input id="business" name="business" value="Atelier Papier" required maxlength="80"></div>
-<div class="msg-field"><label for="audience">Votre public</label><input id="audience" name="audience" value="les commerces de quartier" required maxlength="110"></div>
-<div class="msg-field wide"><label for="offer">Quelle offre proposez-vous ?</label><input id="offer" name="offer" value="un atelier de création d'affiches" required maxlength="160"></div>
-<div class="msg-field wide"><label for="benefit">Bénéfice réel que vous pouvez justifier</label><input id="benefit" name="benefit" value="créer une affiche lisible et personnalisée" required maxlength="160"></div>
-<div class="msg-field wide"><label for="cta">Action souhaitée</label><input id="cta" name="cta" value="Contactez-nous pour connaître les prochaines dates" required maxlength="160"></div>
-<div class="msg-field"><label for="channel">Canal</label><select id="channel" name="channel"><option value="email">E-mail</option><option value="post">Réseau social</option><option value="web">Présentation pour site web</option></select></div>
-<div class="msg-field"><label for="tone">Ton</label><select id="tone" name="tone"><option value="pro">Professionnel</option><option value="warm">Chaleureux</option><option value="direct">Direct</option></select></div>
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#FFF5EE">
+<meta name="description" content="Atelier de rédaction gratuit pour entrepreneurs : e-mails, relances, posts et textes web. Exemples, vérification, export, prompt IA. Sans compte ni API payante.">
+<title>Atelier Rédaction — Studio IA / Outil gratuit</title>
+<link rel="stylesheet" href="../../../assets/import-shell.css">
+<link rel="stylesheet" href="../assets/obscure-pop.css">
+<link rel="stylesheet" href="../assets/journey-nav.css">
+<link rel="stylesheet" href="../../../assets/charte-univers-03.css">
+<link rel="stylesheet" href="../assets/message-studio.css">
+<script defer src="../assets/message-studio.js"></script>
+</head>
+<body class="obscure-pop message-studio-page">
+<div class="ti-shell" role="navigation" aria-label="Navigation de la plateforme">
+<a class="ti-brand" href="../../../index.html">studio<b>/</b>IA</a>
+<nav class="ti-links" aria-label="Navigation générale"><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a></nav>
+<a class="ti-cta" href="../pack-redaction.html">VOIR LA BANQUE ↗</a>
+<details class="ti-mobile"><summary>MENU ☰</summary><div><a href="../../../index.html">Accueil</a><a href="../../../catalogue.html">Tous les produits</a><a href="../../../ressources.html?type=outils">Ressources</a><a href="../pack-redaction.html">Banque Rédaction</a></div></details>
 </div>
-<div class="msg-actions"><button class="msg-button primary" type="submit">Créer mon brouillon ↗</button><button class="msg-button" type="reset">Revenir à l'exemple</button></div></form>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<main class="msg-main" id="contenu"><div class="msg-shell">
+<a class="msg-back" href="../pack-redaction.html">← Revenir à la banque Rédaction</a>
+<p class="msg-kicker">Outil gratuit / Édition 02 — Rédaction &amp; communication</p>
+<h1 class="msg-title">Un message clair.<br><em>Sans page blanche.</em></h1>
+<p class="msg-lead">Préparez votre e-mail, une relance, une publication ou un texte de présentation à partir d'un brief simple. Modifiez le résultat, vérifiez les faits, puis copiez-le ou exportez-le.</p>
+<p class="msg-note">Les exemples sont fictifs. L’atelier utilise des modèles locaux, <strong>pas une IA générative</strong> : aucune donnée n'est envoyée à un serveur, aucun compte ni abonnement requis. Rien n'est publié automatiquement.</p>
+<div class="msg-examples" role="group" aria-label="Choisir un exemple de travail">
+<strong>Partir d'un exemple :</strong>
+<button class="msg-example" type="button" data-example="atelier" aria-pressed="true">Commerce de quartier</button>
+<button class="msg-example" type="button" data-example="conseil" aria-pressed="false">Conseil indépendant</button>
+<button class="msg-example" type="button" data-example="artisan" aria-pressed="false">Artisan</button>
+</div>
+<div class="msg-grid">
+<section class="msg-panel" aria-labelledby="formTitle">
+<h2 id="formTitle">01 / Décrire votre besoin</h2>
+<p>Les champs sont modifiables. Utilisez seulement les informations que vous pouvez vérifier.</p>
+<form id="messageForm">
+<div class="msg-fields">
+<div class="msg-field"><label for="business">Nom de l'activité *</label><input id="business" name="business" value="Atelier Papier" required minlength="3" maxlength="80" autocomplete="organization"></div>
+<div class="msg-field"><label for="audience">Public visé *</label><input id="audience" name="audience" value="les commerces de quartier" required minlength="3" maxlength="110"></div>
+<div class="msg-field wide"><label for="offer">Service ou produit proposé *</label><input id="offer" name="offer" value="un atelier de création d’affiches sur mesure" required minlength="3" maxlength="200"></div>
+<div class="msg-field wide"><label for="benefit">Résultat recherché, sans promesse excessive *</label><input id="benefit" name="benefit" value="concevoir une affiche claire et adaptée à leur vitrine" required minlength="3" maxlength="200"></div>
+<div class="msg-field wide"><label for="proof">Fait concret ou preuve (facultatif)</label><input id="proof" name="proof" value="chaque affiche est relue avec le commerçant avant impression" maxlength="200"><small>Exemple : une étape de contrôle, un livrable, une méthode. Ne pas inventer de témoignages ou de chiffres.</small></div>
+<div class="msg-field wide"><label for="cta">Action souhaitée *</label><input id="cta" name="cta" value="Écrivez-nous pour discuter de votre prochain support" required minlength="3" maxlength="200"></div>
+<div class="msg-field"><label for="channel">Format</label><select id="channel" name="channel">
+<option value="email">E-mail de présentation</option>
+<option value="relance">E-mail de relance</option>
+<option value="post">Publication réseau social</option>
+<option value="web">Présentation site web</option>
+</select></div>
+<div class="msg-field"><label for="tone">Ton</label><select id="tone" name="tone">
+<option value="pro">Professionnel</option><option value="warm" selected>Chaleureux</option><option value="direct">Direct</option>
+</select></div>
+</div>
+<div class="msg-actions">
+<button class="msg-button primary" type="submit">Créer le brouillon ↗</button>
+<button class="msg-button" id="resetMessage" type="button">Réinitialiser l'exemple</button>
+</div>
+</form>
 </section>
-<section class="msg-panel" aria-labelledby="resultTitle"><h2 id="resultTitle">02 / Le brouillon</h2><p>Ce texte reste à relire et à vérifier. Modifiez-le directement dans la zone avant de le copier ou de le télécharger : rien n’est publié ou envoyé automatiquement.</p>
-<label class="msg-kicker" for="messageOutput">Résultat éditable avant utilisation</label><textarea class="msg-output" id="messageOutput" rows="11" placeholder="Votre message apparaîtra ici."></textarea>
-<div class="msg-actions"><button id="copyMessage" class="msg-button primary" type="button" disabled>Copier le texte</button><button id="saveMessage" class="msg-button" type="button" disabled>Télécharger .txt</button></div>
+<section class="msg-panel" aria-labelledby="resultTitle">
+<h2 id="resultTitle">02 / Votre brouillon</h2>
+<p>Le texte est immédiatement modifiable. Les contrôles servent d'aide à la relecture, pas de validation automatique des faits.</p>
+<label class="msg-kicker" for="messageOutput">Texte éditable — aucun envoi</label>
+<textarea class="msg-output" id="messageOutput" rows="11" aria-describedby="messageCount" spellcheck="true"></textarea>
+<p class="msg-count" id="messageCount">0 mots</p>
+<div class="msg-actions">
+<button class="msg-button primary" id="copyMessage" type="button">Copier le texte</button>
+<button class="msg-button" id="saveMessage" type="button">Télécharger .txt</button>
+</div>
 <p class="msg-status" id="messageStatus" role="status" aria-live="polite"></p>
-<div class="msg-check"><h3>03 / Checklist avant envoi</h3><ul><li>Les bénéfices annoncés sont exacts et vérifiables.</li><li>Les mots correspondent à votre public et à votre identité.</li><li>Votre appel à l'action et vos coordonnées sont à jour.</li><li>Votre prospection respecte les règles applicables.</li></ul></div>
-</section></div>
-<div class="msg-footer">Banque Outils IA · Exemple gratuit et original · <a href="../pack-redaction.html">Découvrir la collection</a></div>
+<div class="msg-check" aria-labelledby="qualityTitle">
+<h3 id="qualityTitle">03 / Points de contrôle</h3>
+<p class="msg-score" id="messageScore">Préparation des repères…</p>
+<ul id="messageQuality" aria-label="Contrôles du texte"></ul>
+<small>Avant diffusion : contrôlez vous-même les informations, l'identité du destinataire, les règles de prospection applicables et l'absence de données personnelles inutiles. Une relance ne doit être envoyée qu'après un véritable échange.</small>
+</div>
+<div class="msg-prompt-section" aria-labelledby="promptTitle">
+<h3 id="promptTitle">04 / Aller plus loin avec votre IA</h3>
+<p>Récupérez un prompt précis pour améliorer ce texte dans l'outil IA de votre choix. Vous restez responsable de ce que vous y collez ; évitez les données personnelles et confidentielles.</p>
+<label class="msg-kicker" for="promptOutput">Consignes générées à partir de votre brief</label>
+<textarea class="msg-output prompt" id="promptOutput" rows="7" readonly></textarea>
+<div class="msg-actions"><button class="msg-button" id="copyPrompt" type="button">Copier le prompt</button></div>
+</div>
+</section>
+</div>
+<div class="msg-footer">Exemple public de Studio IA · Banque Rédaction en préparation · <a href="../pack-redaction.html">Découvrir la collection</a> · <a href="../../../catalogue.html?type=outils">Toutes les banques</a></div>
 </div></main>
-<footer class="ti-footer"><a href="../../../index.html">studio/IA</a><small>BANQUES D'OUTILS IA · ÉDITION DE PRÉPARATION · PAS DE PAIEMENT ACTIF</small><div class="ti-foot-links"><a href="../../../catalogue.html?type=outils">Les six banques</a><a href="../../../index.html">Accueil</a></div></footer><script defer src="../../../assets/data.js"></script><script defer src="../../../assets/unified-advisor.js"></script></body></html>
+<footer class="ti-footer"><a href="../../../index.html">studio/IA</a><small>DÉMONSTRATION GRATUITE · AUCUNE VENTE ACTIVE</small><div class="ti-foot-links"><a href="../../../catalogue.html?type=outils">Les banques</a><a href="../../../contact.html">Contact</a></div></footer>
+</body></html>

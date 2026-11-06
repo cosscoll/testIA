@@ -1,0 +1,64 @@
+/* Atelier public — identité CONTROL orange/crème, sans librairie externe. */
+body.message-studio-page{background:#fff5ee!important;color:#111827!important}
+body.message-studio-page .msg-main{min-height:75vh;background:radial-gradient(circle at 96% 8%,#ffd8be80 0%,transparent 36%),#fff5ee!important;color:#111827!important;padding:clamp(36px,5vw,70px) 20px 105px}
+.message-studio-page .msg-shell{max-width:1260px;margin:auto}
+.message-studio-page .msg-back{display:inline-flex;margin:0 0 26px;color:#a04a30!important;font:600 13px Poppins,sans-serif;text-underline-offset:4px}
+.message-studio-page .msg-kicker{font:700 11px/1.5 Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a75436!important}
+.message-studio-page .msg-title{font:800 clamp(44px,6vw,88px)/1.05 Poppins,sans-serif;letter-spacing:-.065em;color:#111827;margin:12px 0 19px;max-width:1000px}
+.message-studio-page .msg-title em{font-style:normal;color:#c65531}
+.message-studio-page .msg-lead{max-width:740px;color:#4b5563;font:400 clamp(16px,1.7vw,19px)/1.65 Poppins,sans-serif}
+.message-studio-page .msg-note{font:400 13px/1.65 Poppins,sans-serif;color:#5d6068;margin:16px 0 28px}
+.message-studio-page .msg-examples{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:22px 0 30px}
+.message-studio-page .msg-examples strong{font-size:12px;margin-right:4px;color:#4b5563}
+.message-studio-page .msg-example{min-height:42px;padding:10px 15px;color:#843d28;background:#fff;border:1px solid #e6cdbf;border-radius:999px;font-weight:600;font-size:12px;cursor:pointer;transition:border-color .2s,background .2s}
+.message-studio-page .msg-example[aria-pressed=true],.message-studio-page .msg-example:hover{border-color:#dc7f59;background:#ffe9dc}
+.message-studio-page .msg-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:19px;align-items:start}
+.message-studio-page .msg-panel{background:#fffdfb!important;color:#111827!important;border:1px solid #e6d9d1;border-radius:20px;padding:clamp(20px,2.7vw,32px);box-shadow:0 9px 28px #76523c12;min-width:0}
+.message-studio-page .msg-panel h2{font:750 clamp(23px,2.4vw,31px)/1.18 Poppins,sans-serif;letter-spacing:-.035em;color:#111827;margin:0 0 10px}
+.message-studio-page .msg-panel>p{color:#5c636e;font-size:13px;line-height:1.65}
+.message-studio-page .msg-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:22px}
+.message-studio-page .msg-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.message-studio-page .msg-field.wide{grid-column:1/-1}
+.message-studio-page .msg-field label{font:600 12px/1.4 Poppins,sans-serif;color:#253041}
+.message-studio-page .msg-field small{font:400 11px/1.5 Poppins,sans-serif;color:#74777e}
+.message-studio-page .msg-field input,.message-studio-page .msg-field select,.message-studio-page .msg-output{
+  width:100%;min-width:0;box-sizing:border-box;border:1px solid #d8cfca;border-radius:10px;
+  color:#111827!important;background:#fff!important;padding:12px 13px;
+  font:400 13px/1.6 Poppins,sans-serif;
+}
+.message-studio-page .msg-field input:hover,.message-studio-page .msg-field select:hover{border-color:#d88f70}
+.message-studio-page .msg-field input:focus-visible,.message-studio-page .msg-field select:focus-visible,.message-studio-page .msg-output:focus-visible{outline:3px solid #d46d4a;outline-offset:2px}
+.message-studio-page .msg-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:19px}
+.message-studio-page .msg-button{min-height:46px;border:1px solid #d8b19e;border-radius:11px;background:#fff7f2;color:#7d3b2a;font:700 12px/1.4 Poppins,sans-serif;padding:12px 16px;cursor:pointer;transition:background .2s,transform .2s}
+.message-studio-page .msg-button.primary,.message-studio-page .msg-button.primary:hover{
+  background:#ff6a3d!important;color:#111827!important;border-color:#ff6a3d!important;
+}
+.message-studio-page .msg-button:hover:not(:disabled){background:#ffe8d9;transform:translateY(-2px)}
+.message-studio-page .msg-button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+.message-studio-page .msg-output{min-height:270px;resize:vertical;white-space:pre-wrap}
+.message-studio-page .msg-output.prompt{min-height:195px;margin-top:10px;background:#fffaf6!important}
+.message-studio-page .msg-status{color:#85472e!important;font:500 12px/1.6 Poppins,sans-serif;min-height:19px;margin:10px 0}
+.message-studio-page .msg-count{color:#666a75;font-size:11px;margin:5px 0 0}
+.message-studio-page .msg-check{margin-top:22px;background:#fff8f3;border:1px solid #eadccf;border-radius:13px;padding:19px}
+.message-studio-page .msg-check h3{font:750 16px Poppins,sans-serif;margin:0 0 5px;color:#111827}
+.message-studio-page .msg-score{color:#575e67;font-size:12px}
+.message-studio-page .msg-check ul{list-style:none;display:grid;grid-template-columns:1fr;gap:7px;margin:13px 0 0;padding:0;font:500 12px/1.5 Poppins,sans-serif}
+.message-studio-page .msg-check li{background:white;border:1px solid #ecdfd6;padding:7px 10px;border-radius:8px}
+.message-studio-page .msg-check li.msg-check-pass{color:#245a38}
+.message-studio-page .msg-check li.msg-check-attention{color:#a04c33}
+.message-studio-page .msg-check small{display:block;margin-top:13px;font:400 11px/1.6 Poppins,sans-serif;color:#6a6060}
+.message-studio-page .msg-prompt-section{margin-top:20px;padding-top:20px;border-top:1px solid #ebdfd8}
+.message-studio-page .msg-prompt-section h3{font:750 16px Poppins,sans-serif;color:#111827;margin:0 0 5px}
+.message-studio-page .msg-prompt-section p{font-size:12px;line-height:1.6;color:#5b626b}
+.message-studio-page .msg-footer{border-top:1px solid #e6d9ce;margin-top:35px;padding-top:22px;color:#626571;font-size:12px}
+.message-studio-page .msg-footer a{color:#a04a30}
+.message-studio-page .ti-footer{border-color:#e6d8ce}
+@media(max-width:900px){.message-studio-page .msg-grid{grid-template-columns:1fr}}
+@media(max-width:560px){
+ .message-studio-page .msg-main{padding:30px 14px 65px}
+ .message-studio-page .msg-fields{grid-template-columns:1fr}
+ .message-studio-page .msg-panel{padding:19px}
+ .message-studio-page .msg-examples{align-items:stretch}
+ .message-studio-page .msg-examples strong{flex-basis:100%}
+}
+@media(prefers-reduced-motion:reduce){.message-studio-page .msg-button,.message-studio-page .msg-example{transition:none!important}.message-studio-page .msg-button:hover:not(:disabled){transform:none}}
