@@ -102,3 +102,7 @@ La [démonstration de rédaction](univers/outils/outils/assistant-messages.html)
 L'atelier conserve le conseiller IA unifié et ses données catalogue. Les champs du brief local ne sont jamais transmis automatiquement au conseiller.
 
 Suivi LIV-02 : une amélioration visible est à la fois intégrée à la page produit et aux ressources ; consulter [le bilan de livraison](docs/SESSIONS_LIVRAISONS_VISIBLES_2026-11-06.md#bilan-liv-02--6-novembre-2026).
+
+## LIV-03 — Construire et tester un workflow (06/11/2026)
+
+La [démonstration interactive d’automatisation](univers/outils/outils/atelier-automatisation.html) permet de concevoir des étapes de travail, de tester des cas d'erreur, de simuler une approbation humaine et d'exporter des plans JSON/TXT **sans installer ni activer aucune automatisation**. Le JSON est intentionnellement marqué `enabled:false` et `mode:simulation-only`. La vitrine du produit et le catalogue de ressources pointent désormais vers cette démonstration. Test manuel : `node tests/workflow-studio.cjs`.

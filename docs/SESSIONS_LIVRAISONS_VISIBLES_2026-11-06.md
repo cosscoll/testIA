@@ -23,7 +23,7 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 | --- | --- | --- | --- |
 | LIV-01 | #3 | Accès simple et direct à l'essai des 11 offres | Catalogue : bouton **Essayer l'atelier gratuit** indépendant sur chaque offre, utilisable après filtres et recherche. Publié en premier. |
 | LIV-02 | #3 | Banque Rédaction pratique | **LIVRÉ :** 4 formats (e-mail, relance, publication et texte web), 3 exemples, 3 tons, 5 repères de relecture, édition, copie, export .txt et prompt IA facultatif. [Ouvrir l’atelier](../univers/outils/outils/assistant-messages.html). |
-| LIV-03 | #3 | Banque Automatisation pratique | Atelier local décrivant déclencheur, étapes, conditions d'arrêt et points de contrôle, avec export d'un workflow testable. Aucune automatisation récurrente exécutée. |
+| LIV-03 | #3 | Banque Automatisation pratique | **LIVRÉ :** 3 scénarios métiers, étapes personnalisables, quatre simulations (complet, incomplet, doublon, autorisation), validation humaine fictive et exports JSON désactivé + TXT. [Ouvrir l’atelier](../univers/outils/outils/atelier-automatisation.html). Aucune automatisation réelle. |
 | LIV-04 | #3 | Quatre autres banques plus concrètes | Pour Visuels, Web, Vidéo et Recherche : un cas d'usage guidé et testable par banque, avec un résultat vérifiable, pas seulement un prompt. Si nécessaire scinder en plusieurs lots publiés séparément. |
 | LIV-05 | #4 | Formation Sites 3D + Agents IA | Une vraie leçon publique par formation, avec exercice, corrigé/critères et fichiers non commerciaux. |
 | LIV-06 | #4 | Formation Automatiser + IA au quotidien | Deux nouvelles leçons interactives complètes, évaluation simple et liens depuis les pages formation. |
@@ -55,3 +55,12 @@ Contrôles : `node tests/catalogue-actions.cjs` puis `node scripts/verify-releas
 - **Contrôles de comportement :** 67 validations par simulateur DOM/JS ; tests de l'atelier dans `tests/message-studio.cjs` ; le contrôle global manuel `scripts/verify-release.cjs` inclut désormais ce fichier.
 - **Restrictions :** générateur de modèles déterministe, **sans IA générative connectée**, sans compte, sans paiement ni publication automatique ; relecture et exactitude restent à la charge de l'utilisateur. Recette mobile visuelle sur navigateur réel à effectuer.
 - **Critère de publication :** comparer la branche `main` et le déploiement Vercel `READY` avant de marquer la livraison finale (à vérifier après ce commit).
+
+## Bilan LIV-03 — 6 novembre 2026
+
+- **Nouvelle URL** : https://testia-unifie.vercel.app/univers/outils/outils/atelier-automatisation.html
+- **Intégrations** : CTA sur la page Banque Automatisation, accès direct depuis les fiches du produit 3D et ajout à la bibliothèque des ressources.
+- **Fonctionnalité** : trois modèles (demande de devis, stock, document), étapes éditables (1–5), construction d’un flux comprenant trois contrôles bloquants et une validation humaine, quatre essais fictifs, journal détaillé, export JSON `enabled:false` et guide .txt.
+- **Règles** : aucune donnée envoyée à un serveur, aucun cron, pas de compte connecté, ni installation d’automatisation ; tout résultat est purement pédagogique.
+- **Test manuel** : `node tests/workflow-studio.cjs` avec moteur, scénarios et interactions ; intégré à `node scripts/verify-release.cjs`. Les validations visuelles mobile restent séparées.
+- **Confirmation publication** : vérifier SHA de `main` et le déploiement Vercel `READY` avant de considérer le lot terminé.

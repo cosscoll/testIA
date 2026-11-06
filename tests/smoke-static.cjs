@@ -56,6 +56,14 @@ verify(rédaction.includes('id="messageQuality"'),'Contrôles de qualité indisp
 verify(rédaction.includes('unified-advisor.js'),'Le conseiller IA manque sur le nouvel atelier');
 verify(rédaction.includes('assets/data.js'),'Le conseiller IA manque ses données catalogue');
 verify(read('univers/outils/pack-redaction.html').includes('quatre formats'),'La vitrine ne présente pas la nouvelle démo');
+verify(exists('univers/outils/outils/atelier-automatisation.html'),'Nouvel atelier de workflows absent');
+verify(exists('univers/outils/assets/workflow-studio.js'),'Moteur de workflows absent');
+verify(exists('univers/outils/assets/workflow-studio.css'),'Styles workflow absents');
+const workflowPage=read('univers/outils/outils/atelier-automatisation.html');
+verify(workflowPage.includes('workflow-studio.js'),'Le nouveau moteur n’est pas chargé');
+verify(workflowPage.includes('id="wf-approve"'),'Validation fictive absente de la page');
+verify(read('univers/outils/pack-automatisation.html').includes('./outils/atelier-automatisation.html'),'La page produit ne relie pas l’atelier workflow');
+
 
 verify(read('contact.html').includes('contact-draft.js'),'Module contact absent');
 verify(read('assets/guide-viewer.js').includes("unsafe protocol"),'Liens dangereux non filtrés du guide');
@@ -77,7 +85,7 @@ for(const product of browser.TESTIA_PRODUCTS){
  verify(exists(resolve('index.html',detail.page)),'Page originale absente : '+product.id);
 }
 vm.runInNewContext(read('assets/resources-data.js'),{window:browser},{timeout:1000});
-verify(browser.STUDIO_RESOURCES.length===37,'La bibliothèque doit présenter 26 ressources sources + 11 ateliers');
+verify(browser.STUDIO_RESOURCES.length===38,'La bibliothèque doit présenter 26 ressources importées + 11 ateliers de fiches + 1 atelier workflow');
 vm.runInNewContext(read('assets/product-depth-data.js'),{window:browser},{timeout:1000});
 verify(Object.keys(browser.STUDIO_PRODUCT_DEPTH).length===11,'Chaque offre doit avoir un atelier');
 for(const product of browser.TESTIA_PRODUCTS){
