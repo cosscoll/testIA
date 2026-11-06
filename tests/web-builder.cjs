@@ -79,7 +79,7 @@ const escaped=core.build(hostile);
 check(!escaped.includes('<iframe')&&!escaped.includes('<script')&&!escaped.includes('<img src=x'),'Entrée HTML exécutée');
 check(escaped.includes('&lt;script&gt;')&&escaped.includes('&lt;iframe'),'Échappement HTML absent');
 check(escaped.includes('class="page--editorial"'),'Disposition non autorisée acceptée');
-check(escaped.includes('color:#111827'),'Palette non autorisée acceptée');
+check(escaped.includes('--ink:#111827'),'Palette non autorisée acceptée');
 check(!escaped.includes('href="mailto:'),'Email dangereux transformé en lien');
 check(!core.emailValid('bonjour@example.com')&&!core.emailValid('test@sample.test'),'Adresses d’exemple non refusées');
 check(core.emailValid('personne@artisan.fr'),'Adresse e-mail valide refusée');
