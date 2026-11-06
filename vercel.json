@@ -30,5 +30,22 @@
         }
       ]
     }
+  ],
+  "routes": [
+    {
+      "src": "^/(?:tests|scripts|docs)(?:/.*)?$",
+      "status": 404
+    },
+    {
+      "src": "^/(?:README\\.md|vercel\\.json|\\.vercelignore|\\.gitignore|\\.gitattributes|\\.env(?:\\..*)?)$",
+      "status": 404
+    },
+    {
+      "src": "^/\\.github(?:/.*)?$",
+      "status": 404
+    },
+    {
+      "handle": "filesystem"
+    }
   ]
 }

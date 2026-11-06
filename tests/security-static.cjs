@@ -27,6 +27,16 @@ check(csp.includes("base-uri 'self'"),'CSP : base-uri absent');
 check(csp.includes("object-src 'none'"),'CSP : objet actif non bloqué');
 check(csp.includes("frame-ancestors 'self'"),'CSP : frame-ancestors absent');
 check(!csp.includes("'unsafe-inline'"),'CSP globale trop permissive');
+// Contrôler le routage Vercel Git en plus de .vercelignore.
+const deniedRoutes=(config.routes||[]).filter(x=>x.status===404&&x.src);
+check(config.routes.some(x=>x.handle==='filesystem'),'Le routage des pages normales doit être conservé');
+for(const route of ['/tests/security-static.cjs','/scripts/verify-release.cjs','/docs/a.md','/README.md','/vercel.json','/.env.local','/.gitignore','/.github/config.yml']){
+ check(deniedRoutes.some(x=>new RegExp(x.src,'i').test(route)),'Fichier interne non interdit : '+route);
+}
+for(const route of ['/','/beta.html','/api/chat','/catalogue.html','/univers/procedures/reproduction-3d/README.md']){
+ check(!deniedRoutes.some(x=>new RegExp(x.src,'i').test(route)),'Page publique bloquée : '+route);
+}
+
 const ignored=read('.vercelignore').split(/\r?\n/).map(x=>x.trim());
 for(const p of ['README.md','docs/','tests/','scripts/','*.zip','*.env','*.env.*']){
  check(ignored.includes(p),'Exclusion de déploiement manquante : '+p);

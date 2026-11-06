@@ -28,7 +28,10 @@ const denied=[
  '/docs/SESSIONS_LIVRAISONS_VISIBLES_2026-11-06.md',
  '/README.md',
  '/.env',
- '/.vercelignore'
+ '/.vercelignore',
+ '/vercel.json',
+ '/.gitignore',
+ '/.env.local'
 ];
 async function fetchWithTimeout(url){
  const controller=new AbortController();
