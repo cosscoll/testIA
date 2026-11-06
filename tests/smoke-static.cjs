@@ -96,6 +96,9 @@ const cinema=read('assets/product-cinema.js');
 verify(cinema.includes('deep.page||collectionUrl'),'Accès direct produit manquant');
 verify(cinema.includes('setVaultProgress'),'Animation du coffre non pilotée');
 verify(exists('univers/procedures/assets/apartment-scene.js'),'Scène 3D d’origine manquante');
+// Contrôle syntaxique systématique, y compris les fiches ajoutées entre deux sessions.
+new vm.Script(read('assets/data.js'),{filename:'assets/data.js'});
+new vm.Script(read('assets/resources-data.js'),{filename:'assets/resources-data.js'});
 const browser={};
 vm.runInNewContext(read('assets/data.js'),{window:browser},{timeout:1000});
 verify(browser.TESTIA_PRODUCTS.length===11,'Le catalogue doit présenter 11 produits');
