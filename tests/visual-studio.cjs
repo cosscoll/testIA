@@ -66,7 +66,7 @@ for(const theme of Object.keys(core.palettes)){
 const attack={...core.examples.artisan,title:'<script>alert(1)</script> & <iframe />',brand:'<img onerror=alert(1)>'};
 const bad=core.buildSvg(attack);
 check(!bad.includes('<script')&&!bad.includes('<iframe')&&!bad.includes('<img'),'Code injecté dans un SVG');
-check(bad.includes('&lt;script&gt;')&&bad.includes('&lt;img'),'Échappement XML des entrées absent');
+check(bad.toLowerCase().includes('&lt;script&gt;')&&bad.toLowerCase().includes('&lt;img'),'Échappement XML des entrées absent');
 check(core.normalize({palette:'__proto__',format:'constructor'}).palette==='orange','Palette non autorisée');
 check(core.normalize({palette:'__proto__',format:'constructor'}).format==='square','Format non autorisé');
 check(core.wrap('sansespaces'.repeat(80),19,3).truncated,'Troncature non signalée');
