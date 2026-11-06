@@ -30,6 +30,10 @@ Le fichier `.vercelignore` demande l'exclusion des tests, scripts manuels, docum
 
 Documentation Vercel : https://vercel.com/docs/project-configuration/vercel-json et https://vercel.com/docs/deployments/vercel-ignore .
 
+### Protection des commits à venir
+
+`.gitignore` bloque les nouvelles inclusions accidentelles de `.env`, clés privées, fichiers de base locale et dossiers `private/`/`secrets/`. **Cette exclusion ne protège pas des fichiers déjà committés**, ne supprime pas l'historique Git et ne doit pas être considérée comme un système de stockage secret.
+
 ## Contrôles reproductibles
 
 Sur une copie locale disposant de Node.js, lancer :

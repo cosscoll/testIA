@@ -38,6 +38,10 @@ for(const p of ['univers/procedures/reproduction-3d/README.md','univers/outils/d
 }
 check(!exists('.env')&&!exists('.env.local'),'Environnement local présent dans le dépôt');
 check(!exists('node_modules'),'Dépendances installées dans le dépôt');
+const gitignore=read('.gitignore').split(/\r?\n/).map(x=>x.trim());
+for(const pattern of ['.env','.env.*','*.pem','*.key','private/','secrets/','studio_ia_produits_prives_*/']){
+ check(gitignore.includes(pattern),'Protection locale Git absente : '+pattern);
+}
 check(!exists('studio_ia_produits_prives_2026-11-06'),'Livrables commerciaux privés présents dans le dépôt');
 // Parcourir les fichiers texte contrôlés par l'équipe. Un match demande une revue humaine,
 // ce n'est pas une garantie d'absence de secret dans l'historique Git ou les médias.

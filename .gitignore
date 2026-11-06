@@ -1,0 +1,26 @@
+# Secrets et fichiers locaux : prévention pour les prochains commits.
+# ATTENTION : n'efface pas les fichiers déjà suivis, ni l'historique Git.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*credentials*.json
+*service-account*.json
+private/
+**/private/
+secrets/
+**/secrets/
+studio_ia_produits_prives_*/
+studio_ia_dossier_produits_prive_*.zip
+*.sqlite
+*.sqlite3
+*.db
+node_modules/
+.venv/
+__pycache__/
+.DS_Store
