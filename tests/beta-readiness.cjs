@@ -58,6 +58,10 @@ check(els['beta-progress'].value===1,'Progression incorrecte');
 check(!els['beta-export'].disabled,'Export doit devenir disponible');
 els['beta-bug'].value='Le coffre bloque le clic';els['beta-form'].events.input();
 check(els['beta-report'].value.includes('Le coffre bloque le clic'),'Le retour doit suivre les modifications');
+check(els['beta-report'].value.includes('Date du test :'),'La date doit figurer dans le compte rendu');
+check(els['beta-report'].value.includes('Missions évaluées : 1 / 5'),'Le décompte doit apparaître dans le compte rendu');
+check(els['beta-report'].value.includes('bloquées : 1'),'Le blocage doit être comptabilisé');
+
 els['beta-export'].events.click();
 check(downloads[0]==='studio-ia-retour-beta.txt','Fichier de synthèse invalide');
 check(created===revoked,'Ressource temporaire non libérée');
