@@ -20,7 +20,7 @@
   '<div class="product-guide-header"><div><strong>Conseiller IA</strong><span id="productGuideStatus" role="status">Packs · Banques d’outils · Formations</span></div>',
   '<div class="product-guide-header-actions"><button type="button" id="productGuideReset" aria-label="Recommencer la conversation" title="Recommencer">↺</button>',
   '<button type="button" id="productGuideClose" aria-label="Fermer le guide" title="Fermer">×</button></div></div>',
-  '<div class="product-guide-alternative" id="productGuideAlternative" hidden><p>Le modèle IA gratuit n’est pas disponible pour le moment. Aucune réponse simulée ou payante ne sera utilisée.</p><div><a href="'+new URL('catalogue.html',siteRoot).href+'">Parcourir les 11 offres ↗</a><button type="button" id="productGuideRecheck">Réessayer la vérification</button></div></div>',
+  '<div class="product-guide-alternative" id="productGuideAlternative" hidden><p>Le modèle IA gratuit n’est pas disponible pour le moment. Aucune réponse simulée ou payante ne sera utilisée.</p><div><a href="'+new URL('guide.html',siteRoot).href+'">Trouver une offre sans IA ↗</a><a href="'+new URL('catalogue.html',siteRoot).href+'">Parcourir les 11 offres ↗</a><button type="button" id="productGuideRecheck">Réessayer la vérification</button></div></div>',
   '<div class="product-guide-messages" id="productGuideMessages" role="log" aria-live="polite" aria-relevant="additions"></div>',
   '<div class="product-guide-choices" id="productGuideChoices" role="group" aria-label="Exemples de projets"></div>',
   '<form class="product-guide-form" id="productGuideForm">',
@@ -89,7 +89,9 @@
    canSend=Boolean(r.ok&&data.ready===true&&data.freeModelOnly===true);
    setStatus(canSend?'IA générative gratuite disponible':data.reason==='free_model_unavailable'?'Modèle gratuit indisponible actuellement':'Conseiller IA non configuré actuellement');
   }catch{setStatus('Connexion au conseiller IA indisponible');}
+  const hadFocusInsideFallback=alternative.contains(document.activeElement);
   syncControls();
+  if(!panel.hidden && canSend && hadFocusInsideFallback)input.focus();
  };
  const start=()=>{
   if(controller){controller.abort();controller=null;}

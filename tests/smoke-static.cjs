@@ -155,6 +155,8 @@ for(const page of ['ressources.html','guide.html']){
 const advisor=read('assets/unified-advisor.js');
 verify(advisor.includes('if(!canSend)'),'Le client doit bloquer les générations non disponibles');
 verify(advisor.includes('Réessayer la vérification'),'Nouvelle vérification manquante');
+verify(advisor.includes("new URL('guide.html',siteRoot)"),'Le repli sans IA doit ouvrir le guide local');
+verify(advisor.includes('hadFocusInsideFallback'),'Le focus clavier doit quitter le volet masqué après connexion de l’IA');
 for(const script of ['assets/product-depth-data.js','assets/product-depth.js','assets/site.js','assets/product-cinema.js','assets/unified-advisor.js','assets/resource-hub.js','api/chat.js','assets/contact-draft.js','assets/guide-viewer.js']){
  new vm.Script(read(script),{filename:script});
  count++;
