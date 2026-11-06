@@ -22,7 +22,7 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 | Lot | Issue | Besoin du cahier des charges | Ce que le visiteur doit réellement constater |
 | --- | --- | --- | --- |
 | LIV-01 | #3 | Accès simple et direct à l'essai des 11 offres | Catalogue : bouton **Essayer l'atelier gratuit** indépendant sur chaque offre, utilisable après filtres et recherche. Publié en premier. |
-| LIV-02 | #3 | Banque Rédaction pratique | Démonstrateur générant un email, une relance ou une publication éditable à partir d'un brief ; copier/Exporter, données fictives, contrôles. |
+| LIV-02 | #3 | Banque Rédaction pratique | **LIVRÉ :** 4 formats (e-mail, relance, publication et texte web), 3 exemples, 3 tons, 5 repères de relecture, édition, copie, export .txt et prompt IA facultatif. [Ouvrir l’atelier](../univers/outils/outils/assistant-messages.html). |
 | LIV-03 | #3 | Banque Automatisation pratique | Atelier local décrivant déclencheur, étapes, conditions d'arrêt et points de contrôle, avec export d'un workflow testable. Aucune automatisation récurrente exécutée. |
 | LIV-04 | #3 | Quatre autres banques plus concrètes | Pour Visuels, Web, Vidéo et Recherche : un cas d'usage guidé et testable par banque, avec un résultat vérifiable, pas seulement un prompt. Si nécessaire scinder en plusieurs lots publiés séparément. |
 | LIV-05 | #4 | Formation Sites 3D + Agents IA | Une vraie leçon publique par formation, avec exercice, corrigé/critères et fichiers non commerciaux. |
@@ -46,3 +46,12 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 LIV-01 : `catalogue.html` charge `assets/catalogue-actions.css` et utilise `assets/site.js`. Les onze cartes exposent deux destinations indépendantes : **fiche 3D** et **atelier gratuit**. Les filtres restent opérationnels.
 
 Contrôles : `node tests/catalogue-actions.cjs` puis `node scripts/verify-release.cjs` sur copie locale, comparaison SHA GitHub/Vercel READY, et contrôle visuel mobile lorsque le navigateur est disponible.
+
+## Bilan LIV-02 — 6 novembre 2026
+
+- **URL publique :** https://testia-unifie.vercel.app/univers/outils/outils/assistant-messages.html
+- **Également accessible depuis :** vitrine Rédaction https://testia-unifie.vercel.app/univers/outils/pack-redaction.html et bibliothèque des ressources.
+- **Ce qui a changé :** interface du générateur entièrement revue, 4 formats × 3 tons, 3 cas métier, preuve facultative, 5 alertes de qualité, copie, export .txt, prompt IA éditable, conseiller du site préservé. Aucun contenu premium publié.
+- **Contrôles de comportement :** 67 validations par simulateur DOM/JS ; tests de l'atelier dans `tests/message-studio.cjs` ; le contrôle global manuel `scripts/verify-release.cjs` inclut désormais ce fichier.
+- **Restrictions :** générateur de modèles déterministe, **sans IA générative connectée**, sans compte, sans paiement ni publication automatique ; relecture et exactitude restent à la charge de l'utilisateur. Recette mobile visuelle sur navigateur réel à effectuer.
+- **Critère de publication :** comparer la branche `main` et le déploiement Vercel `READY` avant de marquer la livraison finale (à vérifier après ce commit).
