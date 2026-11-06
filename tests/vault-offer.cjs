@@ -53,6 +53,13 @@ function scenario(product,change){
 for(const p of base.TESTIA_PRODUCTS){
  const {ids,scroll}=scenario(p);
  assert.equal(ids.cinemaProduct.children.length,5,'Cinq scènes conservées pour '+p.id);
+ const firstPanel=ids.cinemaProduct.children[0].children[0];
+ const initialActions=firstPanel.children.find(x=>x.className==='cinema-actions');
+ assert.ok(initialActions,'Actions du premier écran absentes : '+p.id);
+ const directLink=initialActions.children.find(x=>x.textContent?.includes('sans l’animation 3D'));
+ assert.ok(directLink,'Un accès sans 3D doit être disponible : '+p.id);
+ assert.equal(directLink.href,base.TESTIA_DEEP[p.id]?.demo||'./atelier-produit.html?id='+encodeURIComponent(p.id),
+  'La destination du lien sans animation doit être accessible : '+p.id);
  assert.equal(ids.vaultOfferTitle.textContent,p.title,'Le bon produit doit sortir du coffre');
  assert.equal(ids.vaultOfferFeatures.children.length,3,'Trois bénéfices présentés');
  assert.equal(ids.vaultOfferStatus.textContent,p.status,'Statut de vente fidèle');

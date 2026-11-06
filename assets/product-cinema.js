@@ -202,6 +202,9 @@
     const actions=node('div','cinema-actions');
     addLink(actions,deep.page||collectionUrl,deep.page?(deep.pageLabel||details.action)+' ↗':'Voir la collection ↗','cinema-action');
     addLink(actions,'#cinemaScene1','Explorer la clé en 3D ↓','cinema-action cinema-action--ghost');
+    const directWorkshop=(typeof deep.demo==='string'&&/^\.\/univers\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.html$/i.test(deep.demo))
+     ?deep.demo:'./atelier-produit.html?id='+encodeURIComponent(p.id);
+    addLink(actions,directWorkshop,'Accéder à l’atelier sans l’animation 3D ↗','cinema-action cinema-action--ghost');
     const facts=node('dl','cinema-quickfacts');
     for(const [label,value] of [['Disponibilité',p.status],['Format',p.detail]]){
       const item=node('div','cinema-quickfact');
