@@ -1,0 +1,72 @@
+/* Studio IA — guide de choix éditorial, palette orange/crème validée.
+   Le composant n'altère ni la pile d'étiquettes de l'accueil ni la scène 3D. */
+.offer-finder{
+ max-width:1200px;margin:clamp(26px,4vw,60px) auto 0;
+ padding:clamp(22px,4vw,52px);border:1px solid #e7d5ca;border-radius:24px;
+ background:#fffcf9;color:#111827;box-shadow:0 12px 38px #5036260d;
+ font-family:Poppins,Arial,sans-serif;
+}
+.offer-finder__heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.7fr);gap:25px;align-items:end}
+.offer-finder__eyebrow,.offer-finder__step{display:block;color:#aa4d2c;font:800 10px/1.4 Poppins,Arial,sans-serif;letter-spacing:.12em}
+.offer-finder__heading h2{margin:13px 0 0;font:800 clamp(25px,3vw,42px)/1.12 Poppins,Arial,sans-serif;letter-spacing:-.055em;color:#111827}
+.offer-finder__heading p{margin:0;color:#535b66;font:500 13px/1.7 Poppins,Arial,sans-serif}
+.offer-finder__prompt{margin:32px 0 12px;color:#7f4a34;font:800 11px/1.4 Poppins,Arial,sans-serif;letter-spacing:.08em}
+.offer-finder__modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.offer-finder__mode,.offer-finder__topic{
+ color:#111827;min-height:55px;padding:14px 17px;text-align:left;cursor:pointer;
+ border-radius:13px;border:1px solid #e9d9cc;background:#fff6ef;
+ font:700 12px/1.4 Poppins,Arial,sans-serif;transition:border-color .16s,background .16s,transform .16s;
+}
+.offer-finder__mode:hover,.offer-finder__topic:hover{background:#ffeadc;border-color:#f9ac84;transform:translateY(-1px)}
+.offer-finder__mode[aria-pressed=true],.offer-finder__topic[aria-pressed=true]{
+ background:#ff6a3d;color:#111827;border-color:#ff6a3d;
+}
+.offer-finder__topics{margin-top:24px;border-top:1px solid #f0e5dd;padding-top:20px}
+.offer-finder__topics[hidden],.offer-finder__result[hidden]{display:none!important}
+.offer-finder__question{font:700 13px/1.4 Poppins,Arial,sans-serif;margin:0 0 13px;color:#111827}
+.offer-finder__topics-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.offer-finder__topic{background:#fff;font-weight:600;min-height:49px}
+.offer-finder__result{margin-top:22px;padding:clamp(20px,3vw,32px);border:1px solid #ffd7bd;border-radius:18px;background:#fff5ee}
+.offer-finder__result h3{margin:10px 0;font:800 clamp(22px,2.4vw,32px)/1.22 Poppins,Arial,sans-serif;letter-spacing:-.045em;color:#111827}
+.offer-finder__intro{margin:0 0 8px;font:600 13px/1.7 Poppins,Arial,sans-serif;color:#273241}
+.offer-finder__description{margin:0 0 20px;font:500 12px/1.65 Poppins,Arial,sans-serif;color:#535b66}
+.offer-finder__facts{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:15px 0;margin-top:8px;border-top:1px solid #efcdb9}
+.offer-finder__facts span{display:block;margin-bottom:4px;color:#8d4d35;font:800 10px Poppins,Arial,sans-serif;letter-spacing:.05em}
+.offer-finder__facts strong{font:700 12px/1.5 Poppins,Arial,sans-serif;color:#111827}
+.offer-finder__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.offer-finder__primary,.offer-finder__secondary{
+ display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 17px;
+ border-radius:12px;font:700 12px/1.35 Poppins,Arial,sans-serif;text-align:center;text-decoration:none;
+ transition:transform .16s,background .16s;
+}
+.offer-finder__primary{background:#ff6a3d;color:#111827!important}
+.offer-finder__secondary{background:#fff;border:1px solid #e7cabb;color:#111827!important}
+.offer-finder__primary:hover,.offer-finder__secondary:hover{transform:translateY(-2px)}
+.offer-finder__primary:hover{background:#ef5b31}
+.offer-finder__secondary:hover{background:#fffaf6}
+.offer-finder__alternative{margin-top:20px;padding-top:18px;border-top:1px solid #efcdb9}
+.offer-finder__alternative>span{font:800 10px Poppins,Arial,sans-serif;letter-spacing:.08em;color:#8d4d35}
+.offer-finder__alternative p{margin:7px 0;font:500 12px/1.65 Poppins,Arial,sans-serif;color:#535b66}
+.offer-finder__alt-link{color:#a84220!important;font:700 12px/1.5 Poppins,Arial,sans-serif;text-underline-offset:3px}
+.offer-finder__disclaimer,.offer-finder__privacy{font:500 10px/1.65 Poppins,Arial,sans-serif;color:#67666c}
+.offer-finder__disclaimer{margin:17px 0 0}
+.offer-finder__privacy{margin:15px 0 0}
+.offer-finder :is(button,a):focus-visible{outline:3px solid #ae4320!important;outline-offset:3px}
+@media(max-width:1240px){.offer-finder{margin-left:22px;margin-right:22px}}
+@media(max-width:760px){
+ .offer-finder{margin:20px 14px 0;padding:20px;border-radius:18px}
+ .offer-finder__heading{grid-template-columns:1fr;gap:10px}
+ .offer-finder__prompt{margin-top:22px}
+ .offer-finder__modes{grid-template-columns:1fr}
+ .offer-finder__mode{min-height:47px}
+ .offer-finder__topics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .offer-finder__actions{flex-direction:column}
+ .offer-finder__actions a{width:100%}
+}
+@media(max-width:420px){
+ .offer-finder__topics-grid{grid-template-columns:1fr}
+ .offer-finder__facts{grid-template-columns:1fr;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .offer-finder__mode,.offer-finder__topic,.offer-finder__primary,.offer-finder__secondary{transition:none!important;transform:none!important}
+}
