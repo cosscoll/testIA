@@ -20,8 +20,8 @@ const escapeXml=v=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 const normalize=raw=>{
  raw=raw||{};
  return{brand:limit(raw.brand,48),title:limit(raw.title,92),description:limit(raw.description,190),
-  cta:limit(raw.cta,48),footer:limit(raw.footer,92),palette:palettes[raw.palette]?raw.palette:'orange',
-  layout:layouts.has(raw.layout)?raw.layout:'editorial',format:formats[raw.format]?raw.format:'square'};
+  cta:limit(raw.cta,48),footer:limit(raw.footer,92),palette:Object.prototype.hasOwnProperty.call(palettes,raw.palette)?raw.palette:'orange',
+  layout:layouts.has(raw.layout)?raw.layout:'editorial',format:Object.prototype.hasOwnProperty.call(formats,raw.format)?raw.format:'square'};
 };
 const linear=x=>{const v=x/255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)};
 const luminance=hex=>{const c=[1,3,5].map(i=>linear(parseInt(hex.slice(i,i+2),16)));return c[0]*.2126+c[1]*.7152+c[2]*.0722};
@@ -50,7 +50,7 @@ function wrap(value,max=19,lines=3){
 function quality(raw){
  const v=normalize(raw),p=palettes[v.palette];
  const title=wrap(v.title,v.layout==='split'?16:19,3);
- const description=wrap(v.description,v.layout==='split'?26:40,4);
+ const description=wrap(v.description,v.layout==='split'?26:40,v.format==='square'?(v.layout==='center'?2:3):4);
  return [
   {key:'title',ok:v.title.length>=8&&!title.truncated,label:'Titre complet et lisible'},
   {key:'description',ok:v.description.length>=12&&!description.truncated,label:'Description sans coupure'},
@@ -69,8 +69,8 @@ function groupLines(x,y,words,size,color,lineHeight,weight,anchor='start'){
 function buildSvg(raw){
  const v=normalize(raw),p=palettes[v.palette],f=formats[v.format],h=f.height,w=f.width,portrait=h>1100;
  const titleInfo=wrap(v.title,v.layout==='split'?16:19,3);
- const descInfo=wrap(v.description,v.layout==='split'?26:40,4);
- const mainSize=v.layout==='split'?72:91;
+ const descInfo=wrap(v.description,v.layout==='split'?26:40,v.format==='square'?(v.layout==='center'?2:3):4);
+ const mainSize=v.layout==='split'?72:82;
  const headlineLine=mainSize*1.16;
  const parts=[
   '<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+escapeXml(v.title||'Aperçu de l’affiche')+'">',
@@ -81,19 +81,20 @@ function buildSvg(raw){
   parts.push('<circle cx="971" cy="135" r="280" fill="'+p.accent+'" opacity=".94"/>');
   parts.push(rect(84,105,75,9,p.ink,0),text(84,160,v.brand.toLocaleUpperCase('fr'),25,p.ink,700,'start',2.2));
   parts.push(rect(84,257,70,70,p.accent,35));
-  parts.push(groupLines(84,435,titleInfo.lines,mainSize,p.ink,headlineLine,800));
-  const descTop=435+titleInfo.lines.length*headlineLine+42;
-  parts.push(groupLines(88,descTop,descInfo.lines,31,p.muted,47,400));
+  const startY=portrait?465:390;
+  parts.push(groupLines(84,startY,titleInfo.lines,mainSize,p.ink,headlineLine,800));
+  const descTop=startY+titleInfo.lines.length*headlineLine+25;
+  parts.push(groupLines(88,descTop,descInfo.lines,portrait?31:28,p.muted,portrait?45:41,400));
   const y=h-241;
   parts.push(rect(84,y,730,79,p.accent,13));
-  parts.push(text(122,y+52,v.cta.toLocaleUpperCase('fr'),24,p.accentInk,700,'start',1.1));
+  parts.push(text(122,y+52,v.cta.toLocaleUpperCase('fr'),v.cta.length>31?19:24,p.accentInk,700,'start',.8));
   parts.push(rect(84,h-97,w-168,2,p.ink,0,'opacity=".24"'));
-  parts.push(text(84,h-50,v.footer,23,p.muted,400));
+  parts.push(groupLines(84,h-65,wrap(v.footer,46,2).lines,18,p.muted,27,400));
   parts.push(text(996,h-50,'STUDIO / VISUEL',16,p.muted,700,'end',2));
  } else if(v.layout==='split'){
   parts.push(rect(0,0,355,h,p.accent));
   parts.push('<circle cx="177" cy="200" r="104" fill="'+p.accentInk+'" opacity=".085"/>');
-  parts.push(text(84,145,v.brand.toLocaleUpperCase('fr'),25,p.accentInk,700,'start',2));
+  parts.push(groupLines(84,140,wrap(v.brand.toLocaleUpperCase('fr'),17,2).lines,22,p.accentInk,33,700));
   parts.push('<path d="M80 '+(h-455)+' L265 '+(h-455)+' M80 '+(h-422)+' L210 '+(h-422)+'" stroke="'+p.accentInk+'" stroke-width="8" opacity=".28"/>');
   parts.push(groupLines(78,h-324,wrap(v.cta.toLocaleUpperCase('fr'),17,3).lines,23,p.accentInk,39,750));
   parts.push(rect(430,126,76,11,p.accent));
@@ -107,14 +108,15 @@ function buildSvg(raw){
   parts.push('<circle cx="540" cy="260" r="141" fill="'+p.accent+'"/>');
   parts.push('<circle cx="540" cy="260" r="78" fill="none" stroke="'+p.accentInk+'" stroke-width="4" opacity=".65"/>');
   parts.push(text(540,145,v.brand.toLocaleUpperCase('fr'),23,p.ink,700,'middle',2.3));
-  const titleY=portrait?575:510;
-  parts.push(groupLines(540,titleY,titleInfo.lines,82,p.ink,98,800,'middle'));
-  const descTop=titleY+titleInfo.lines.length*98+35;
-  parts.push(groupLines(540,descTop,descInfo.lines,30,p.muted,45,400,'middle'));
+  const titleY=portrait?590:485;
+  const line=portrait?91:78;
+  parts.push(groupLines(540,titleY,titleInfo.lines,portrait?79:73,p.ink,line,800,'middle'));
+  const descTop=titleY+titleInfo.lines.length*line+26;
+  parts.push(groupLines(540,descTop,descInfo.lines,portrait?30:27,p.muted,portrait?42:36,400,'middle'));
   const ctaY=h-267;
   parts.push(rect(165,ctaY,750,86,p.accent,11));
-  parts.push(text(540,ctaY+56,v.cta.toLocaleUpperCase('fr'),24,p.accentInk,750,'middle',.8));
-  parts.push(text(540,h-102,v.footer,20,p.muted,500,'middle'));
+  parts.push(text(540,ctaY+56,v.cta.toLocaleUpperCase('fr'),v.cta.length>31?19:24,p.accentInk,750,'middle',.6));
+  parts.push(groupLines(540,h-118,wrap(v.footer,52,2).lines,19,p.muted,27,500,'middle'));
  }
  parts.push('</svg>');
  return parts.join('');
