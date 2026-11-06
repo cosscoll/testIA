@@ -86,6 +86,11 @@
     demo.textContent=(deep.demoLabel||'Tester un exemple gratuit')+' ↗';
    }else demo.removeAttribute('href');
   }
+  const workshop=$('vaultOfferWorkshop');
+  if(workshop){
+   workshop.href='./atelier-produit.html?id='+encodeURIComponent(p.id);
+   workshop.textContent='Essayer l’atelier de cette offre ↗';
+  }
   const checkout=verifiedCheckout(p);
   if(checkout){
    primary.href=checkout;
@@ -214,6 +219,7 @@
    section(4,'left','04 / À QUI S’ADRESSE-T-IL ?',displayTitle(p),p.audience,copy=>{
     const label=node('p','cinema-proto-note',p.status+' · Aucun achat ou inscription activé.');
     copy.append(label);
+    addLink(copy,'./atelier-produit.html?id='+encodeURIComponent(p.id),'Réaliser mon atelier d’essai ↗','cinema-action cinema-action--ghost');
     if(deep.demo)addLink(copy,deep.demo,(deep.demoLabel||'Essayer un exemple')+' ↗','cinema-action cinema-action--ghost');
     else if(deep.secondary)addLink(copy,deep.secondary,(deep.secondaryLabel||'Voir un exemple')+' ↗','cinema-action cinema-action--ghost');
    })

@@ -17,6 +17,14 @@ La structure validée reprend les **cinq étiquettes interactives superposées**
 Documentation : [retour Obscure Pop et pages produits 3D](docs/RETOUR_OBSCURE_POP_CINEMA_PRODUITS_2026-11-03.md). Les trois dépôts originaux restent inchangés. Le chatbot a été conservé mais son dysfonctionnement signalé reste à corriger.
 
 
+## Ateliers d'essai gratuits — 6 novembre 2026
+
+Les onze offres disposent chacune d'un **atelier public praticable**, non d'un simple texte de présentation : 49 étapes de travail au total, 55 champs de brief, des critères de contrôle qualité et une génération locale d'un canevas texte réutilisable. La fonction d'export `.txt` ne contacte aucun serveur et n'envoie aucune donnée métier à une IA. Le pack Conciergerie présente les intitulés publics de ses 15 procédures et 7 registres pilotes, sans diffuser les documents commerciaux.
+
+Le parcours est **Catalogue → fiche produit cinématique → atelier associé**, avec accès direct depuis le guide de choix et le module sortant du coffre. La bibliothèque compte 37 ressources publiques : 26 sources importées et 11 ateliers originaux créés pour la plateforme. Les supports commerciaux complets, tarifs, inscriptions et livraisons restent à finaliser.
+
+Contrôles : `node tests/product-depth.cjs`, `node tests/smoke-static.cjs`, `node tests/vault-offer.cjs`. Une recette visuelle sur de vrais appareils est encore nécessaire.
+
 ## Les 11 offres représentées
 
 - **Packs Procédures Pro (1)** : pack pilote Conciergeries et locations courte durée.
@@ -38,7 +46,7 @@ L’accueil utilise les cinq étiquettes animées validées. Le catalogue prése
 
 ## Bibliothèque des ressources publiques
 
-Le regroupement comprend désormais **26 ressources accessibles** dans une bibliothèque progressive, en plus des **11 produits** du catalogue :
+Le regroupement comprend **37 ressources accessibles**, dont **26 ressources d’origine** et **11 ateliers publics complémentaires**, en plus des **11 produits** du catalogue :
 
 - **5 ressources procédures** : exemple P01, atelier de décisions, scène clé/coffre, laboratoire de reproduction et guide technique.
 - **13 ressources d'outils IA** : générateur, fiches, guide de choix, cartographie, démonstrations AETHER/FORME/NOVA/WEB PRESS/STUDIO 3D et guides de prompts.

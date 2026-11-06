@@ -105,3 +105,8 @@
 .cinema-offer__demo{display:inline-block;margin-top:14px;color:#a44220!important;font:800 11px/1.55 Poppins,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px}
 .cinema-offer__demo:hover{color:#732a12!important}
 .cinema-offer__demo[hidden]{display:none!important}
+
+/* L'atelier complète le parcours de la clé sans créer une fausse offre d'achat. */
+.cinema-offer__workshop{display:flex;align-items:center;justify-content:center;margin-top:12px;padding:11px 13px;min-height:43px;background:#fff7ef;border:1px solid #eebf9e;border-radius:10px;color:#913b1c!important;text-decoration:none;text-align:center;font:800 11px/1.45 Poppins,Arial,sans-serif}
+.cinema-offer__workshop:hover{background:#ffe8d5;color:#70290f!important}
+.cinema-offer__workshop:focus-visible{outline:3px solid #b0441a!important;outline-offset:3px}

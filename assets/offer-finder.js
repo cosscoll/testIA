@@ -104,7 +104,8 @@
   result.append(facts);
   const actions=make('div','offer-finder__actions');
   actions.append(link('Voir le produit et son coffre 3D ↗',productUrl(product.id),'offer-finder__primary'));
-  if(deep.demo)actions.append(link((deep.demoLabel||'Essayer un exemple gratuit')+' ↗',deep.demo,'offer-finder__secondary'));
+  actions.append(link('Créer ma fiche d’essai gratuite ↗','./atelier-produit.html?id='+encodeURIComponent(product.id),'offer-finder__secondary'));
+  if(deep.demo)actions.append(link((deep.demoLabel||'Voir une autre démonstration gratuite')+' ↗',deep.demo,'offer-finder__secondary'));
   else if(deep.page)actions.append(link('Consulter le contenu présenté ↗',deep.page,'offer-finder__secondary'));
   result.append(actions);
   const complementary=byId[otherChoices[product.id]];

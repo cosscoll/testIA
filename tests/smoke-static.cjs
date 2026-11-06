@@ -4,7 +4,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');
-const pages=['index.html','catalogue.html','produit.html','ressources.html','contact.html','guide.html'];
+const pages=['index.html','catalogue.html','produit.html','atelier-produit.html','ressources.html','contact.html','guide.html'];
 const exists=relative=>fs.existsSync(path.join(root,relative));
 const read=relative=>fs.readFileSync(path.join(root,relative),'utf8');
 let count=0;
@@ -67,7 +67,20 @@ for(const product of browser.TESTIA_PRODUCTS){
  verify(exists(resolve('index.html',detail.page)),'Page originale absente : '+product.id);
 }
 vm.runInNewContext(read('assets/resources-data.js'),{window:browser},{timeout:1000});
-verify(browser.STUDIO_RESOURCES.length===26,'La bibliothèque doit présenter 26 ressources');
+verify(browser.STUDIO_RESOURCES.length===37,'La bibliothèque doit présenter 26 ressources sources + 11 ateliers');
+vm.runInNewContext(read('assets/product-depth-data.js'),{window:browser},{timeout:1000});
+verify(Object.keys(browser.STUDIO_PRODUCT_DEPTH).length===11,'Chaque offre doit avoir un atelier');
+for(const product of browser.TESTIA_PRODUCTS){
+ const atelier=browser.STUDIO_PRODUCT_DEPTH[product.id];
+ verify(Boolean(atelier),'Atelier absent : '+product.id);
+ verify(Array.isArray(atelier.phases)&&atelier.phases.length>=4,'Progression trop courte : '+product.id);
+ verify(atelier.sample.fields.length>=4,'Brief incomplet : '+product.id);
+ verify(atelier.criteria.length>=4,'Critères de qualité manquants : '+product.id);
+ verify(browser.STUDIO_RESOURCES.some(r=>r.id==='atelier-'+product.id),'Atelier non listé : '+product.id);
+}
+verify(read('produit.html').includes('id="vaultOfferWorkshop"'),'Lien atelier coffre absent');
+verify(read('assets/product-cinema.js').includes('atelier-produit.html?id='),'Accès atelier depuis les scènes absent');
+verify(read('assets/offer-finder.js').includes('atelier-produit.html?id='),'Accès atelier depuis le guide de choix absent');
 for(const resource of browser.STUDIO_RESOURCES){
  verify(exists(resolve('index.html',resource.url)),'Ressource introuvable : '+resource.id);
 }
@@ -78,7 +91,7 @@ for(const page of ['ressources.html','guide.html']){
 const advisor=read('assets/unified-advisor.js');
 verify(advisor.includes('if(!canSend)'),'Le client doit bloquer les générations non disponibles');
 verify(advisor.includes('Réessayer la vérification'),'Nouvelle vérification manquante');
-for(const script of ['assets/site.js','assets/product-cinema.js','assets/unified-advisor.js','assets/resource-hub.js','api/chat.js','assets/contact-draft.js','assets/guide-viewer.js']){
+for(const script of ['assets/product-depth-data.js','assets/product-depth.js','assets/site.js','assets/product-cinema.js','assets/unified-advisor.js','assets/resource-hub.js','api/chat.js','assets/contact-draft.js','assets/guide-viewer.js']){
  new vm.Script(read(script),{filename:script});
  count++;
 }

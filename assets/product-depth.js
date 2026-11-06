@@ -129,9 +129,17 @@
   status.textContent='Fiche préparée localement. Vous pouvez la relire, la copier ou l’exporter.';
  });
  form.addEventListener('reset',()=>{
+  boxes.forEach(box=>{box.checked=false;});count();
   output.value='';copy.disabled=true;download.disabled=true;
   status.textContent='Le formulaire a été réinitialisé, sans sauvegarde.';
  });
+ const invalidate=()=>{
+  if(!output.value)return;
+  output.value='';copy.disabled=true;download.disabled=true;
+  status.textContent='Le brief a changé. Reconstruisez la fiche pour inclure vos modifications.';
+ };
+ fields.addEventListener('input',invalidate);
+ checked.addEventListener('change',invalidate);
  copy.addEventListener('click',async()=>{
   if(!output.value)return;
   try{
