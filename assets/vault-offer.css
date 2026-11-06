@@ -100,3 +100,8 @@
  .cinema-offer{will-change:auto;transition:none!important;transform:none!important;filter:none!important}
  .cinema-vault__copy{transition:none!important}
 }
+
+/* Preuve avant achat : lien uniquement lorsque la vraie démonstration existe. */
+.cinema-offer__demo{display:inline-block;margin-top:14px;color:#a44220!important;font:800 11px/1.55 Poppins,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.cinema-offer__demo:hover{color:#732a12!important}
+.cinema-offer__demo[hidden]{display:none!important}

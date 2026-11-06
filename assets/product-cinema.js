@@ -76,6 +76,16 @@
   const primary=$('vaultOfferPrimary');
   const secondary=$('vaultOfferSecondary');
   const notice=$('vaultOfferNotice');
+  // Une preuve gratuite n'est affichée que si sa page importée existe déjà.
+  const demo=$('vaultOfferDemo');
+  if(demo){
+   const usable=typeof deep.demo==='string'&&/^\.\/univers\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.html$/i.test(deep.demo);
+   demo.hidden=!usable;
+   if(usable){
+    demo.href=deep.demo;
+    demo.textContent=(deep.demoLabel||'Tester un exemple gratuit')+' ↗';
+   }else demo.removeAttribute('href');
+  }
   const checkout=verifiedCheckout(p);
   if(checkout){
    primary.href=checkout;

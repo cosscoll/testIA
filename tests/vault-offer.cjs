@@ -19,7 +19,7 @@ class Element{
 }
 function scenario(product,change){
  const ids={};
- for(const id of ['cinemaProduct','cinemaVault','world','vaultState','vaultDescription','vaultTitle','vaultPrimary','vaultSecondary','vaultOffer','vaultOfferFamily','vaultOfferTitle','vaultOfferLead','vaultOfferFormat','vaultOfferStatus','vaultOfferFeatures','vaultOfferPrimary','vaultOfferSecondary','vaultOfferNotice'])
+ for(const id of ['cinemaProduct','cinemaVault','world','vaultState','vaultDescription','vaultTitle','vaultPrimary','vaultSecondary','vaultOffer','vaultOfferFamily','vaultOfferTitle','vaultOfferLead','vaultOfferFormat','vaultOfferStatus','vaultOfferFeatures','vaultOfferPrimary','vaultOfferSecondary','vaultOfferNotice','vaultOfferDemo'])
   ids[id]=new Element('div');
  const state={open:1},events={},queue=[];
  const p=Object.assign({},product,change||{});
@@ -57,6 +57,9 @@ for(const p of base.TESTIA_PRODUCTS){
  assert.equal(ids.vaultOfferFeatures.children.length,3,'Trois bénéfices présentés');
  assert.equal(ids.vaultOfferStatus.textContent,p.status,'Statut de vente fidèle');
  assert.equal(ids.vaultOffer.dataset.checkout,'unavailable','Aucune vente fictive');
+ const demo=base.TESTIA_DEEP[p.id]?.demo;
+ assert.equal(ids.vaultOfferDemo.hidden,!Boolean(demo),'Démonstration conditionnelle : '+p.id);
+ if(demo)assert.equal(ids.vaultOfferDemo.href,demo,'Destination réelle de la démonstration : '+p.id);
  assert.match(ids.vaultOfferPrimary.href,/^\.\/univers\//,'Détails d’origine liés');
  assert.equal(ids.vaultOfferSecondary.href,'./contact.html?produit='+encodeURIComponent(p.id));
  assert.equal(scroll(.70).hidden,'true','Pas de vente avant ouverture du coffre');
