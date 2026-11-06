@@ -47,6 +47,14 @@ for(const page of imported){
  }
 }
 verify(read('contact.html').includes('id="contactCopy"'),'Copie locale de brouillon absente');
+verify(exists('univers/outils/assets/message-studio.js'),'Nouveau moteur rédaction absent');
+verify(exists('univers/outils/assets/message-studio.css'),'Nouveau style rédaction absent');
+const rédaction=read('univers/outils/outils/assistant-messages.html');
+verify(rédaction.includes('assets/message-studio.js'),'Atelier de rédaction non chargé');
+verify(rédaction.includes('id="promptOutput"'),'Prompt à copier indisponible');
+verify(rédaction.includes('id="messageQuality"'),'Contrôles de qualité indisponibles');
+verify(read('univers/outils/pack-redaction.html').includes('quatre formats'),'La vitrine ne présente pas la nouvelle démo');
+
 verify(read('contact.html').includes('contact-draft.js'),'Module contact absent');
 verify(read('assets/guide-viewer.js').includes("unsafe protocol"),'Liens dangereux non filtrés du guide');
 verify(read('assets/product-cinema.js').includes('COFFRE — APERÇU STATIQUE'),'Fallback 3D ambigu');

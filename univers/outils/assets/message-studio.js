@@ -45,7 +45,7 @@
   }
   if(channel==='post'){
    const lead={pro:cap(benefit),warm:'Une idée pour '+audience, direct:cap(benefit)}[tone];
-   return lines([lead,'',offerLine,proofLine,'',dot(cta)]).replace(/\n{3,}/g,'\n\n');
+   return lines([lead,'',offerLine,tone==='warm'?benefitLine:'',proofLine,'',dot(cta)]).replace(/\n{3,}/g,'\n\n');
   }
   const lead=tone==='direct'?cap(benefit):business+' — '+cap(benefit);
   return lines([lead,'',offerLine,proofLine,'',dot('Pour en savoir plus : '+cta)]).replace(/\n{3,}/g,'\n\n');
