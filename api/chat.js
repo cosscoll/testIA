@@ -93,6 +93,22 @@ async function freeModelStillFree(){
   return ['input','output'].every(k=>v[k]!==undefined && v[k]!==null && Number.isFinite(Number(v[k])) && Number(v[k])===0)
      && ![...(v.input_tiers||[]),...(v.output_tiers||[])].some(p=>Number(p.cost)!==0);
 }
+// Les simples contrôles d'état sont regroupés pour éviter de solliciter le fournisseur
+// à chaque ouverture du panneau. Cette mémoire n'est jamais utilisée pour les POST :
+// leur barrière de coût refait TOUJOURS une vérification de tarif en direct.
+const healthCache={checkedAt:0,ready:false,pending:null};
+async function cachedFreeModelStatus(){
+  if(healthCache.checkedAt&&Date.now()-healthCache.checkedAt<30_000)return healthCache.ready;
+  if(healthCache.pending)return healthCache.pending;
+  healthCache.pending=(async()=>{
+    let ready=false;
+    try{ready=await freeModelStillFree()}catch{}
+    healthCache.ready=ready;
+    healthCache.checkedAt=Date.now();
+    return ready;
+  })().finally(()=>{healthCache.pending=null;});
+  return healthCache.pending;
+}
 async function handler(req,res){
   const origin=req.headers?.origin;
   if(req.method==='OPTIONS'){
@@ -106,8 +122,7 @@ async function handler(req,res){
     // Ne jamais contacter l'AI Gateway si l'authentification n'est pas configurée.
     // La disponibilité reste vérifiée de nouveau côté serveur avant chaque génération POST.
     if(!credential)return respond(res,200,{ready:false,reason:'not_configured',modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
-    let free=false;
-    try{free=await freeModelStillFree()}catch{}
+    const free=await cachedFreeModelStatus();
     return respond(res,200,{ready:free,reason:free?null:'free_model_unavailable',modelKind:'generative',families:3,offers:11,historyStored:false,freeModelOnly:true});
   }
   if(req.method!=='POST')return respond(res,405,{error:'method_not_allowed'});
