@@ -98,3 +98,5 @@ Le travail est désormais découpé en lots fonctionnels publiés sur la version
 ## LIV-02 — Atelier Rédaction & communication (06/11/2026)
 
 La [démonstration de rédaction](univers/outils/outils/assistant-messages.html) propose quatre formats (e-mail, relance, publication, texte web), trois exemples métier, trois tons, un fait concret, cinq repères de relecture, un texte éditable, copie, export .txt et un prompt à coller dans l'outil IA de son choix. L'atelier est déterministe et local **sans IA connectée ni paiement**, les produits premium restent en préparation. Vérification manuelle : `node tests/message-studio.cjs` et `node scripts/verify-release.cjs`.
+
+L'atelier conserve le conseiller IA unifié et ses données catalogue. Les champs du brief local ne sont jamais transmis automatiquement au conseiller.

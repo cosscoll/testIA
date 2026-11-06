@@ -53,6 +53,8 @@ const rédaction=read('univers/outils/outils/assistant-messages.html');
 verify(rédaction.includes('assets/message-studio.js'),'Atelier de rédaction non chargé');
 verify(rédaction.includes('id="promptOutput"'),'Prompt à copier indisponible');
 verify(rédaction.includes('id="messageQuality"'),'Contrôles de qualité indisponibles');
+verify(rédaction.includes('unified-advisor.js'),'Le conseiller IA manque sur le nouvel atelier');
+verify(rédaction.includes('assets/data.js'),'Le conseiller IA manque ses données catalogue');
 verify(read('univers/outils/pack-redaction.html').includes('quatre formats'),'La vitrine ne présente pas la nouvelle démo');
 
 verify(read('contact.html').includes('contact-draft.js'),'Module contact absent');
