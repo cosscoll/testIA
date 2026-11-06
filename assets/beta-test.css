@@ -1,0 +1,62 @@
+/* Atelier de bêta-test : identité Studio IA orange/crème, sans dépendance externe. */
+body.beta-page{margin:0;background:#fff5ee;color:#111827;font-family:Poppins,Arial,sans-serif}
+.beta-page *{box-sizing:border-box}
+.beta-page .skip-link{position:absolute;top:-90px;left:12px;background:#fff;padding:12px;z-index:10}
+.beta-page .skip-link:focus{top:12px}
+.beta-page .beta-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid #e8d9cc;background:#fff9f4;padding:21px max(20px,calc((100vw - 1300px)/2))}
+.beta-page .beta-brand,.beta-page .beta-footer a{font-weight:800;font-size:24px;text-decoration:none;color:#111827;letter-spacing:-.05em}
+.beta-page .beta-brand b{color:#ff6a3d}
+.beta-page .beta-header nav{display:flex;flex-wrap:wrap;gap:17px}
+.beta-page .beta-header nav a{font-size:13px;font-weight:650;color:#344051;text-decoration:none}
+.beta-page .beta-header>span,.beta-page .beta-footer span{font-size:11px;letter-spacing:.1em;color:#964d36;font-weight:800}
+.beta-page .beta-main{padding:58px 17px 86px;background:radial-gradient(ellipse at 90% 4%,#ffd6bf80,transparent 42%),#fff5ee}
+.beta-page .beta-wrap{max-width:1300px;margin:0 auto}
+.beta-page .beta-eyebrow{font-size:11px;color:#954b33;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.beta-page .beta-hero h1{font-size:clamp(43px,6vw,84px);line-height:1.05;letter-spacing:-.07em;font-weight:800;margin:14px 0 23px;color:#111827}
+.beta-page .beta-hero h1 em{font-style:normal;color:#c35a3a}
+.beta-page .beta-hero>p:not(.beta-eyebrow){font-size:clamp(15px,1.6vw,19px);line-height:1.7;max-width:870px;color:#505a67}
+.beta-page .beta-hero .beta-notice{font-size:12px;max-width:1040px;background:#fffaf6;padding:18px 20px;border-left:4px solid #f18a64;border-radius:0 10px 10px 0;margin:25px 0 30px}
+.beta-page .beta-grid{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:20px;align-items:start}
+.beta-page .beta-panel{min-width:0;background:#fffcf9;border:1px solid #e8d9cf;border-radius:19px;padding:clamp(20px,2.5vw,32px);box-shadow:0 10px 29px #70564712}
+.beta-page .beta-feedback{position:sticky;top:95px}
+.beta-page .beta-heading{display:flex;align-items:start;gap:13px;margin-bottom:23px}
+.beta-page .beta-heading>span{flex:0 0 35px;height:35px;border-radius:10px;display:grid;place-items:center;background:#ffe9d9;color:#91452c;font-size:12px;font-weight:800}
+.beta-page .beta-heading h2{font-size:clamp(22px,2.5vw,29px);letter-spacing:-.045em;line-height:1.2;margin:0 0 8px;color:#111827}
+.beta-page .beta-heading p{font-size:12px;color:#66707c;line-height:1.65;margin:0}
+.beta-page .beta-progress{display:grid;gap:11px;background:#fff6ef;border:1px solid #e9d8cb;padding:17px;border-radius:11px;margin-bottom:17px}
+.beta-page .beta-progress strong{font-size:13px;color:#2b3546}
+.beta-page .beta-progress progress{width:100%;height:10px;accent-color:#ff6a3d}
+.beta-page .beta-tasks{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.beta-page .beta-tasks>li{background:#fff9f5;border:1px solid #ebdbcf;border-radius:13px;padding:19px}
+.beta-page .beta-task-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.beta-page .beta-task-head strong{font-size:11px;letter-spacing:.1em;color:#a35236}
+.beta-page .beta-task-head a{font-size:12px;font-weight:750;color:#8e4028;text-decoration:underline;text-underline-offset:4px}
+.beta-page .beta-tasks h3{font-size:18px;margin:15px 0 8px;letter-spacing:-.035em}
+.beta-page .beta-tasks p{font-size:12px;line-height:1.7;color:#5b6471;margin:0 0 14px}
+.beta-page .beta-tasks label,.beta-page .beta-field{display:grid;gap:8px;font-size:12px;font-weight:650;color:#303e4b}
+.beta-page .beta-tasks select,.beta-page .beta-field :is(select,textarea),.beta-page #beta-report{display:block;max-width:100%;width:100%;background:#fff!important;color:#111827!important;padding:12px 13px;border:1px solid #d8c9bd;border-radius:9px;font:450 13px/1.6 Poppins,Arial,sans-serif}
+.beta-page .beta-tasks select{max-width:300px}
+.beta-page #beta-form{display:grid;gap:17px}
+.beta-page .beta-field textarea,.beta-page #beta-report{resize:vertical}
+.beta-page .beta-rating{border:1px solid #eaddcf;border-radius:11px;margin:0;padding:16px}
+.beta-page .beta-rating legend{font-size:12px;font-weight:700;color:#293847}
+.beta-page .beta-rating>div{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0}
+.beta-page .beta-rating label{cursor:pointer;font-size:15px;font-weight:750;display:flex;align-items:center;gap:5px}
+.beta-page .beta-rating input{width:17px;height:17px;accent-color:#da6540}
+.beta-page .beta-rating small{font-size:11px;color:#70707a}
+.beta-page .beta-actions{display:grid;gap:9px}
+.beta-page .beta-button{min-height:45px;border-radius:11px;border:1px solid #e4bba5;background:#fff1e7;color:#803d28;padding:12px 15px;font:750 12px Poppins,Arial,sans-serif;cursor:pointer}
+.beta-page .beta-button-primary{background:#ff6a3d!important;color:#111827!important;border-color:#ff6a3d!important}
+.beta-page .beta-button:disabled{cursor:not-allowed;opacity:.42}
+.beta-page :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #b24e2f!important;outline-offset:3px!important}
+.beta-page .beta-status{font-size:12px;line-height:1.7;color:#85422d;margin:0}
+.beta-page details summary{font-size:12px;color:#914b30;cursor:pointer;font-weight:700}
+.beta-page #beta-report{margin-top:11px;max-height:300px;font-family:monospace}
+.beta-page .beta-bottom{border-top:1px solid #e8d9cc;margin-top:38px;padding-top:20px}
+.beta-page .beta-bottom h2{font-size:24px;letter-spacing:-.04em;color:#111827}
+.beta-page .beta-bottom p{font-size:13px;line-height:1.8;max-width:950px;color:#56616d}
+.beta-page .beta-bottom a{font-size:13px;font-weight:750;color:#8f452b}
+.beta-page .beta-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:24px max(20px,calc((100vw - 1300px)/2));background:#fff9f4;border-top:1px solid #e8d9cc}
+@media(max-width:980px){.beta-page .beta-grid{grid-template-columns:1fr}.beta-page .beta-feedback{position:relative;top:auto}}
+@media(max-width:550px){.beta-page .beta-main{padding:30px 12px 58px}.beta-page .beta-header{gap:13px}.beta-page .beta-header>span{display:none}.beta-page .beta-panel{padding:17px}}
+@media(prefers-reduced-motion:reduce){.beta-page *{transition:none!important;scroll-behavior:auto!important}}
