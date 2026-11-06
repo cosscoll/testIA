@@ -28,6 +28,7 @@ check(fs.existsSync(path.join(root,'univers/procedures/assets/apartment-scene.js
 check(fs.existsSync(path.join(root,'api/chat.js')),'Conseiller IA absent');
 const contact=read('contact.html');
 check(!contact.includes('issues/new'),'Contact ne doit pas ouvrir une Issue GitHub publique');
+check(contact.includes('form-action &#39;none&#39;'),'Contact doit bloquer la soumission même sans JavaScript');
 check(contact.includes('href="./beta.html"'),'Le lien de la beta manque sur Contact');
 check(home.includes('href="./beta.html"'),'Le lien de la beta manque sur Accueil');
 
