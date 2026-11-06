@@ -20,6 +20,11 @@
         feedback.textContent='Demande préremplie pour '+product.title+'. Vous pouvez copier ce brouillon ; il n’est pas envoyé automatiquement.';
       }
     }
+    // Le formulaire prépare exclusivement un texte copiable. Aucune soumission réseau.
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      feedback.textContent='Aucun message envoyé. Utilisez le bouton de copie pour préparer votre brouillon.';
+    });
     let manual=null;
     copy.addEventListener('click',async()=>{
       if(!form.reportValidity()){
