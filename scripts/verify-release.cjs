@@ -12,6 +12,7 @@ const tests=[
  'tests/message-studio.cjs',
  'tests/workflow-studio.cjs',
  'tests/visual-studio.cjs',
+ 'tests/web-builder.cjs',
  'tests/product-depth.cjs',
  'tests/vault-offer.cjs',
  'tests/chat-contract.cjs'

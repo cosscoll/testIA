@@ -24,7 +24,7 @@ Les étapes privées (production de packs, de prompts premium et de contenus pay
 | LIV-01 | #3 | Accès simple et direct à l'essai des 11 offres | Catalogue : bouton **Essayer l'atelier gratuit** indépendant sur chaque offre, utilisable après filtres et recherche. Publié en premier. |
 | LIV-02 | #3 | Banque Rédaction pratique | **LIVRÉ :** 4 formats (e-mail, relance, publication et texte web), 3 exemples, 3 tons, 5 repères de relecture, édition, copie, export .txt et prompt IA facultatif. [Ouvrir l’atelier](../univers/outils/outils/assistant-messages.html). |
 | LIV-03 | #3 | Banque Automatisation pratique | **LIVRÉ :** 3 scénarios métiers, étapes personnalisables, quatre simulations (complet, incomplet, doublon, autorisation), validation humaine fictive et exports JSON désactivé + TXT. [Ouvrir l’atelier](../univers/outils/outils/atelier-automatisation.html). Aucune automatisation réelle. |
-| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **LIV-04A — Visuels livré** : studio local (3 mises en page, 3 palettes, formats 1080 × 1080 / 1080 × 1350, aperçus, exports SVG/PNG et brief), [ouvrir l’atelier](../univers/outils/outils/atelier-visuels.html). **LIV-04B/C/D restant** : Web, Vidéo, Recherche. |
+| LIV-04 | #3 | Visuels, Web, Vidéo et Recherche | **A livré :** [Atelier Visuels](../univers/outils/outils/atelier-visuels.html) ; **B livré :** [constructeur web](../univers/outils/outils/atelier-sites-web.html) avec 3 mises en page, 3 palettes, prévisualisations ordinateur/téléphone et HTML autonome exportable. **C/D restant** : Vidéo & audio, Recherche & analyse. |
 | LIV-05 | #4 | Formation Sites 3D + Agents IA | Une vraie leçon publique par formation, avec exercice, corrigé/critères et fichiers non commerciaux. |
 | LIV-06 | #4 | Formation Automatiser + IA au quotidien | Deux nouvelles leçons interactives complètes, évaluation simple et liens depuis les pages formation. |
 | LIV-07 | #2 | Démontrer le pack Conciergerie v0.2 sans dévoiler le pack privé | Démonstration réelle d'un registre fictif de rotation, contrôles, export CSV d'essai, lien depuis la page Conciergerie. |
@@ -74,3 +74,13 @@ Contrôles : `node tests/catalogue-actions.cjs` puis `node scripts/verify-releas
 - Module et liens intégrés à la banque, au catalogue de produits et aux ressources. Aucun visuel premium ni contenu commercial intégral n'a été publié.
 - Tests : `tests/visual-studio.cjs` ; tests manuels globaux dans `scripts/verify-release.cjs`. Vérification du déploiement SHA/Vercel READY à consigner en fin de session.
 - **LIV-04 non entièrement achevé** : trois banques à outiller (Web, Vidéo & Audio, Recherche & Analyse). La présente session a pour résultat visible le studio Visuels.
+
+## Bilan LIV-04B — Atelier Sites web & prototypes, 6 novembre 2026
+
+- **Atelier public :** https://testia-unifie.vercel.app/univers/outils/outils/atelier-sites-web.html
+- **Page produit :** https://testia-unifie.vercel.app/univers/outils/pack-sites-web.html
+- Trois cas métiers (artisan, consultant, studio créatif), trois compositions (éditoriale, services, portfolio), trois palettes, contenu editable, six repères de relecture, aperçu isolé dans une iframe sans script, vue desktop réelle de 1100px et vue mobile de 390px, et exports HTML/TXT.
+- Le fichier généré est une page autonome statique comprenant sections Offre, Pour qui et Contact. Le lien email est désactivé lorsque l'adresse est fictive ou invalide ; aucun formulaire ou paiement factice.
+- Pas d'API, d'hébergement automatique, d'exécution de scripts générés ni de publication de données sensibles. Le fichier HTML doit être relu avant mise en ligne et complété selon les obligations applicables.
+- Liens ajoutés à la banque, aux pages produit et à la bibliothèque de ressources. **LIV-04C/D** restent à réaliser ; le kit premium reste en préparation.
+- Recette ciblée : `node tests/web-builder.cjs` et manuel `node scripts/verify-release.cjs` ; contrôle de déploiement GitHub SHA/Vercel READY exigé avant affirmation de mise en ligne.

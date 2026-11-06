@@ -110,3 +110,7 @@ La [démonstration interactive d’automatisation](univers/outils/outils/atelier
 ## LIV-04A — Banque Création visuelle (06/11/2026)
 
 La [démonstration graphique publique](univers/outils/outils/atelier-visuels.html) crée directement des affiches carrées ou portrait depuis un brief. Trois exemples, trois palettes et trois compositions ; prévisualisation SVG, contrôles de contraste, export SVG, PNG et texte. Aucune API, aucune image externe ni paiement. Le produit complet reste en préparation ; poursuivre ensuite LIV-04B/C/D sur les autres banques. Test manuel : `node tests/visual-studio.cjs`.
+
+## LIV-04B — Constructeur de sites web gratuit (06/11/2026)
+
+Le [nouvel atelier Sites web & prototypes](univers/outils/outils/atelier-sites-web.html) assemble une page HTML responsive depuis un brief, 3 cas métier, 3 compositions, 3 palettes, avec un aperçu `iframe sandbox` séparé et des vues 1100px / 390px. Exports : HTML autonome et mini-cahier des charges TXT. Aucun compte, aucune API, aucune publication automatique. Les e-mails fictifs ou invalides ne créent pas de lien de contact. Le produit commercial reste en préparation. Test de recette manuel : `node tests/web-builder.cjs`.
