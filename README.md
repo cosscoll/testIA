@@ -133,3 +133,13 @@ La page [Contact](contact.html) ne soumet plus les messages à une Issue GitHub 
 **Recette ciblée :** `node tests/beta-readiness.cjs` (ajouté à `node scripts/verify-release.cjs`).
 **Recette pré-bêta :** [checklist détaillée](docs/RECETTE_PRE_BETA_2026-11-06.md).
 Audit statique du 06/11 : 51 pages HTML et 1 220 références internes sans lien manquant, 50 scripts classiques syntaxiquement valides, 41 fichiers clés inspectés contre des signatures connues de secrets. Ces contrôles **ne remplacent pas** un essai en vrai navigateur, la recette globale Node, le contrôle HTTP des exclusions de publication ni l'audit de l'historique Git.
+
+## Vérification manuelle de la production — pré-bêta
+
+Pour vérifier, sur une machine Node.js 18+ qui a accès au réseau, les pages de la bêta et les fichiers exclus, exécuter volontairement :
+
+```bash
+node scripts/verify-live-site.cjs https://testia-unifie.vercel.app
+```
+
+Ce script **ne fait aucun appel à l’API IA et n’envoie aucune donnée** : il contrôle 11 pages/fichiers publics et 6 chemins internes qui devraient répondre 403/404, ainsi que des en-têtes HTTP et la protection du formulaire Contact. Une sortie verte ne certifie **pas** l’UX mobile, WebGL ou la conformité légale. Il n’est ni automatisé ni programmé ; les dossiers `scripts/` et `tests/` sont exclus du déploiement Vercel.
